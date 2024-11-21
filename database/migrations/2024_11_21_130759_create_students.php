@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
+//
 return new class extends Migration
 {
     /**
@@ -20,8 +20,7 @@ return new class extends Migration
             $table->string('parent_surname');
             $table->string('parent_phone_number');
             $table->string('parent_email');
-            $table->unsignedBigInteger('id_group');
-            $table->foreign('id_group')->references('id')->on('groups');
+            $table->foreignId('group_id')->nullable()->constrained('groups')->nullOnDelete();
             $table->timestamps();
         });
     }
