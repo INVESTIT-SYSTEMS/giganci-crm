@@ -23,4 +23,8 @@ class Group extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
+    public function location(): BelongsTo
+    {
+        return $this->belongsTo(Location::class);
+    }
 }
