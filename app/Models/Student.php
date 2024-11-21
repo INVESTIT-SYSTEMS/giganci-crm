@@ -15,6 +15,7 @@ class Student extends Model
         'parent_surname',
         'parent_phone_number',
         'parent_email',
+        'group_id',
     ];
     public function group(): BelongsTo
     {

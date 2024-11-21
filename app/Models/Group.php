@@ -12,8 +12,8 @@ class Group extends Model
         'name',
         'classes_day',
         'classes_hour',
-        'id_teacher',
-        'id_location',
+        'teacher_id',
+        'location_id',
     ];
     public function student(): HasMany
     {
