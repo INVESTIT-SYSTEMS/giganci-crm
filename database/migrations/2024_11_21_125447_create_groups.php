@@ -16,10 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('classes_day');
             $table->string('classes_hour');
-            $table->unsignedBigInteger('id_teacher');
-            $table->foreign('id_teacher')->references('id')->on('teachers');
-            $table->unsignedBigInteger('id_location');
-            $table->foreign('id_location')->references('id')->on('locations');
+            $table->foreignId('teacher_id')->nullable()->constrained('teachers')->nullOnDelete();
+            $table->foreignId('location_id')->nullable()->constrained('locations')->nullOnDelete();
             $table->timestamps();
         });
     }
