@@ -12,6 +12,6 @@ class Location extends Model
     ];
     public function group():HasMany
     {
-        return $this->hasMany(Group::class)
+        return $this->hasMany(Group::class);
     }
 }
