@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+header div{
+    width: 10vw;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.navigator{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
+}
+
+.logo{
+    width: 40vw;
+}
+
+
