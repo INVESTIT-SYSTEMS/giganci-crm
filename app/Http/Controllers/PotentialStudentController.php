@@ -12,11 +12,15 @@ class PotentialStudentController extends Controller
     /**
      * Display a listing of the resource.
      */
+   public function showPotential()
+   {
+       $data = PotentialStudent::all();
+       return view('wppotential', ['user' => $data]);
+   }
     public function index()
     {
-        $data = PotentialStudent::all();
-        return view('Layout_forms.PotentialStudentAddingForm',
-        ['user' => $data]);
+        return view('Layout_forms.PotentialStudentAddingForm');
+
     }
 
     /**
@@ -45,7 +49,7 @@ class PotentialStudentController extends Controller
 
 
             ]);
-            return redirect()->route('PotentialStudent_routes.index');
+            return redirect()->route('pstudent.index');
     }
 
     /**
