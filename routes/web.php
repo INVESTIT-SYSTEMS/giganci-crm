@@ -11,9 +11,8 @@ Route::get('/', function () {
 
 
 
-Route::get('/wppotential', function () {
-    return view('wppotential');
-});
+Route::get('/wppotential', [PotentialStudentController::class, 'showPotential'])->name('pstudent.index');
+Route::get('/AddPotentialStudent', [PotentialStudentController::class, 'index']);
 
 Route::get('/wpteacher', function () {
     return view('wpteacher');
@@ -33,6 +32,6 @@ Route::get('/main', function () {
 
 Route::get('/wpstudent', [StudentController::class,'StudentList'])->name('wpstudent');
 
-Route::resource('PotentialStudent_routes', PotentialStudentController::class);
+Route::resource('addingPotential', PotentialStudentController::class);
 Route::resource('TeacherController_routes', TeacherController::class);
 Route::resource('StudentController_routes', StudentController::class);
