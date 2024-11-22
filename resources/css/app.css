@@ -22,12 +22,14 @@ header{
     background-color: #ae14cb;
     color: white;
     font-weight: bold;
+    box-shadow: black 15px 0px 20px;
 }
 
 .navigator{
     display: flex;
     flex-wrap: wrap;
     width: 60vw;
+    box-shadow: black 5px 0px 20px;
 }
 
 .logo{
@@ -52,3 +54,133 @@ header div:hover{
         font-size: 8px;
     }
 }
+
+
+table, tr, td, th{
+    border-collapse: collapse;
+    border: solid 2px black;
+}
+
+tr, th, td{
+    padding: 10px 10px;
+    margin-bottom: 5px;
+}
+
+th{
+    background-color: #ff6213;
+
+}
+
+td{
+    background-color: white;
+    padding: 5px;
+}
+
+tr{
+    border-radius: 10px;
+}
+
+tr:hover td{
+    background-color: #b7bfca;
+    transition: all 0.35s;
+}
+
+
+
+.potentialuser{
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 5px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.potentialuser::-webkit-scrollbar{
+    display: none;
+}
+
+.potentialuser{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+table{
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px auto;
+
+}
+
+.addpotential{
+    background-color: #ff6213;
+    padding: 5px 5px;
+    border: #9c1fb5 solid 2px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    float: right;
+    box-shadow: black 5px 5px 10px;
+}
+
+.addpotential:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.del{
+    padding: 0px 13px;
+}
+
+table button{
+    background-color: #ae14cb;
+    border-radius: 15px;
+    border: #9c1fb5 solid 2px;
+    padding: 5px;
+    margin: 5px;
+}
+
+table button:hover{
+    scale: 1.1;
+    transition: all .2s;
+}
+
+table form, a{
+    margin: 0;
+    padding: 0;
+}
+
+.contentpotential{
+    background-color: #ff6213;
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.contentpotential h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+footer{
+    height: 7.5vh;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
