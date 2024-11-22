@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PotentialStudent;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class PotentialStudentController extends Controller
@@ -12,7 +14,9 @@ class PotentialStudentController extends Controller
      */
     public function index()
     {
-        return view('Layout_forms.PotentialStudentAddingForm');
+        $data = PotentialStudent::all();
+        return view('Layout_forms.PotentialStudentAddingForm',
+        ['user' => $data]);
     }
 
     /**
@@ -26,9 +30,22 @@ class PotentialStudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+            PotentialStudent::create([
+                'name' => $request->get('name'),
+                'surname' => $request->get('surname'),
+                'birth_year' => $request->get('birth_year'),
+                'status' => $request->get('status'),
+                'comment' => $request->get('comment'),
+                'parent_name' => $request->get('parent_name'),
+                'parent_surname' => $request->get('parent_surname'),
+                'parent_phone_number' => $request->get('parent_phone_number'),
+                'parent_email' => $request->get('parent_email'),
+
+
+            ]);
+            return redirect()->route('PotentialStudent_routes.index');
     }
 
     /**
