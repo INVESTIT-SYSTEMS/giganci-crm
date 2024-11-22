@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
@@ -12,7 +13,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('Layout_forms.TeacherAddingForm');
+        $saved_teachers = Teacher::all();
+        return view('Layout_forms.TeacherAddingForm', ['user' => $saved_teachers]);
+
     }
 
     /**
@@ -26,7 +29,7 @@ class TeacherController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
         $request->validate([
             'name' => 'required',
@@ -49,7 +52,6 @@ class TeacherController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**
