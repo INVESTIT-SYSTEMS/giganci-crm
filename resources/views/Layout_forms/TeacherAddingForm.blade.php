@@ -14,6 +14,9 @@
         <input type="text" name="email" id="email"> <br>
         <button type="submit">Dodaj</button>
     </form>
-{{--<h1>{{$user['name']}}</h1>--}}
+    @foreach($user as $teacher)
+        <h1>{{$teacher['name']}}</h1>
+    @endforeach
+
 </body>
 </html>

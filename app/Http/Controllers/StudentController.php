@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Teacher;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
-class TeacherController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $saved_teachers = Teacher::all();
-        return view('Layout_forms.TeacherAddingForm', ['user' => $saved_teachers]);
-
+        $saved_students = Student::all();
+        return view('Layout_forms.StudentAddingForm', ['user'=>$saved_students]);
     }
 
     /**
@@ -23,28 +21,39 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+
+    }
+
+    public function StudentList()
+    {
+        return view('wpstudent');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) : RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'phone_number' => 'required|min:9|max:9',
-            'email' => 'required',
+            'birth_year' => 'required|min:4|max:4',
+            'parent_name' => 'required',
+            'parent_surname' => 'required',
+            'parent_phone_number' => 'required|min:9|max:9',
+            'parent_email' => 'required',
         ]);
 
-        Teacher::create([
+        Student::create([
             'name'=>$request->get('name'),
             'surname'=>$request->get('surname'),
-            'phone_number'=>$request->get('phone_number'),
-            'email'=>$request->get('email'),
+            'birth_year'=>$request->get('birth_year'),
+            'parent_name'=>$request->get('parent_name'),
+            'parent_surname'=>$request->get('parent_surname'),
+            'parent_phone_number'=>$request->get('parent_phone_number'),
+            'parent_email'=>$request->get('parent_email'),
         ]);
-        return redirect()->route('wpteacher');
+        return redirect()->route('wpstudent');
     }
 
     /**
@@ -52,6 +61,7 @@ class TeacherController extends Controller
      */
     public function show(string $id)
     {
+        //
     }
 
     /**
