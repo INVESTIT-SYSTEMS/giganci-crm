@@ -18,6 +18,12 @@ class TeacherController extends Controller
 
     }
 
+    public function TeachersList()
+    {
+        $saved_teachers = Teacher::all();
+        return view('wpteacher', ['user' => $saved_teachers]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -57,17 +63,25 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Teacher $TeacherController_route)
     {
-        //
+        return view('layout_forms.TeacherEdit', ['teacher'=>$TeacherController_route]);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Teacher $TeacherController_route, Request $request)
     {
-        //
+        $data =$request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'phone_number' => 'required|min:9|max:9',
+            'email' => 'required',
+        ]);
+        $TeacherController_route->update($data);
+        return redirect(route('wpteacher'))->with('success', 'Updated');
     }
 
     /**
