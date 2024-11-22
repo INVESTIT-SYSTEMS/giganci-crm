@@ -1,4 +1,4 @@
-@section()
+{{--@section()--}}
     <form action="" method="post">
         @csrf
         @method('post')
@@ -18,4 +18,4 @@
         <input type="email" name="parent_email" id="">
         <button type="submit">Dodaj Użytkownika</button>
     </form>
-@endsection
+{{--@endsection--}}

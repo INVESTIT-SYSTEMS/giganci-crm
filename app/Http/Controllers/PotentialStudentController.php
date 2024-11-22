@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class PotentialStudentController extends Controller
@@ -11,7 +12,7 @@ class PotentialStudentController extends Controller
      */
     public function index()
     {
-        //
+        return view('Layout_forms.PotentialStudentAddingForm');
     }
 
     /**
