@@ -9,29 +9,29 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <header class="">
+    <header class="text-center">
         <section class="logo">
             <h1>Giganci Programowania</h1>
         </section>
         <section class="navigator">
-            <div class="">
-                <a href="../main"><p>Strona Główna</p></a>
-            </div>
-            <div class="">
-                <a href='../wpstudent'><p>Uczniowie</p></a>
-            </div>
-            <div class="">
-               <a href="../wpteacher"> <p>Nauczyciele</p></a>
-            </div>
-            <div class="">
-                <a href="../wppotential"><p>Potencjalni uczniowie</p></a>
-            </div>
-            <div class="">
-               <a href="../wpgroup"> <p>Grupy</p></a>
-            </div>
-            <div class="">
-               <a href="../wplocation"><p>Lokalizacja</p></a>
-            </div>
+            <a href="../main"><div class="">
+                <p>Strona Główna</p>
+            </div></a>
+            <a href='../wpstudent'><div class="">
+                <p>Uczniowie</p>
+            </div></a>
+            <a href="../wpteacher"><div class="">
+                <p>Nauczyciele</p>
+            </div></a>
+            <a href="../wppotential"><div class="">
+                <p>Potencjalni uczniowie</p>
+            </div></a>
+            <a href="../wpgroup"><div class="">
+                <p>Grupy</p>
+            </div></a>
+            <a href="../wplocation"><div class="">
+               <p>Lokalizacja</p>
+            </div></a>
         </section>
     </header>
 
