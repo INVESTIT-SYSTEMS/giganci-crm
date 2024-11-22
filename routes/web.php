@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PotentialStudentController;
-
+use App\Http\Controllers\TeacherController;
 Route::get('/', function () {
     return view('main');
 });
@@ -33,5 +33,4 @@ Route::get('/main', function () {
 
 
 Route::resource('PotentialStudent_routes', PotentialStudentController::class);
-
-
+Route::resource('TeacherController_routes', TeacherController::class);
