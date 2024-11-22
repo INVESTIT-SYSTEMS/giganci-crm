@@ -1,5 +1,5 @@
 {{--@section()--}}
-    <form action="{{route('PotentialStudent_routes.store')}}" method="post" id="potential">
+    <form action="{{route('addingPotential.store')}}" method="post" id="potential">
         @csrf
 
         <input type="text" name="name" id="">
@@ -19,7 +19,4 @@
         <button type="submit">Dodaj Użytkownika</button>
     </form>
 
-    @foreach($user as $users)
-            <h2>{{ $users['name']}}</h2>
-    @endforeach
 {{--@endsection--}}

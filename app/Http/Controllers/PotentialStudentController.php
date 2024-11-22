@@ -12,12 +12,12 @@ class PotentialStudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-   public function showPotential()
+   public function showPotential(): View
    {
        $data = PotentialStudent::all();
        return view('wppotential', ['user' => $data]);
    }
-    public function index()
+    public function index(): View
     {
         return view('Layout_forms.PotentialStudentAddingForm');
 
@@ -63,24 +63,38 @@ class PotentialStudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(PotentialStudent $addingPotential)
     {
-        //
+        return view('Layout_forms.PotentialStudentEditForm', ['user' => $addingPotential]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, PotentialStudent $addingPotential)
     {
-        //
+        $addingPotential->update([
+            'name' => $request->get('name'),
+            'surname' => $request->get('surname'),
+            'birth_year' => $request->get('birth_year'),
+            'status' => $request->get('status'),
+            'comment' => $request->get('comment'),
+            'parent_name' => $request->get('parent_name'),
+            'parent_surname' => $request->get('parent_surname'),
+            'parent_phone_number' => $request->get('parent_phone_number'),
+            'parent_email' => $request->get('parent_email'),
+
+
+        ]);
+        return redirect()->route('pstudent.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(PotentialStudent $addingPotential)
     {
-        //
+        $addingPotential -> delete();
+        return redirect()->route('pstudent.index');
     }
 }

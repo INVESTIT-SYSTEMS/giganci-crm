@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 
 Route::resource('addingPotential', PotentialStudentController::class);
-Route::get('/wppotential', [PotentialStudentController::class, 'showPotential'])->name('pstudent.index');
+Route::get('/potential', [PotentialStudentController::class, 'showPotential'])->name('pstudent.index');
 Route::get('/AddPotentialStudent', [PotentialStudentController::class, 'index']);
 
 Route::get('/wpteacher', function () {
