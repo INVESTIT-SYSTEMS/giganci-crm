@@ -6,7 +6,7 @@
 <section class="contentlocationadd">
     <h1>Dodaj lokalizacje</h1>
     <section class="locationsectionadd">
-        <form action="{{route('location.store')}}" method="post">
+        <form action="{{route('Location.store')}}" method="post">
             @csrf
             @method('post')
             <table class="">
