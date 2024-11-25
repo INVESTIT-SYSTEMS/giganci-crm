@@ -1,7 +1,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentteacher">
     <h1>Nauczyciele</h1>
-    <a href="{{route('addPStudent.index')}}"> <button type="submit" class="addteacher">Dodaj nauczyciela</button></a>
+    <a href="{{route('teachers.index')}}"> <button type="submit" class="addteacher">Dodaj nauczyciela</button></a>
     <section class="teacher">
         <table class="">
             <tr>
@@ -21,12 +21,12 @@
                         <td class="colored">{{$info->phone_number}}</td>
                         <td>{{$info->email}}</td>
                         <td class="colored">
-{{--                            <a href="{{ route('addingPotential.edit', ['addingPotential' => $info])}}"><button>Edit</button></a> <br>--}}
-{{--                            <form action="{{ route('addingPotential.destroy', ['addingPotential' => $info]) }}" method="post">--}}
-{{--                                @csrf--}}
-{{--                                @method('delete')--}}
-{{--                                <button type="submit" class="del">X</button>--}}
-{{--                            </form>--}}
+                            <a href="{{ route('teachers.edit', ['teacher' => $info])}}"><button>Edit</button></a> <br>
+                            <form action="{{ route('teachers.destroy', ['teacher' => $info]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="del">X</button>
+                            </form>
                         </td>
                     </tr>
                 </div>

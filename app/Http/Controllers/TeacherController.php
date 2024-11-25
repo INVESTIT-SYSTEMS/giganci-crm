@@ -15,21 +15,14 @@ class TeacherController extends Controller
     {
         $saved_teachers = Teacher::all();
         return view('Layout_forms.TeacherAddingForm', ['teacher' => $saved_teachers]);
-
     }
-
-    public function TeachersList()
-    {
-        $saved_teachers = Teacher::all();
-        return view('wpteacher', ['teacher' => $saved_teachers]);
-    }
-
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $saved_teachers = Teacher::all();
+        return view('wpteacher', ['teacher' => $saved_teachers]);
     }
 
     /**
@@ -50,7 +43,7 @@ class TeacherController extends Controller
             'phone_number'=>$request->get('phone_number'),
             'email'=>$request->get('email'),
         ]);
-        return redirect()->route('wpteacher');
+        return redirect()->route('teacher.index');
     }
 
     /**
@@ -63,16 +56,15 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Teacher $addTeacher)
+    public function edit(Teacher $teacher)
     {
-        return view('layout_forms.TeacherEdit', ['teacher'=> $addTeacher]);
-
+        return view('layout_forms.TeacherEdit', ['teachers'=> $teacher]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Teacher $addTeacher, Request $request)
+    public function update(Teacher $teacher, Request $request)
     {
         $data =$request->validate([
             'name' => 'required',
@@ -80,15 +72,16 @@ class TeacherController extends Controller
             'phone_number' => 'required|min:9|max:9',
             'email' => 'required',
         ]);
-        $addTeacher->update($data);
-        return redirect(route('wpteacher'))->with('success', 'Updated');
+        $teacher->update($data);
+        return redirect(route('teacher.index'))->with('success', 'Updated');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Teacher $teachers)
     {
-        //
+        $teachers->delete();
+        return redirect(route('teacher.index'));
     }
 }

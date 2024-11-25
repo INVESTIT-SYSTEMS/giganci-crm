@@ -6,7 +6,7 @@
     <title>Students</title>
 </head>
 <body>
-<form action="{{route('addStudent.store')}}" method="POST" id="StudentForm">
+<form action="{{route('students.store')}}" method="POST" id="StudentForm">
     @csrf
     <input type="text" name="name" id="name"> <br>
     <input type="text" name="surname" id="surname"> <br>
