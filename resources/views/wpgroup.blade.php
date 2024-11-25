@@ -1,6 +1,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentgroup">
     <h1>Grupy</h1>
+    <a href="{{route('addPStudent.index')}}"> <button type="submit" class="addgroup">Dodaj grupe</button></a>
     <section class="group">
         <table class="">
             <tr>

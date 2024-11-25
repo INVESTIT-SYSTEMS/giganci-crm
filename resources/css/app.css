@@ -197,6 +197,23 @@ table form, a{
     margin: auto;
 }
 
+.addstudent{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    float: right;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.addstudent:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
 .student{
     text-align: center;
     background-color: #9c1fb5;
@@ -209,6 +226,13 @@ table form, a{
     box-shadow: black 5px 5px 20px;
 }
 
+.contentstudent h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
 .contentteacher{
     background: linear-gradient(180deg, #ff691f, #e35400);
     height: 85vh;
@@ -216,6 +240,23 @@ table form, a{
     align-items: center;
     justify-content: center;
     margin: auto;
+}
+
+.addteacher{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    float: right;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.addteacher:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
 }
 
 .teacher{
@@ -230,6 +271,13 @@ table form, a{
     box-shadow: black 5px 5px 20px;
 }
 
+.contentteacher h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
+}
+
 .contentgroup{
     background: linear-gradient(180deg, #ff691f, #e35400);
     height: 85vh;
@@ -237,6 +285,23 @@ table form, a{
     align-items: center;
     justify-content: center;
     margin: auto;
+}
+
+.addgropup{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    float: right;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.addgroup:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
 }
 
 .group{
@@ -249,6 +314,13 @@ table form, a{
     padding: 5px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
+}
+
+.contentgroup h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5px;
 }
 
 footer{
