@@ -6,7 +6,7 @@
 <section class="contentgroupadd">
     <h1>Dodaj grupę</h1>
     <section class="groupsectionadd">
-        <form action="{{route('addGroup.store')}}" method="post" id="group">
+        <form action="{{route('Group.store')}}" method="post" id="group">
             @csrf
             @method('post')
             <table class="">

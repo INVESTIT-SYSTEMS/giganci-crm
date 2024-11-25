@@ -5,7 +5,7 @@
 
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
-    <a href="{{route('addPStudent.index')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
+    <a href="{{route('PotentialStudent.index')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
     <section class="potentialuser">
         <table class="">
             <tr>
@@ -35,8 +35,8 @@
                 <td>{{$info->parent_phone_number}}</td>
                 <td class="colored">{{$info->parent_email}}</td>
                 <td>
-                    <a href="{{ route('addPStudent.edit', ['addPStudent' => $info])}}"><button>Edit</button></a> <br>
-                    <form action="{{ route('addPStudent.destroy', ['addPStudent' => $info]) }}" method="post">
+                    <a href="{{ route('PotentialStudent.edit', ['PotentialStudent' => $info])}}"><button>Edit</button></a> <br>
+                    <form action="{{ route('PotentialStudent.destroy', ['PotentialStudent' => $info]) }}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="del">X</button>

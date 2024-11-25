@@ -6,7 +6,7 @@
 <section class="contentgroupedit">
     <h1>Edytuj grupę</h1>
     <section class="groupsectionedit">
-        <form action="{{route('addGroup.update', ['addGroup'=>$group])}}" method="post" id="group">
+        <form action="{{route('Group.update', ['Group'=>$group])}}" method="post" id="group">
             @csrf
             @method('put')
             <table class="">
