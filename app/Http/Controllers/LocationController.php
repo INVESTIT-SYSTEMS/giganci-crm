@@ -48,17 +48,17 @@ class LocationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Location $location)
+    public function edit(Location $Location)
     {
-        return view('Layout_forms.LocationEditForm', ['location' => $location]);
+        return view('Layout_forms.LocationEditForm', ['Location' => $Location]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Location $location)
+    public function update(Request $request, Location $Location)
     {
-        $location -> update([
+        $Location -> update([
             'town' => $request->get('town'),
         ]);
         return redirect()->route('Location.index');
@@ -67,9 +67,9 @@ class LocationController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Location $location)
+    public function destroy(Location $Location)
     {
-        $location -> delete();
+        $Location -> delete();
         return redirect()->route('Location.index');
     }
 

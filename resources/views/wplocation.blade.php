@@ -13,12 +13,12 @@
                     <tr>
                         <td>{{$info->town}}</td>
                         <td class="colored">
-                            {{--                            <a href="{{ route('addingPotential.edit', ['addingPotential' => $info])}}"><button>Edit</button></a> <br>--}}
-                            {{--                            <form action="{{ route('addingPotential.destroy', ['addingPotential' => $info]) }}" method="post">--}}
-                            {{--                                @csrf--}}
-                            {{--                                @method('delete')--}}
-                            {{--                                <button type="submit" class="del">X</button>--}}
-                            {{--                            </form>--}}
+                            <a href="{{ route('Location.edit', ['Location' => $info])}}"><button>Edit</button></a> <br>
+                            <form action="{{ route('Location.destroy', ['Location' => $info]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="del">X</button>
+                            </form>
                         </td>
                     </tr>
                 </div>
