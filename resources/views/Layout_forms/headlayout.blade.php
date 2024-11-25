@@ -26,7 +26,7 @@
             <a href="{{ route('pStudent.index') }}"><div class="">
                 <p>Potencjalni uczniowie</p>
             </div></a>
-            <a href="../wpgroup"><div class="">
+            <a href="{{ route('group.index') }}"><div class="">
                 <p>Grupy</p>
             </div></a>
             <a href="../wplocation"><div class="">

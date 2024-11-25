@@ -12,8 +12,23 @@
 @include('Layout_forms.headlayout')
 <main class="w-100">
     <h1>Giganci programowania CRM</h1>
-</main>
+    <h3>Kursy programowania dla dzieci i młodzieży</h3>
 
+    <section class="bg-gray-100 contentmain">
+        <div class="maindiv">
+            <p>Łączymy Studentów i Nauczycieli</p>
+        </div>
+
+        <div class="maindiv">
+            <p>Laravel</p>
+        </div>
+
+        <div class="maindiv">
+            <P>Pomagamy w nauce</P>
+        </div>
+    </section>
+</main>
+@include('Layout_forms.footerlayout')
 
 </body>
 </html>
