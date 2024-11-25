@@ -198,9 +198,6 @@ table form, a{
 }
 
 .student{
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
     text-align: center;
     background-color: #9c1fb5;
     overflow: auto;
@@ -222,9 +219,27 @@ table form, a{
 }
 
 .teacher{
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 5px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.contentgroup{
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.group{
     text-align: center;
     background-color: #9c1fb5;
     overflow: auto;
