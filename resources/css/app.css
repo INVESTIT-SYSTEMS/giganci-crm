@@ -551,3 +551,119 @@ footer{
     transition: all 0.35s;
     background-color: #cc531c;
 }
+
+.contentstudentaddadd{
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
+
+}
+
+.contentstudentadd h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.studentsectionadd{
+
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 35px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.studentsectionadd input{
+    border-bottom: 1px black solid;
+}
+
+.studentsectionadd td,.studentsectionadd tr {
+    border: 0px;
+}
+
+.studentadd{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.studentadd:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.contentstudentedit{
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
+
+}
+
+.contentstudentedit h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.studentsectionedit{
+
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 35px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.studentsectionedit input{
+    border-bottom: 1px black solid;
+}
+
+.studentsectionedit td,.studentsectionedit tr {
+    border: 0px;
+}
+
+.studentedit{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.studentedit:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
