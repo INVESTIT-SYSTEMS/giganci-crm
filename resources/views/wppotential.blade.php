@@ -5,7 +5,7 @@
 
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
-    <a href="{{route('PotentialStudent.index')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
+    <a href="{{route('PotentialStudent.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
     <section class="potentialuser">
         <table class="">
             <tr>

@@ -1,7 +1,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentlocation">
     <h1>Lokalizacje</h1>
-    <a href="{{route('addPStudent.index')}}"> <button type="submit" class="addlocation">Dodaj lokalizacje</button></a>
+    <a href="{{route('Location.create')}}"> <button type="submit" class="addlocation">Dodaj lokalizacje</button></a>
     <section class="location">
         <table class="">
             <tr>
