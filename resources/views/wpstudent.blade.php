@@ -12,7 +12,7 @@
                 <th>Nazwisko rodzica</th>
                 <th>Numer telefonu rodzica</th>
                 <th>E-mail rodzica</th>
-                <th>Id grupy</th>
+                <th>Nazwa grupy</th>
                 <th>Edytor</th>
             </tr>
             @foreach($user as $info)
