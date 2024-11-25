@@ -551,3 +551,177 @@ footer{
     transition: all 0.35s;
     background-color: #cc531c;
 }
+
+.contentstudentadd{
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
+
+}
+
+.contentstudentadd h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.studentsectionadd{
+
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 35px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.studentsectionadd input{
+    border-bottom: 1px black solid;
+}
+
+.studentsectionadd td,.studentsectionadd tr {
+    border: 0px;
+}
+
+.studentadd{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.studentadd:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.contentstudentedit{
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
+
+}
+
+.contentstudentedit h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.studentsectionedit{
+
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 35px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.studentsectionedit input{
+    border-bottom: 1px black solid;
+}
+
+.studentsectionedit td,.studentsectionedit tr {
+    border: 0px;
+}
+
+.studentedit{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.studentedit:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd{
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
+
+}
+
+.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd{
+
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 35px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.groupsectionadd input, .groupsectionedit input, .locationsectionedit input, .locationsectionadd input{
+    border-bottom: 1px black solid;
+}
+
+.groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr, .locationsectionedit td, .locationsectionedit tr, .locationsectionadd td, .locationsectionadd tr{
+    border: 0px;
+}
+
+.groupadd, .groupedit, .locationedit, .locationadd{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.groupadd:hover, .groupedit:hover, .locationedit:hover, .locationadd:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}

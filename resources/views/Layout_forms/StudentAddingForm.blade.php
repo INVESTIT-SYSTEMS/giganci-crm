@@ -1,27 +1,58 @@
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Students</title>
+    <title>Dodaj ucznia</title>
 </head>
-<body>
-<form action="{{route('students.store')}}" method="POST" id="StudentForm">
-    @csrf
-    <input type="text" name="name" id="name"> <br>
-    <input type="text" name="surname" id="surname"> <br>
-    <input type="text" name="birth_year" id="birth_year"> <br>
-    <input type="text" name="parent_name" id=""> <br>
-    <input type="text" name="parent_surname" id=""> <br>
-    <input type="text" name="parent_phone_number" id=""> <br>
-    <input type="email" name="parent_email" id=""> <br>
-    <select form="StudentForm" name="group_id">
-        @foreach($group as $name)
-            <option value="{{$name['id']}}">{{$name['name']}}</option>
-        @endforeach
-    </select>
-    <button type="submit">Dodaj</button>
-</form>
+@include('Layout_forms.headlayout')
+
+<section class="contentstudentadd">
+    <h1>Dodaj ucznia</h1>
+    <section class="studentsectionadd">
+        <form action="{{route('students.store')}}" method="POST" id="StudentForm">
+            @csrf
+            <table class="">
+                <tr>
+                    <td>Imie:</td>
+                    <td><input type="text" name="name" id="name" placeholder="Podaj imie"></td>
+                </tr>
+                <tr>
+                    <td>Nazwisko:</td>
+                    <td><input type="text" name="surname" id="surname" placeholder="Podaj nazwisko"></td>
+                </tr>
+                <tr>
+                    <td>Rok urodzenia:</td>
+                    <td><input type="text" name="birth_year" id="birth_year" placeholder="Podaj rok urodzin"></td>
+                </tr>
+                <tr>
+                    <td>Imie rodzica:</td>
+                    <td><input type="text" name="parent_name" id="" placeholder="Podaj imie rodzica"></td>
+                </tr>
+                <tr>
+                    <td>Nazwisko rodzica:</td>
+                    <td><input type="text" name="parent_surname" id="" placeholder="Podaj nazwisko rodzica"></td>
+                </tr>
+                <tr>
+                    <td>Numer telefonu rodzica:</td>
+                    <td><input type="text" name="parent_phone_number" id="" placeholder="Podaj numer telefonu rodzica"></td>
+                </tr>
+                <tr>
+                    <td>E-mail rodzica:</td>
+                    <td><input type="email" name="parent_email" id="" placeholder="Podaj e-mail rodzica"></td>
+                </tr>
+                <tr>
+                    <td>Grupa:</td>
+                    <td><select form="StudentForm" name="group_id">
+                            @foreach($group as $name)
+                                <option value="{{$name['id']}}">{{$name['name']}}</option>
+                            @endforeach
+                        </select></td>
+                </tr>
+            </table>
+            <button type="submit" class="studentadd">Dodaj Ucznia</button>
+        </form>
+    </section>
+</section>
+@include('Layout_forms.footerlayout')
+
 
 
 </body>
