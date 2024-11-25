@@ -17,7 +17,7 @@
             <a href="../main"><div class="">
                 <p>Strona Główna</p>
             </div></a>
-            <a href='../wpstudent'><div class="">
+            <a href="{{ route('student.index') }}"><div class="">
                 <p>Uczniowie</p>
             </div></a>
             <a href="{{ route('teacher.index') }}"><div class="">

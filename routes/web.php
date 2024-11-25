@@ -32,5 +32,5 @@ Route::resource('addTeacher', TeacherController::class);
 Route::get('/teacher', [TeacherController::class,'TeachersList'])->name('teacher.index');
 
 Route::resource('addStudent', StudentController::class);
-Route::get('/student', [StudentController::class,'StudentList'])->name('wpstudent');
+Route::get('/student', [StudentController::class,'StudentList'])->name('student.index');
 
