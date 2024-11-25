@@ -2,7 +2,7 @@
 <section class="contentteacher">
     <h1>Nauczyciele</h1>
     <p>Gruby m.in.</p>
-    <a href="{{route('addPStudent.index')}}"> <button type="submit" class="addsteacher">Dodaj nauczyciela</button></a>
+    <a href="{{route('addPStudent.index')}}"> <button type="submit" class="addteacher">Dodaj nauczyciela</button></a>
     <section class="teacher">
         <table class="">
             <tr>
