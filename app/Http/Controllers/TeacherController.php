@@ -43,7 +43,7 @@ class TeacherController extends Controller
             'phone_number'=>$request->get('phone_number'),
             'email'=>$request->get('email'),
         ]);
-        return redirect()->route('teacher.index');
+        return redirect()->route('teachers.index');
     }
 
     /**
@@ -73,15 +73,15 @@ class TeacherController extends Controller
             'email' => 'required',
         ]);
         $teacher->update($data);
-        return redirect(route('teacher.index'))->with('success', 'Updated');
+        return redirect(route('teachers.index'))->with('success', 'Updated');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Teacher $teachers)
+    public function destroy(Teacher $teacher)
     {
-        $teachers->delete();
-        return redirect(route('teacher.index'));
+        $teacher->delete();
+        return redirect(route('teachers.index'));
     }
 }
