@@ -17,10 +17,10 @@
             <a href="../main"><div class="">
                 <p>Strona Główna</p>
             </div></a>
-            <a href="{{ route('student.index') }}"><div class="">
+            <a href="{{ route('students.index') }}"><div class="">
                 <p>Uczniowie</p>
             </div></a>
-            <a href="{{ route('teacher.index') }}"><div class="">
+            <a href="{{ route('teachers.index') }}"><div class="">
                 <p>Nauczyciele</p>
             </div></a>
             <a href="{{ route('PotentialStudent.index') }}"><div class="">

@@ -13,8 +13,7 @@ class StudentController extends Controller
     public function index()
     {
         $saved_students = Student::all();
-        $groups= Group::all();
-        return view('Layout_forms.StudentAddingForm', ['student'=>$saved_students], ['group'=>$groups]);
+        return view('wpstudent', ['student' => $saved_students]);
     }
 
     /**
@@ -23,7 +22,8 @@ class StudentController extends Controller
     public function create()
     {
         $saved_students = Student::all();
-        return view('wpstudent', ['student' => $saved_students]);
+        $groups= Group::all();
+        return view('Layout_forms.StudentAddingForm', ['student'=>$saved_students], ['group'=>$groups]);
     }
 
     /**

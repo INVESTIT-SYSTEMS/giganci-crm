@@ -1,7 +1,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
     <h1>Uczniowie</h1>
-    <a href="{{route('students.index')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
+    <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
     <section class="student">
         <table class="">
             <tr>

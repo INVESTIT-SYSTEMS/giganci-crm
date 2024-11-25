@@ -14,7 +14,7 @@ class TeacherController extends Controller
     public function index()
     {
         $saved_teachers = Teacher::all();
-        return view('Layout_forms.TeacherAddingForm', ['teacher' => $saved_teachers]);
+        return view('wpteacher', ['teacher' => $saved_teachers]);
     }
     /**
      * Show the form for creating a new resource.
@@ -22,7 +22,7 @@ class TeacherController extends Controller
     public function create()
     {
         $saved_teachers = Teacher::all();
-        return view('wpteacher', ['teacher' => $saved_teachers]);
+        return view('Layout_forms.TeacherAddingForm', ['teacher' => $saved_teachers]);
     }
 
     /**
