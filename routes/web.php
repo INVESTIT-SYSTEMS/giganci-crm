@@ -5,27 +5,23 @@ use App\Http\Controllers\PotentialStudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\LocationController;
 
 Route::get('/', function () {
     return view('main');
 });
-
-
-Route::resource('addPStudent', PotentialStudentController::class);
-Route::get('/potential', [PotentialStudentController::class, 'PotentialList'])->name('pStudent.index');
-Route::get('/AddPotentialStudent', [PotentialStudentController::class, 'index']);
-
-
-Route::resource('addGroup', GroupController::class);
-Route::get('/group', [GroupController::class, 'GroupList'])->name('group.index');
-
-Route::get('/wplocation', function () {
-    return view('wplocation');
-});
-
 Route::get('/main', function () {
     return view('main');
-});
+})->name('main.index');
+
+
+Route::resource('PotentialStudent', PotentialStudentController::class);
+
+Route::resource('Group', GroupController::class);
+
+Route::resource('Location', LocationController::class);
+
+
 
 
 Route::resource('teachers', TeacherController::class);

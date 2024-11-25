@@ -1,5 +1,5 @@
 {{--@section()--}}
-    <form action="{{route('addGroup.update', ['addGroup'=>$group])}}" method="post" id="group">
+    <form action="{{route('Group.update', ['Group'=>$group])}}" method="post" id="group">
         @csrf
         @method('put')
         <input type="text" name="name" id="">

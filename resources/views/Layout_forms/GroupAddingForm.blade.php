@@ -1,5 +1,5 @@
 {{--@section()--}}
-    <form action="{{route('addGroup.store')}}" method="post" id="group">
+    <form action="{{route('Group.store')}}" method="post" id="group">
         @csrf
         @method('post')
         <input type="text" name="name" id="">

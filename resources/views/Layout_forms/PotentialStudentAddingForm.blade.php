@@ -6,7 +6,7 @@
 <section class="contentpotentialadd">
     <h1>Edytuj potencjalnego ucznia</h1>
     <section class="potentialuseradd">
-        <form action="{{route('addPStudent.store')}}" method="post" id="potential">
+        <form action="{{route('PotentialStudent.store')}}" method="post" id="potential">
             @csrf
             <table class="">
                 <tr>

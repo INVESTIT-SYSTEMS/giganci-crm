@@ -23,13 +23,13 @@
             <a href="{{ route('teacher.index') }}"><div class="">
                 <p>Nauczyciele</p>
             </div></a>
-            <a href="{{ route('pStudent.index') }}"><div class="">
+            <a href="{{ route('PotentialStudent.index') }}"><div class="">
                 <p>Potencjalni uczniowie</p>
             </div></a>
-            <a href="{{ route('group.index') }}"><div class="">
+            <a href="{{route('Group.index')}}"><div class="">
                 <p>Grupy</p>
             </div></a>
-            <a href="../wplocation"><div class="">
+            <a href="{{route('Location.index')}}"><div class="">
                <p>Lokalizacja</p>
             </div></a>
         </section>
