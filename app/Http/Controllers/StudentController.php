@@ -13,7 +13,8 @@ class StudentController extends Controller
     public function index()
     {
         $saved_students = Student::all();
-        return view('Layout_forms.StudentAddingForm', ['user'=>$saved_students]);
+        $groups= Group::all();
+        return view('Layout_forms.StudentAddingForm', ['student'=>$saved_students], ['group'=>$groups]);
     }
 
     /**
@@ -26,7 +27,8 @@ class StudentController extends Controller
 
     public function StudentList()
     {
-        return view('wpstudent');
+        $saved_students = Student::all();
+        return view('wpstudent', ['student' => $saved_students]);
     }
 
     /**
@@ -67,17 +69,27 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Student $addStudent)
     {
-        //
+        return view('Layout_forms.StudentEdit', ['student'=>$addStudent]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Student $addStudent, Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'birth_year' => 'required|min:4|max:4',
+            'parent_name' => 'required',
+            'parent_surname' => 'required',
+            'parent_phone_number' => 'required|min:9|max:9',
+            'parent_email' => 'required',
+        ]);
+        $addStudent->update($data);
+        return redirect(route('wpstudent'))->with('success', 'Updated');
     }
 
     /**

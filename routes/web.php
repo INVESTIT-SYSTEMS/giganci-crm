@@ -33,6 +33,6 @@ Route::get('/main', function () {
 Route::resource('addTeacher', TeacherController::class);
 Route::get('/teacher', [TeacherController::class,'TeachersList'])->name('teacher.index');
 
-Route::resource('StudentController_routes', StudentController::class);
+Route::resource('addStudent', StudentController::class);
 Route::get('/student', [StudentController::class,'StudentList'])->name('wpstudent');
 

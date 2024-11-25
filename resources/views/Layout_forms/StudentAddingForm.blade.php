@@ -6,7 +6,7 @@
     <title>Students</title>
 </head>
 <body>
-<form action="{{route('StudentController_routes.store')}}" method="POST">
+<form action="{{route('addStudent.store')}}" method="POST">
     @csrf
     <input type="text" name="name" id="name"> <br>
     <input type="text" name="surname" id="surname"> <br>
@@ -15,11 +15,9 @@
     <input type="text" name="parent_surname" id=""> <br>
     <input type="text" name="parent_phone_number" id=""> <br>
     <input type="email" name="parent_email" id=""> <br>
-    <button type="submit">Dodaj</button>
+    <button type="submit">Edytuj</button>
 </form>
-@foreach($user as $teacher)
-    <h1>{{$teacher['name']}}</h1>
-@endforeach
+
 
 </body>
 </html>
