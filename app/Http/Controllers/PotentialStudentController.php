@@ -12,12 +12,13 @@ class PotentialStudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-   public function showPotential(): View
+   public function PotentialList(): View
    {
        $data = PotentialStudent::all();
        return view('wppotential', ['user' => $data]);
    }
-    public function index(): View
+
+   public function index(): View
     {
         return view('Layout_forms.PotentialStudentAddingForm');
 
@@ -49,7 +50,7 @@ class PotentialStudentController extends Controller
 
 
             ]);
-            return redirect()->route('pstudent.index');
+            return redirect()->route('pStudent.index');
     }
 
     /**
@@ -63,17 +64,17 @@ class PotentialStudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PotentialStudent $addingPotential)
+    public function edit(PotentialStudent $addPStudent)
     {
-        return view('Layout_forms.PotentialStudentEditForm', ['user' => $addingPotential]);
+        return view('Layout_forms.PotentialStudentEditForm', ['user' => $addPStudent]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PotentialStudent $addingPotential)
+    public function update(Request $request, PotentialStudent $addPStudent)
     {
-        $addingPotential->update([
+        $addPStudent->update([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
             'birth_year' => $request->get('birth_year'),
@@ -86,15 +87,15 @@ class PotentialStudentController extends Controller
 
 
         ]);
-        return redirect()->route('pstudent.index');
+        return redirect()->route('pStudent.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PotentialStudent $addingPotential)
+    public function destroy(PotentialStudent $addPStudent)
     {
-        $addingPotential -> delete();
-        return redirect()->route('pstudent.index');
+        $addPStudent -> delete();
+        return redirect()->route('pStudent.index');
     }
 }

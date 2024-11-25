@@ -20,10 +20,10 @@
             <a href='../wpstudent'><div class="">
                 <p>Uczniowie</p>
             </div></a>
-            <a href="../wpteacher"><div class="">
+            <a href="{{ route('teacher.index') }}"><div class="">
                 <p>Nauczyciele</p>
             </div></a>
-            <a href="../wppotential"><div class="">
+            <a href="{{ route('pStudent.index') }}"><div class="">
                 <p>Potencjalni uczniowie</p>
             </div></a>
             <a href="../wpgroup"><div class="">

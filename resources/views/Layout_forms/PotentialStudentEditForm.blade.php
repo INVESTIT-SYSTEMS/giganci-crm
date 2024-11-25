@@ -1,5 +1,5 @@
 {{--@section()--}}
-    <form action="{{route('addingPotential.update', ['addingPotential'=>$user])}}" method="post" id="potential">
+    <form action="{{route('addPStudent.update', ['addPStudent'=>$user])}}" method="post" id="potential">
         @csrf
         @method('put')
         <input type="text" name="name" id="" value="{{$user['name']}}">

@@ -1,5 +1,5 @@
 {{--@section()--}}
-    <form action="{{route('addingPotential.store')}}" method="post" id="potential">
+    <form action="{{route('addPStudent.store')}}" method="post" id="potential">
         @csrf
 
         <input type="text" name="name" id="">
