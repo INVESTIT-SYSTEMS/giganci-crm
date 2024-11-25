@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Group extends Model
 {
+    protected $table = 'groups';
     protected $fillable = [
         'name',
         'classes_day',

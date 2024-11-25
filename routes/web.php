@@ -17,9 +17,7 @@ Route::get('/AddPotentialStudent', [PotentialStudentController::class, 'index'])
 
 
 Route::resource('addGroup', GroupController::class);
-//Route::get('/wpgroup', function () {
-//
-//});
+Route::get('/group', [GroupController::class, 'GroupList'])->name('group.index');
 
 Route::get('/wplocation', function () {
     return view('wplocation');
