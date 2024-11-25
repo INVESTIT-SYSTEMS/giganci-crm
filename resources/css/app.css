@@ -436,7 +436,118 @@ footer{
     justify-content: center;
 }
 
+.contentpotentialedit{
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
 
+}
 
+.contentpotentialedit h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
 
+.potentialuseredit{
 
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 35px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.potentialuseredit input{
+    border-bottom: 1px black solid;
+}
+
+.potentialuseredit td,.potentialuseredit tr {
+    border: 0px;
+}
+
+.editpotential{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.editpotential:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.contentpotentialadd{
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
+
+}
+
+.contentpotentialadd h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.potentialuseradd{
+
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 35px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
+.potentialuseradd input{
+    border-bottom: 1px black solid;
+}
+
+.potentialuseradd td,.potentialuseradd tr {
+    border: 0px;
+}
+
+.potentialadd{
+    background-color: #ff6213;
+    padding: 5px 10px;
+    border: #9c1fb5 solid 3px;
+    border-radius: 15px;
+    margin: 10px 45px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.potentialadd:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
