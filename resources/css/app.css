@@ -19,10 +19,12 @@ header{
     justify-content: center;
     align-items: center;
     height: 55px;
-    background-color: #ae14cb;
+    /*background-color: #ae14cb;*/
+    background: linear-gradient(180deg, #ae14cb, #d22fef);
     color: white;
     font-weight: bold;
     box-shadow: black 15px 0px 20px;
+    border-bottom: solid 1px black;
 }
 
 .navigator{
@@ -82,7 +84,7 @@ tr{
 }
 
 tr:hover td{
-    background-color: #b7bfca;
+    background-color: rgba(183, 191, 202, 0.89);
     transition: all 0.35s;
 }
 
@@ -158,13 +160,23 @@ table form, a{
     padding: 0;
 }
 
+.colored{
+    background-color: rgba(221, 226, 232, 0.9);
+}
+
+.gap{
+    margin: 2px;
+}
+
 .contentpotential{
-    background-color: #ff6213;
+    /*background-color: #ff6213;*/
+    background: linear-gradient(180deg, #ff691f, #e35400);
     height: 85vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     margin: auto;
+    /*box-shadow: black 15px 0px 20px;*/
 
 }
 
@@ -175,6 +187,31 @@ table form, a{
     padding-top: 5px;
 }
 
+
+.contentstudent{
+    background: linear-gradient(180deg, #ff691f, #e35400);
+    height: 85vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.student{
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    text-align: center;
+    background-color: #9c1fb5;
+    overflow: auto;
+    width: 95vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 5px;
+    height: 80%;
+    box-shadow: black 5px 5px 20px;
+}
+
 footer{
     height: 7.5vh;
     width: 100vw;
@@ -183,6 +220,8 @@ footer{
     align-items: center;
     justify-content: center;
 }
+
+
 
 
 
