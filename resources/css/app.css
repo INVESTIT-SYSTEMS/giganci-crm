@@ -668,7 +668,7 @@ footer{
     background-color: #cc531c;
 }
 
-.contentgroupadd, .contentgroupedit{
+.contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd{
     /*background-color: #ff6213;*/
     background: linear-gradient(180deg, #ff691f, #e35400);
     height: 85vh;
@@ -680,7 +680,7 @@ footer{
 
 }
 
-.contentgroupadd h1, .contentgroupedit h1{
+.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1{
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -688,7 +688,7 @@ footer{
     padding-bottom: 30px;
 }
 
-.groupsectionadd, .groupsectionedit{
+.groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd{
 
     text-align: center;
     background-color: #9c1fb5;
@@ -701,15 +701,15 @@ footer{
     box-shadow: black 5px 5px 20px;
 }
 
-.groupsectionadd input, .groupsectionedit input{
+.groupsectionadd input, .groupsectionedit input, .locationsectionedit input, .locationsectionadd input{
     border-bottom: 1px black solid;
 }
 
-.groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr {
+.groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr, .locationsectionedit td, .locationsectionedit tr, .locationsectionadd td, .locationsectionadd tr{
     border: 0px;
 }
 
-.groupadd, .groupedit{
+.groupadd, .groupedit, .locationedit, .locationadd{
     background-color: #ff6213;
     padding: 5px 10px;
     border: #9c1fb5 solid 3px;
@@ -720,7 +720,7 @@ footer{
     text-align: center;
 }
 
-.groupadd:hover, .groupedit:hover{
+.groupadd:hover, .groupedit:hover, .locationedit:hover, .locationadd:hover{
     scale: 1.1;
     transition: all 0.35s;
     background-color: #cc531c;
