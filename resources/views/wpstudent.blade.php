@@ -27,8 +27,8 @@
                         <td class="colored">{{$info->parent_surname}}</td>
                         <td>{{$info->parent_phone_number}}</td>
                         <td class="colored">{{$info->parent_email}}</td>
-                        <td>{{$info->group_id}}</td>
-                        <td class="colored">
+                        <td>{{$info->group->name}}</td>
+                       <td class="colored">
                             <a href="{{ route('addStudent.edit', ['addStudent' => $info])}}"><button>Edit</button></a> <br>
                             <form action="{{ route('addStudent.destroy', ['addStudent' => $info]) }}" method="post">
                                 @csrf

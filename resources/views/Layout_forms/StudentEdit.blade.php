@@ -38,6 +38,15 @@
                     <td>E-mail rodzica:</td>
                     <td><input type="email" name="parent_email" id="" value="{{$student['parent_email']}}"></td>
                 </tr>
+                <tr>
+                    <td>Grupa</td>
+                    <td> <select form="StudentForm" name="group_id">
+                            @foreach($group as $name)
+                                <option value="{{$name['id']}}">{{$name['name']}}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                </tr>
             </table>
             <button type="submit" class="studentedit">Edytuj Ucznia</button>
         </form>

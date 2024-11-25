@@ -28,9 +28,9 @@ Route::get('/main', function () {
 });
 
 
-Route::resource('addTeacher', TeacherController::class);
-Route::get('/teacher', [TeacherController::class,'TeachersList'])->name('teacher.index');
+Route::resource('teachers', TeacherController::class);
+Route::get('/teacher', [TeacherController::class,'create'])->name('teacher.index');
 
 Route::resource('addStudent', StudentController::class);
-Route::get('/student', [StudentController::class,'StudentList'])->name('student.index');
+Route::get('/student', [StudentController::class,'create'])->name('student.index');
 
