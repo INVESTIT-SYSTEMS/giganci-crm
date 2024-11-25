@@ -14,14 +14,14 @@ class TeacherController extends Controller
     public function index()
     {
         $saved_teachers = Teacher::all();
-        return view('Layout_forms.TeacherAddingForm', ['user' => $saved_teachers]);
+        return view('Layout_forms.TeacherAddingForm', ['teacher' => $saved_teachers]);
 
     }
 
     public function TeachersList()
     {
         $saved_teachers = Teacher::all();
-        return view('wpteacher', ['user' => $saved_teachers]);
+        return view('wpteacher', ['teacher' => $saved_teachers]);
     }
 
     /**
@@ -63,16 +63,16 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Teacher $TeacherController_route)
+    public function edit(Teacher $addTeacher)
     {
-        return view('layout_forms.TeacherEdit', ['teacher'=>$TeacherController_route]);
+        return view('layout_forms.TeacherEdit', ['teacher'=> $addTeacher]);
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Teacher $TeacherController_route, Request $request)
+    public function update(Teacher $addTeacher, Request $request)
     {
         $data =$request->validate([
             'name' => 'required',
@@ -80,7 +80,7 @@ class TeacherController extends Controller
             'phone_number' => 'required|min:9|max:9',
             'email' => 'required',
         ]);
-        $TeacherController_route->update($data);
+        $addTeacher->update($data);
         return redirect(route('wpteacher'))->with('success', 'Updated');
     }
 
