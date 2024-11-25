@@ -6,7 +6,7 @@
     <title>Students</title>
 </head>
 <body>
-<form action="{{route('addStudent.store')}}" method="POST">
+<form action="{{route('addStudent.store')}}" method="POST" id="StudentForm">
     @csrf
     <input type="text" name="name" id="name"> <br>
     <input type="text" name="surname" id="surname"> <br>
@@ -15,7 +15,12 @@
     <input type="text" name="parent_surname" id=""> <br>
     <input type="text" name="parent_phone_number" id=""> <br>
     <input type="email" name="parent_email" id=""> <br>
-    <button type="submit">Edytuj</button>
+    <select form="StudentForm" name="group_id">
+        @foreach($group as $name)
+            <option value="{{$name['id']}}">{{$name['name']}}</option>
+        @endforeach
+    </select>
+    <button type="submit">Dodaj</button>
 </form>
 
 
