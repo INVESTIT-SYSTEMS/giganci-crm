@@ -69,24 +69,34 @@ class GroupController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Group $addGroup)
     {
-        //
+        $teacher = Teacher::all();
+        $location = Location::all();
+        return view('Layout_forms.GroupEditForm', ['group'=>$addGroup, 'teachers' => $teacher, 'locations' => $location]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Group $addGroup)
     {
-        //
+        $addGroup ->update([
+            'name' => $request->get('name'),
+            'classes_day' => $request->get('classes_day'),
+            'classes_hour' => $request->get('classes_hour'),
+            'teacher_id' => $request->get('teacher_id'),
+            'location_id' => $request->get('location_id'),
+        ]);
+        return redirect()->route('group.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Group $addGroup)
     {
-        //
+        $addGroup -> delete();
+        return redirect()->route('group.index');
     }
 }
