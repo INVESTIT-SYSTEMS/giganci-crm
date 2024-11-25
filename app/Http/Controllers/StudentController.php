@@ -65,16 +65,16 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Student $addStudent)
+    public function edit(Student $student)
     {
         $groups= Group::all();
-        return view('Layout_forms.StudentEdit', ['student'=>$addStudent, 'group'=>$groups]);
+        return view('Layout_forms.StudentEdit', ['student'=>$student, 'group'=>$groups]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Student $addStudent, Request $request)
+    public function update(Student $students, Request $request)
     {
         $data = $request->validate([
             'name' => 'required',
@@ -86,7 +86,7 @@ class StudentController extends Controller
             'parent_email' => 'required',
             'group_id' => 'required'
         ]);
-        $addStudent->update($data);
+        $students->update($data);
 
         return redirect(route('student.index'))->with('success', 'Updated');
     }
@@ -94,9 +94,9 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $addStudent)
+    public function destroy(Student $students)
     {
-        $addStudent->delete();
+        $students->delete();
         return redirect(route('student.index'));
     }
 }

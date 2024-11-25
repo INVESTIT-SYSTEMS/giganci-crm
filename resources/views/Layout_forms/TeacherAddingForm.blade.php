@@ -6,7 +6,7 @@
     <title>Nauczyciele</title>
 </head>
 <body>
-    <form action="{{route('addTeacher.store')}}" method="POST">
+    <form action="{{route('teachers.store')}}" method="POST">
         @csrf
         <input type="text" name="name" id="name"> <br>
         <input type="text" name="surname" id="surname"> <br>
@@ -14,9 +14,6 @@
         <input type="text" name="email" id="email"> <br>
         <button type="submit">Dodaj</button>
     </form>
-    @foreach($teacher as $user)
-        <h1>{{$user['name']}}</h1>
-    @endforeach
 
 </body>
 </html>

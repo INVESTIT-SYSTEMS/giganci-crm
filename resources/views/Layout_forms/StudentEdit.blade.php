@@ -6,7 +6,7 @@
 <section class="contentstudentedit">
     <h1>Edytuj ucznia</h1>
     <section class="studentsectionedit">
-        <form action="{{route('addStudent.update', ['addStudent'=>$student])}}" method="POST">
+        <form action="{{route('students.update', ['student'=>$student])}}" method="POST" id="StudentForm">
             @csrf
             @method('put')
             <table class="">

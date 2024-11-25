@@ -1,3 +1,4 @@
+<html>
 <head>
     <title>Dodaj ucznia</title>
 </head>
@@ -6,7 +7,7 @@
 <section class="contentstudentadd">
     <h1>Dodaj ucznia</h1>
     <section class="studentsectionadd">
-        <form action="{{route('addStudent.store')}}" method="POST">
+        <form action="{{route('students.store')}}" method="POST" id="StudentForm">
             @csrf
             <table class="">
                 <tr>
