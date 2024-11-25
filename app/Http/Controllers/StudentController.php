@@ -51,7 +51,7 @@ class StudentController extends Controller
             'parent_email'=>$request->get('parent_email'),
             'group_id'=>$request->get('group_id'),
         ]);
-        return redirect()->route('student.index');
+        return redirect()->route('students.index');
     }
 
     /**
@@ -88,7 +88,7 @@ class StudentController extends Controller
         ]);
         $students->update($data);
 
-        return redirect(route('student.index'))->with('success', 'Updated');
+        return redirect(route('students.index'))->with('success', 'Updated');
     }
 
     /**
@@ -97,6 +97,6 @@ class StudentController extends Controller
     public function destroy(Student $students)
     {
         $students->delete();
-        return redirect(route('student.index'));
+        return redirect(route('students.index'));
     }
 }

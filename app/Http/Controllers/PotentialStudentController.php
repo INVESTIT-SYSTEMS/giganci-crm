@@ -46,7 +46,7 @@ class PotentialStudentController extends Controller
 
 
             ]);
-            return redirect()->route('pStudent.index');
+            return redirect()->route('PotentialStudent.index');
     }
 
     /**
