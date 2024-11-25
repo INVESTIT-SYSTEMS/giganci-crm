@@ -31,7 +31,7 @@ Route::get('/main', function () {
 });
 
 
-Route::resource('TeacherController_routes', TeacherController::class);
+Route::resource('addTeacher', TeacherController::class);
 Route::get('/teacher', [TeacherController::class,'TeachersList'])->name('wpteacher');
 
 Route::resource('StudentController_routes', StudentController::class);

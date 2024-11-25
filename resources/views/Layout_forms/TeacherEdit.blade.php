@@ -1,4 +1,4 @@
-<form action="{{route('TeacherController_routes.update', ['TeacherController_route'=>$teacher])}}" method="POST">
+<form action="{{route('addTeacher.update', ['addTeacher'=>$teacher])}}" method="POST">
     @csrf
     @method('put')
     <input type="text" name="name" id="name" value="{{$teacher['name']}}"> <br>
