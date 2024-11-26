@@ -10,7 +10,7 @@ class Location extends Model
     protected $fillable = [
         'town',
     ];
-    public function group():HasMany
+    public function groups():HasMany
     {
         return $this->hasMany(Group::class);
     }

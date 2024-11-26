@@ -34,7 +34,7 @@ class LocationController extends Controller
         Location::create([
             'town' => $request->get('town'),
         ]);
-        return redirect()->route('Location.index');
+        return redirect()->route('locations.index');
     }
 
     /**
@@ -48,29 +48,29 @@ class LocationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Location $Location)
+    public function edit(Location $location)
     {
-        return view('Layout_forms.LocationEditForm', ['Location' => $Location]);
+        return view('Layout_forms.LocationEditForm', ['locations' => $location]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Location $Location)
+    public function update(Request $request, Location $location)
     {
-        $Location -> update([
+        $location -> update([
             'town' => $request->get('town'),
         ]);
-        return redirect()->route('Location.index');
+        return redirect()->route('locations.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Location $Location)
+    public function destroy(Location $location)
     {
-        $Location -> delete();
-        return redirect()->route('Location.index');
+        $location -> delete();
+        return redirect()->route('locations.index');
     }
 
 }

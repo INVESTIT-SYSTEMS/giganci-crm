@@ -16,7 +16,7 @@ class Group extends Model
         'teacher_id',
         'location_id',
     ];
-    public function student(): HasMany
+    public function students(): HasMany
     {
         return $this->hasMany(Student::class);
     }

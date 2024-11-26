@@ -6,13 +6,13 @@
 <section class="contentlocationedit">
     <h1>Edytuj lokalizacje</h1>
     <section class="locationsectionedit">
-        <form action="{{ route('Location.update', ['Location'=> $Location])}}" method="post">
+        <form action="{{ route('locations.update', ['location'=> $locations])}}" method="post">
             @csrf
             @method('put')
             <table class="">
                 <tr>
                     <td>Nazwa lokalizacji:</td>
-                    <td><input type="text" name="town" id="" value="{{$Location['name']}}"></td>
+                    <td><input type="text" name="town" id="" value="{{$locations['name']}}"></td>
                 </tr>
             </table>
             <button type="submit" class="locationedit">Edytuj Lokalizację</button>
