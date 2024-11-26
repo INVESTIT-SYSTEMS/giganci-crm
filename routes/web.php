@@ -15,11 +15,11 @@ Route::get('/main', function () {
 })->name('main.index');
 
 
-Route::resource('PotentialStudent', PotentialStudentController::class);
+Route::resource('potentialStudents', PotentialStudentController::class);
 
-Route::resource('Group', GroupController::class);
+Route::resource('groups', GroupController::class);
 
-Route::resource('Location', LocationController::class);
+Route::resource('locations', LocationController::class);
 
 
 

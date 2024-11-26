@@ -1,7 +1,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentgroup">
     <h1>Grupy</h1>
-    <a href="{{route('Group.create')}}"> <button type="submit" class="addgroup">Dodaj grupe</button></a>
+    <a href="{{route('groups.create')}}"> <button type="submit" class="addgroup">Dodaj grupe</button></a>
     <section class="group">
         <table class="">
             <tr>
@@ -23,8 +23,8 @@
                         <td>{{$info->teacher->name}} {{$info->teacher->surname}}</td>
                         <td class="colored">{{$info->location->town}}</td>
                         <td>
-                            <a href="{{ route('Group.edit', ['Group' => $info])}}"><button>Edit</button></a> <br>
-                            <form action="{{ route('Group.destroy', ['Group' => $info]) }}" method="post">
+                            <a href="{{ route('groups.edit', ['group' => $info])}}"><button>Edit</button></a> <br>
+                            <form action="{{ route('groups.destroy', ['group' => $info]) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="del">X</button>

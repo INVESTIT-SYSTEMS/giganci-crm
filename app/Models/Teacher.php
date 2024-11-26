@@ -15,7 +15,7 @@ class Teacher extends Model
         'email',
     ];
 
-    public function group(): HasMany
+    public function groups(): HasMany
     {
         return $this->hasMany(Group::class);
     }

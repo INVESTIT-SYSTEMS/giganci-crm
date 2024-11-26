@@ -46,7 +46,7 @@ class PotentialStudentController extends Controller
 
 
             ]);
-            return redirect()->route('PotentialStudent.index');
+            return redirect()->route('potentialStudents.index');
     }
 
     /**
@@ -60,17 +60,17 @@ class PotentialStudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PotentialStudent $PotentialStudent)
+    public function edit(PotentialStudent $potentialStudent)
     {
-        return view('Layout_forms.PotentialStudentEditForm', ['user' => $PotentialStudent]);
+        return view('Layout_forms.PotentialStudentEditForm', ['user' => $potentialStudent]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PotentialStudent $PotentialStudent)
+    public function update(Request $request, PotentialStudent $potentialStudent)
     {
-        $PotentialStudent->update([
+        $potentialStudent->update([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
             'birth_year' => $request->get('birth_year'),
@@ -83,15 +83,15 @@ class PotentialStudentController extends Controller
 
 
         ]);
-        return redirect()->route('PotentialStudent.index');
+        return redirect()->route('potentialStudents.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PotentialStudent $PotentialStudent)
+    public function destroy(PotentialStudent $potentialStudent)
     {
-        $PotentialStudent -> delete();
-        return redirect()->route('PotentialStudent.index');
+        $potentialStudent -> delete();
+        return redirect()->route('potentialStudents.index');
     }
 }
