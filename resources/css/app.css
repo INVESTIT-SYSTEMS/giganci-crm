@@ -471,6 +471,7 @@ footer{
 
 .potentialuseredit input{
     border-bottom: 1px black solid;
+    padding: 5px;
 }
 
 .potentialuseredit td,.potentialuseredit tr {
@@ -529,6 +530,7 @@ footer{
 
 .potentialuseradd input{
     border-bottom: 1px black solid;
+    padding: 5px;
 }
 
 .potentialuseradd td,.potentialuseradd tr {
@@ -587,6 +589,7 @@ footer{
 
 .studentsectionadd input{
     border-bottom: 1px black solid;
+    padding: 5px;
 }
 
 .studentsectionadd td,.studentsectionadd tr {
@@ -645,6 +648,7 @@ footer{
 
 .studentsectionedit input{
     border-bottom: 1px black solid;
+    padding: 5px;
 }
 
 .studentsectionedit td,.studentsectionedit tr {
@@ -668,7 +672,7 @@ footer{
     background-color: #cc531c;
 }
 
-.contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd{
+.contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd, .contentteacheredit, .contentteacheradd{
     /*background-color: #ff6213;*/
     background: linear-gradient(180deg, #ff691f, #e35400);
     height: 85vh;
@@ -680,7 +684,7 @@ footer{
 
 }
 
-.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1{
+.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1, .contentteacheredit h1, .contentteacheradd h1{
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -688,7 +692,7 @@ footer{
     padding-bottom: 30px;
 }
 
-.groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd{
+.groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd, .teachercontentedit, .teachercontentadd{
 
     text-align: center;
     background-color: #9c1fb5;
@@ -701,15 +705,16 @@ footer{
     box-shadow: black 5px 5px 20px;
 }
 
-.groupsectionadd input, .groupsectionedit input, .locationsectionedit input, .locationsectionadd input{
+.groupsectionadd input, .groupsectionedit input, .locationsectionedit input, .locationsectionadd input, .teachercontentedit input, .teachercontentadd input{
     border-bottom: 1px black solid;
+    padding: 5px;
 }
 
-.groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr, .locationsectionedit td, .locationsectionedit tr, .locationsectionadd td, .locationsectionadd tr{
+.groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr, .locationsectionedit td, .locationsectionedit tr, .locationsectionadd td, .locationsectionadd tr, .teachercontentedit td, .teachercontentedit tr, teachercontentadd td, .teachercontentadd tr{
     border: 0px;
 }
 
-.groupadd, .groupedit, .locationedit, .locationadd{
+.groupadd, .groupedit, .locationedit, .locationadd, .teacheredit, .teacheradd{
     background-color: #ff6213;
     padding: 5px 10px;
     border: #9c1fb5 solid 3px;
@@ -720,7 +725,7 @@ footer{
     text-align: center;
 }
 
-.groupadd:hover, .groupedit:hover, .locationedit:hover, .locationadd:hover{
+.groupadd:hover, .groupedit:hover, .locationedit:hover, .locationadd:hover, .teacheredit:hover, .teacheradd:hover{
     scale: 1.1;
     transition: all 0.35s;
     background-color: #cc531c;
