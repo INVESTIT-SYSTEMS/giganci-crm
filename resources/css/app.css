@@ -464,9 +464,11 @@ footer{
     width: 95vw;
     margin: auto;
     border-radius: 10px;
-    padding: 35px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .potentialuseredit input{
@@ -523,9 +525,11 @@ footer{
     width: 95vw;
     margin: auto;
     border-radius: 10px;
-    padding: 35px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .potentialuseradd input{
@@ -582,9 +586,11 @@ footer{
     width: 95vw;
     margin: auto;
     border-radius: 10px;
-    padding: 35px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .studentsectionadd input{
@@ -641,9 +647,11 @@ footer{
     width: 95vw;
     margin: auto;
     border-radius: 10px;
-    padding: 35px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .studentsectionedit input{
@@ -700,9 +708,11 @@ footer{
     width: 95vw;
     margin: auto;
     border-radius: 10px;
-    padding: 35px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .groupsectionadd input, .groupsectionedit input, .locationsectionedit input, .locationsectionadd input, .teachercontentedit input, .teachercontentadd input{

@@ -58,4 +58,3 @@
     </section>
 </section>
 @include('Layout_forms.footerlayout')
-
