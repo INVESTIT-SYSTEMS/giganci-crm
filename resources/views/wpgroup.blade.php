@@ -1,3 +1,6 @@
+<head>
+    <title>Grupy</title>
+</head>
 @include('Layout_forms.headlayout')
 <section class="contentgroup">
     <h1>Grupy</h1>
@@ -5,7 +8,6 @@
     <section class="group">
         <table class="">
             <tr>
-                <th>Id</th>
                 <th>Nazwa</th>
                 <th>Dzień</th>
                 <th>Godzina</th>
@@ -16,7 +18,6 @@
             @foreach($group as $info)
                 <div class="gap">
                     <tr>
-                        <td>{{$info->id}}</td>
                         <td class="colored">{{$info->name}}</td>
                         <td>{{$info->classes_day}}</td>
                         <td class="colored">{{$info->classes_hour}}</td>

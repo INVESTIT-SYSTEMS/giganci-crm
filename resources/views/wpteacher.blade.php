@@ -1,3 +1,7 @@
+<head>
+    <title>Nauczyciele</title>
+</head>
+
 @include('Layout_forms.headlayout')
 <section class="contentteacher">
     <h1>Nauczyciele</h1>
@@ -5,7 +9,6 @@
     <section class="teacher">
         <table class="">
             <tr>
-                <th>Id</th>
                 <th>Imie</th>
                 <th>Nazwisko</th>
                 <th>Numer telefonu</th>
@@ -15,7 +18,6 @@
             @foreach($teacher as $info)
                 <div class="gap">
                     <tr>
-                        <td>{{$info->id}}</td>
                         <td class="colored">{{$info->name}}</td>
                         <td>{{$info->surname}}</td>
                         <td class="colored">{{$info->phone_number}}</td>

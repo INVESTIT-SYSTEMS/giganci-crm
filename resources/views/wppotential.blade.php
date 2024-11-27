@@ -9,7 +9,6 @@
     <section class="potentialuser">
         <table class="">
             <tr>
-                <th>Id</th>
                 <th>Imie</th>
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
@@ -24,7 +23,6 @@
             @foreach($user as $info)
                 <div class="gap">
             <tr>
-                <td>{{$info->id}}</td>
                 <td class="colored">{{$info->name}}</td>
                 <td>{{$info->surname}}</td>
                 <td class="colored">{{$info->birth_year}}</td>

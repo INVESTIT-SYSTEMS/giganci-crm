@@ -314,6 +314,9 @@ table form, a{
     padding: 5px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
 }
 
 .contentgroup h1{
