@@ -54,7 +54,7 @@ class GroupController extends Controller
 
 
         ]);
-        return redirect()->route('Group.index');
+        return redirect()->route('groups.index');
     }
 
     /**

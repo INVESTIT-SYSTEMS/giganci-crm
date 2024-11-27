@@ -7,6 +7,10 @@
     <h1>Uczniowie</h1>
     <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
     <section class="student">
+        <form method="get" action="{{route ('students.index')}}">
+            <input type="text" name="search">
+            <button>Szukaj</button>
+        </form>
         <table class="">
             <tr>
                 <th>Imie</th>
