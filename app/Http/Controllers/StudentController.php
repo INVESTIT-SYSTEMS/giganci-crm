@@ -13,10 +13,12 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $saved_students = Student::all();
+        $query = Student::query();
         if (request()->has('search')){
-            $saved_students = $saved_students->where('name', 'like', '%' . request()->get('search','') . '%');
+            $search = request()->get('search','');
+            $query->where('name', 'like', '%' . $search . '%');
         }
+        $saved_students = $query->get();
         return view('wpstudent', ['student' => $saved_students]);
     }
 
