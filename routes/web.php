@@ -21,11 +21,7 @@ Route::resource('groups', GroupController::class);
 
 Route::resource('locations', LocationController::class);
 
-
-
-
 Route::resource('teachers', TeacherController::class);
-
 
 Route::resource('students', StudentController::class);
 

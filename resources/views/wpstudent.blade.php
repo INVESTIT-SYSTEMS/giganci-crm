@@ -1,11 +1,18 @@
+<head>
+    <title>Uczniowie</title>
+</head>
+
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
     <h1>Uczniowie</h1>
     <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
     <section class="student">
+        <form method="get" action="{{route ('students.index')}}">
+            <input type="text" name="search">
+            <button>Szukaj</button>
+        </form>
         <table class="">
             <tr>
-                <th>Id</th>
                 <th>Imie</th>
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
@@ -19,7 +26,6 @@
             @foreach($student as $info)
                 <div class="gap">
                     <tr>
-                        <td>{{$info->id}}</td>
                         <td class="colored">{{$info->name}}</td>
                         <td>{{$info->surname}}</td>
                         <td class="colored">{{$info->birth_year}}</td>

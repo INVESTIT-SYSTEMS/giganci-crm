@@ -1,3 +1,6 @@
+<head>
+    <title>Lokalizacje</title>
+</head>
 @include('Layout_forms.headlayout')
 <section class="contentlocation">
     <h1>Lokalizacje</h1>

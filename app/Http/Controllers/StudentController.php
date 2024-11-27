@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Group;
+use Cassandra\Custom;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -13,6 +14,9 @@ class StudentController extends Controller
     public function index()
     {
         $saved_students = Student::all();
+        if (request()->has('search')){
+            $saved_students = $saved_students->where('name', 'like', '%' . request()->get('search','') . '%');
+        }
         return view('wpstudent', ['student' => $saved_students]);
     }
 
@@ -57,9 +61,17 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        //
+//        $search = $request->search ?? null;
+//
+//        if ($search)
+//        {
+//            $saved_students = Student::where('name', "like", "%".$search."%")->get();
+//        }else{
+//            $saved_students = Student::all();
+//        }
+//        return view('wpstudent', compact('students', 'search'));
     }
 
     /**
@@ -99,4 +111,7 @@ class StudentController extends Controller
         $student->delete();
         return redirect(route('students.index'));
     }
+
+
+
 }
