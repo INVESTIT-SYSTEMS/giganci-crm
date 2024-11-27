@@ -1,5 +1,5 @@
 <footer>
-    <p>&copy; 2024 Copyright: InvestIT</p>
+    <p class="footerp">&copy; 2024 Copyright: InvestIT</p>
     <div class="waves">
         <div class="wave" id="wave1"></div>
         <div class="wave" id="wave2"></div>
