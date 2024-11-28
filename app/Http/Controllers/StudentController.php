@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\PotentialStudent;
 use App\Models\Student;
 use App\Models\Group;
 use Cassandra\Custom;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class StudentController extends Controller
 {
@@ -113,7 +116,11 @@ class StudentController extends Controller
         $student->delete();
         return redirect(route('students.index'));
     }
+public function moveStudent(PotentialStudent $studentData): View
+{
 
-
+    $groups = Group::all();
+    return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
+}
 
 }
