@@ -5,6 +5,7 @@ use App\Models\PotentialStudent;
 use App\Models\Student;
 use App\Models\Group;
 use Cassandra\Custom;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -18,17 +19,26 @@ class StudentController extends Controller
     {
 
         $savedGroups = Group::all();
-        $query = Student::when($request->get('search' || $request->get('NameGroup')), function (Builder $query) use ($request){
-            $query->where('name','like','%' . $request->get('search') . '%')
+//        $query = Student::where('group_id', $request->get('NameGroup'))->get();
+        $query = Student::
+        when($request->get('search'), function (Builder $query) use ($request){
+            $query->where(function ($query)use ($request){
+                  $query->orWhere('name','like','%' . $request->get('search') . '%')
                 ->orWhere('surname','like','%' . $request->get('search') . '%')
                 ->orWhere('birth_year','like','%' . $request->get('search') . '%')
                 ->orWhere('parent_name','like','%' . $request->get('search') . '%')
                 ->orWhere('parent_surname','like','%' . $request->get('search') . '%')
                 ->orWhere('parent_phone_number','like','%' . $request->get('search') . '%')
-                ->orWhere('parent_email','like','%' . $request->get('search') . '%')
-                ->orWhere('group_id','like','%' . $request->get('NameGroup') . '%');
+                ->orWhere('parent_email','like','%' . $request->get('search') . '%');
+            });
+
+
+
+        })->when($request->get('NameGroup'), function ($query) use ($request) {
+            $query->where('group_id', $request->get('NameGroup'));
         })
             ->get();
+
 
         return view('wpstudent', ['student' => $query, 'group' => $savedGroups]);
     }

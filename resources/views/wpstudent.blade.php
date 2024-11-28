@@ -7,9 +7,9 @@
     <h1 class="">Uczniowie</h1>
     <div class="contener">
         <div class="looking">
-            <form method="get" action="{{route ('students.index')}}" id="search">
+            <form method="get" action="{{route ('students.index')}}">
             <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
-            <select name="NameGroup" form="search">
+            <select name="NameGroup">
                 <option value="">Nazwa Grupy</option>
                 @foreach($group as $GroupName)
                     <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
