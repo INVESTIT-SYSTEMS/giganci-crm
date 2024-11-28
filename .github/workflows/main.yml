@@ -1,0 +1,41 @@
+on:
+  push:
+    branches:
+      - master
+name: PHP App Deploy - Praktyki
+jobs:
+  web-deploy:
+    name: Start deploy...
+    runs-on: ubuntu-latest
+    steps:
+      - name: Downloading code from repo...
+        uses: actions/checkout@v4
+
+      - name: Copying .env file...
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+      - name: Setting PHP version...
+        uses: shivammathur/setup-php@v2
+        with:
+           php-version: '8.1'
+
+      - name: SFTP server file push...
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.ftp_host }}
+          username: ${{ secrets.ftp_user }}
+          password: ${{ secrets.ftp_pass }}
+          protocol: ftp
+          timeout: 100000
+          server-dir: ~/public_html/
+
+      - name: SSH commands init...
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: ${{ secrets.ftp_host }}
+          user: ${{ secrets.ftp_user }}
+          pass: ${{ secrets.ftp_pass }}
+          connect_timeout: 10s
+          first_ssh: |
+            cd ~/public_html
+          
