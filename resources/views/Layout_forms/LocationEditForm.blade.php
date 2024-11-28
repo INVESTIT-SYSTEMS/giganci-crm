@@ -12,7 +12,7 @@
             <table class="">
                 <tr>
                     <td>Nazwa lokalizacji:</td>
-                    <td><input type="text" name="town" id="" value="{{$locations['name']}}"></td>
+                    <td><input type="text" name="town" id="" value="{{$locations['town']}}"></td>
                 </tr>
             </table>
             <button type="submit" class="locationedit">Edytuj Lokalizację</button>

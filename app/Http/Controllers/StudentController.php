@@ -16,24 +16,25 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $query = Student::query();
-        if (request()->has('search')){
-            $search = request()->get('search','');
-            $query->where('surname', 'like', '%' . $search . '%')
-            ->whereany([
-                'name',
-                'parent_name'
-            ],
-                'like', '%' . $search . '%');
-
-            $query->where(, 'like', '%' . $search . '%');
-        }
-       if (request()->has('searchGroup')){
-            $search = request()->get('searchGroup','');
-            $query->where();
-       }
+        $saved_students = Student::all();
+//        $query = Student::query();
+//        if (request()->has('search')){
+//            $search = request()->get('search','');
+//            $query->where('surname', 'like', '%' . $search . '%')
+//            ->whereany([
+//                'name',
+//                'parent_name'
+//            ],
+//                'like', '%' . $search . '%');
+//
+//            $query->where(, 'like', '%' . $search . '%');
+//        }
+//       if (request()->has('searchGroup')){
+//            $search = request()->get('searchGroup','');
+//            $query->where();
+//       }
         $savedGroups = Group::all();
-        $saved_students = $query->get();
+//        $saved_students = $query->get();
         return view('wpstudent', ['student' => $saved_students, 'group' => $savedGroups]);
     }
 

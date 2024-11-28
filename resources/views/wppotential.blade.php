@@ -19,11 +19,11 @@
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
                 <th>Status
-                    <select name="status" form="search">
-                        <option @if($status == 'Wszystkie') selected @endif value="">Wszystkie</option>
-                        <option @if($status == 'Zapis na zajęcia pokazowe') selected @endif value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
-                        <option @if($status == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>
-                    </select>
+{{--                    <select name="status" form="search">--}}
+{{--                        <option @if($status == 'Wszystkie') selected @endif value="">Wszystkie</option>--}}
+{{--                        <option @if($status == 'Zapis na zajęcia pokazowe') selected @endif value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>--}}
+{{--                        <option @if($status == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>--}}
+{{--                    </select>--}}
                 </th>
                 <th>Komentarz</th>
                 <th>Imie rodzica</th>
