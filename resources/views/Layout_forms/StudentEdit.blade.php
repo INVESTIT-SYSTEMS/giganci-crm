@@ -5,7 +5,7 @@
 
 <section class="contentstudentedit">
     <h1>Edytuj ucznia</h1>
-    <section class="studentsectionedit">
+    <section class="bg-gray-300 studentsectionedit">
         <form action="{{route('students.update', ['student'=>$student])}}" method="POST" id="StudentForm">
             @csrf
             @method('put')

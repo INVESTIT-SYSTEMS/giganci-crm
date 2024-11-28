@@ -6,7 +6,7 @@
 <section class="contentteacher">
     <h1>Nauczyciele</h1>
     <a href="{{route('teachers.create')}}"> <button type="submit" class="addteacher">Dodaj nauczyciela</button></a>
-    <section class="teacher">
+    <section class="bg-gray-300 teacher">
         <table class="">
             <tr>
                 <th>Imie</th>

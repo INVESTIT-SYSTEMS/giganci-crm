@@ -5,7 +5,7 @@
 
 <section class="contentgroupedit">
     <h1>Edytuj grupę</h1>
-    <section class="groupsectionedit">
+    <section class="bg-gray-300 groupsectionedit">
         <form action="{{route('groups.update', ['group'=>$groups])}}" method="post" id="group">
             @csrf
             @method('put')

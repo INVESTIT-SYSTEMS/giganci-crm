@@ -5,7 +5,7 @@
 
 <section class="contentteacheredit">
     <h1>Edytuj nauczyciela</h1>
-    <section class="teachercontentedit">
+    <section class="bg-gray-300 teachercontentedit">
         <form action="{{route('teachers.update', ['teacher'=>$teachers])}}" method="POST" id="teacherForm">
             @csrf
             @method('put')
