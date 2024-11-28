@@ -17,19 +17,21 @@ class PotentialStudentController extends Controller
    public function index(Request $request)
     {
         $query = PotentialStudent::
-        when($request->get('search'), function (Builder $query) use ($request){
-            $query->where(function ($query)use ($request) {
-                $query->orwhere('name','like','%' . $request->get('search') . '%')
-                    ->orwhere('surname','like','%' . $request->get('search') . '%')
-                    ->orwhere('birth_year','like','%' . $request->get('search') . '%')
-                    ->orwhere('comment','like','%' . $request->get('search') . '%')
-                    ->orwhere('parent_name','like','%' . $request->get('search') . '%')
-                    ->orwhere('parent_surname','like','%' . $request->get('search') . '%')
-                    ->orwhere('parent_phone_number','like','%' . $request->get('search') . '%')
-                    ->orwhere('parent_email','like','%' . $request->get('search') . '%');
-            })
+        when($request->get('search'), function (Builder $query) use ($request) {
+            $query->where(function ($query) use ($request) {
+                $query->orwhere('name', 'like', '%' . $request->get('search') . '%')
+                    ->orwhere('surname', 'like', '%' . $request->get('search') . '%')
+                    ->orwhere('birth_year', 'like', '%' . $request->get('search') . '%')
+                    ->orwhere('comment', 'like', '%' . $request->get('search') . '%')
+                    ->orwhere('parent_name', 'like', '%' . $request->get('search') . '%')
+                    ->orwhere('parent_surname', 'like', '%' . $request->get('search') . '%')
+                    ->orwhere('parent_phone_number', 'like', '%' . $request->get('search') . '%')
+                    ->orwhere('parent_email', 'like', '%' . $request->get('search') . '%');
+            });
+        })->when($request->get('status'), function ($query) use ($request){
+            $query->where('status', $request->get('status'));
+        })
             ->get();
-        });
         return view('wppotential', ['user' => $query]);
 
     }
