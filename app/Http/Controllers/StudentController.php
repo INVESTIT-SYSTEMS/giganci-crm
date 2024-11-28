@@ -5,6 +5,7 @@ use App\Models\PotentialStudent;
 use App\Models\Student;
 use App\Models\Group;
 use Cassandra\Custom;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -14,27 +15,24 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $query = Student::query();
-        if (request()->has('search')){
-            $search = request()->get('search','');
-            $query->where('surname', 'like', '%' . $search . '%')
-            ->whereany([
-                'name',
-                'parent_name'
-            ],
-                'like', '%' . $search . '%');
 
-            $query->where(, 'like', '%' . $search . '%');
-        }
-       if (request()->has('searchGroup')){
-            $search = request()->get('searchGroup','');
-            $query->where();
-       }
         $savedGroups = Group::all();
-        $saved_students = $query->get();
-        return view('wpstudent', ['student' => $saved_students, 'group' => $savedGroups]);
+        $query = Student::when($request->get('search' || $request->get('NameGroup')), function (Builder $query) use ($request){
+            $query->where('name','like','%' . $request->get('search') . '%')
+                ->orWhere('surname','like','%' . $request->get('search') . '%')
+                ->orWhere('birth_year','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_name','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_surname','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_phone_number','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_email','like','%' . $request->get('search') . '%')
+                ->orWhere('group_id','like','%' . $request->get('NameGroup') . '%');
+        })
+            ->get();
+
+// halo
+        return view('wpstudent', ['student' => $query, 'group' => $savedGroups]);
     }
 
     /**
@@ -80,15 +78,7 @@ class StudentController extends Controller
      */
     public function show(Request $request)
     {
-//        $search = $request->search ?? null;
-//
-//        if ($search)
-//        {
-//            $saved_students = Student::where('name', "like", "%".$search."%")->get();
-//        }else{
-//            $saved_students = Student::all();
-//        }
-//        return view('wpstudent', compact('students', 'search'));
+
     }
 
     /**
