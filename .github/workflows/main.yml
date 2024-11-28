@@ -35,7 +35,15 @@ jobs:
           host: ${{ secrets.ftp_host }}
           user: ${{ secrets.ftp_user }}
           pass: ${{ secrets.ftp_pass }}
+          port: 222
           connect_timeout: 10s
           first_ssh: |
             cd ~/public_html
+            php composer.phar install --optimize-autoloader --no-dev
+            php artisan migrate --force
+            php artisan storage:link
+            php artisan optimize:clear
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
           
