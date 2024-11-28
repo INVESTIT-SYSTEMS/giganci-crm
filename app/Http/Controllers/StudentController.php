@@ -23,7 +23,7 @@ class StudentController extends Controller
         $query = Student::
         when($request->get('search'), function (Builder $query) use ($request){
             $query->where(function ($query)use ($request){
-                  $query->orWhere('name','like','%' . $request->get('search') . '%')
+                $query->orWhere('name','like','%' . $request->get('search') . '%')
                 ->orWhere('surname','like','%' . $request->get('search') . '%')
                 ->orWhere('birth_year','like','%' . $request->get('search') . '%')
                 ->orWhere('parent_name','like','%' . $request->get('search') . '%')

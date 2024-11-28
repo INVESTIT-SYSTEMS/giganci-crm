@@ -9,12 +9,11 @@
         <div class="looking">
             <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
                 <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
-{{--                <select name="NameGroup">--}}
-{{--                    <option value="">Nazwa Grupy</option>--}}
-{{--                    @foreach($group as $GroupName)--}}
-{{--                        <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
+                    <select name="status" form="search">
+                        <option @if($user == 'Wszystkie') selected @endif value="">Wszystkie</option>
+                        <option @if($user == 'Zapis na zajęcia pokazowe') selected @endif value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
+                        <option @if($user == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>
+                    </select>
                 <button>Szukaj</button>
                 <a href="{{route('potentialStudents.index')}}"> <button>Reset</button> </a>
             </form>
@@ -33,11 +32,7 @@
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
                 <th>Status
-{{--                    <select name="status" form="search">--}}
-{{--                        <option @if($status == 'Wszystkie') selected @endif value="">Wszystkie</option>--}}
-{{--                        <option @if($status == 'Zapis na zajęcia pokazowe') selected @endif value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>--}}
-{{--                        <option @if($status == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>--}}
-{{--                    </select>--}}
+
                 </th>
                 <th>Komentarz</th>
                 <th>Imie rodzica</th>
