@@ -31,7 +31,6 @@ class StudentController extends Controller
         })
             ->get();
 
-// halo
         return view('wpstudent', ['student' => $query, 'group' => $savedGroups]);
     }
 

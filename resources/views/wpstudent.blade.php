@@ -7,7 +7,7 @@
     <h1>Uczniowie</h1>
     <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
     <section class="bg-gray-300 student">
-        <form method="get" action="{{route ('students.index')}}" id="GroupName">
+        <form method="get" action="{{route ('students.index')}}" id="search">
             <input type="text" name="search">
             <button>Szukaj</button>
         </form>
@@ -23,7 +23,14 @@
                 <th>Nazwisko rodzica</th>
                 <th>Numer telefonu rodzica</th>
                 <th>E-mail rodzica</th>
-                <th>Nazwa grupy</th>
+                <th>
+                    <select name="NameGroup" form="search">
+                        <option value="">Nazwa Grupy</option>
+                        @foreach($group as $GroupName)
+                            <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
+                        @endforeach
+                    </select>
+                </th>
                 <th>Edytor</th>
             </tr>
             @foreach($student as $info)
@@ -36,7 +43,7 @@
                         <td class="colored">{{$info->parent_surname}}</td>
                         <td>{{$info->parent_phone_number}}</td>
                         <td class="colored">{{$info->parent_email}}</td>
-                        <td>{{$info->group->name}}</td>
+                        <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                        <td class="colored">
                             <a href="{{ route('students.edit', ['student' => $info])}}"><button>Edit</button></a> <br>
                             <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">

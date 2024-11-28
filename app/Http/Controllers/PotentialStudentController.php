@@ -14,18 +14,18 @@ class PotentialStudentController extends Controller
      * Display a listing of the resource.
      */
 
-   public function index(\http\Client\Request $request): View
+   public function index(Request $request): View
     {
-//        $query = PotentialStudent::query();
-//        if (request()->has('status') || request()->has('search')){
-//            $status = request()->get('status','');
-//            $search = request()->get('search','');
-//            $query->where('status','like',"%$status%")->where('name', 'like', "%$search$");
-//        }
-       $query = PotentialStudent::when($request->has('status'), function ( Builder $q){
-           $q->
-       })
-           ->
+        $query = PotentialStudent::query();
+        if (request()->has('status') || request()->has('search')){
+            $status = request()->get('status','');
+            $search = request()->get('search','');
+            $query->where('status','like',"%$status%")->where('name', 'like', "%$search$");
+        }
+//       $query = PotentialStudent::when($request->has('status'), function ( Builder $q){
+//           $q->
+//       })
+//           ->
 
 
         $status = request()->get('status','');
