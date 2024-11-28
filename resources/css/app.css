@@ -177,6 +177,10 @@ table form, a{
     padding: 0;
 }
 
+table select, textarea{
+    border: 1px solid black;
+}
+
 .colored{
     background-color: rgba(221, 226, 232, 0.9);
 }
@@ -869,4 +873,39 @@ body{
 
 .tablescale{
     scale: 0.9;
+}
+
+.looking{
+   float: left;
+    width: 50%;
+}
+
+.add{
+    float: left;
+    width: 50%;
+}
+
+.looking button{
+    background-color:#7043aa;
+    color: white;
+    padding: 5px 10px;
+    border: #7043aa solid 3px;
+    border-radius: 15px;
+    margin: 5px 5px 20px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.looking input{
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5px 0px 20px 45px;
+    border-radius: 15px;
+}
+
+.looking select{
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5px 0px 20px 5px;
+    border-radius: 15px;
 }

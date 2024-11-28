@@ -8,6 +8,7 @@
     <section class=" bg-gray-300 group">
         <table class="">
             <tr>
+                <th><input type="checkbox" name="" id=""></th>
                 <th>Nazwa</th>
                 <th>Dzień</th>
                 <th>Godzina</th>
@@ -18,6 +19,7 @@
             @foreach($group as $info)
                 <div class="gap">
                     <tr>
+                        <td><input type="checkbox" name="" id=""></td>
                         <td class="colored">{{$info->name}}</td>
                         <td>{{$info->classes_day}}</td>
                         <td class="colored">{{$info->classes_hour}}</td>
