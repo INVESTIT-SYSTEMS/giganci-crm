@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PotentialStudent;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -13,14 +14,20 @@ class PotentialStudentController extends Controller
      * Display a listing of the resource.
      */
 
-   public function index(): View
+   public function index(\http\Client\Request $request): View
     {
-        $query = PotentialStudent::query();
-        if (request()->has('status') || request()->has('search')){
-            $status = request()->get('status','');
-            $search = request()->get('search','');
-            $query->where('status','like',"%$status%")->where('name', 'like', "%$search$");
-        }
+//        $query = PotentialStudent::query();
+//        if (request()->has('status') || request()->has('search')){
+//            $status = request()->get('status','');
+//            $search = request()->get('search','');
+//            $query->where('status','like',"%$status%")->where('name', 'like', "%$search$");
+//        }
+       $query = PotentialStudent::when($request->has('status'), function ( Builder $q){
+           $q->
+       })
+           ->
+
+
         $status = request()->get('status','');
         $data = $query -> get();
         return view('wppotential', ['user' => $data, 'status'=>$status]);
