@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\PotentialStudent;
 use App\Models\Student;
 use App\Models\Group;
 use Cassandra\Custom;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class StudentController extends Controller
 {
@@ -16,10 +19,22 @@ class StudentController extends Controller
         $query = Student::query();
         if (request()->has('search')){
             $search = request()->get('search','');
-            $query->where('name', 'like', '%' . $search . '%');
+            $query->where('surname', 'like', '%' . $search . '%')
+            ->whereany([
+                'name',
+                'parent_name'
+            ],
+                'like', '%' . $search . '%');
+
+            $query->where(, 'like', '%' . $search . '%');
         }
+       if (request()->has('searchGroup')){
+            $search = request()->get('searchGroup','');
+            $query->where();
+       }
+        $savedGroups = Group::all();
         $saved_students = $query->get();
-        return view('wpstudent', ['student' => $saved_students]);
+        return view('wpstudent', ['student' => $saved_students, 'group' => $savedGroups]);
     }
 
     /**
@@ -88,7 +103,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Student $students, Request $request)
+    public function update(Student $student, Request $request)
     {
         $data = $request->validate([
             'name' => 'required',
@@ -100,7 +115,7 @@ class StudentController extends Controller
             'parent_email' => 'required',
             'group_id' => 'required'
         ]);
-        $students->update($data);
+        $student->update($data);
 
         return redirect(route('students.index'))->with('success', 'Updated');
     }
@@ -113,7 +128,11 @@ class StudentController extends Controller
         $student->delete();
         return redirect(route('students.index'));
     }
+public function moveStudent(PotentialStudent $studentData): View
+{
 
-
+    $groups = Group::all();
+    return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
+}
 
 }

@@ -7,10 +7,13 @@
     <h1>Uczniowie</h1>
     <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
     <section class="bg-gray-300 student">
-        <form method="get" action="{{route ('students.index')}}">
+        <form method="get" action="{{route ('students.index')}}" id="GroupName">
             <input type="text" name="search">
             <button>Szukaj</button>
         </form>
+        <a href="{{route('students.index')}}"> <button>Reset</button> </a>
+
+
         <table class="">
             <tr>
                 <th>Imie</th>

@@ -21,8 +21,8 @@
                         <td class="colored">{{$info->name}}</td>
                         <td>{{$info->classes_day}}</td>
                         <td class="colored">{{$info->classes_hour}}</td>
-                        <td>{{$info->teacher->name}} {{$info->teacher->surname}}</td>
-                        <td class="colored">{{$info->location->town}}</td>
+                        <td>{{$info->teacher ? $info->teacher->name:'brak' }} {{$info->teacher ? $info->teacher->surname:'nauczyciela'}}</td>
+                        <td class="colored">{{$info->location ? $info->location->town:'brak lokalizacji'  }}</td>
                         <td>
                             <a href="{{ route('groups.edit', ['group' => $info])}}"><button>Edit</button></a> <br>
                             <form action="{{ route('groups.destroy', ['group' => $info]) }}" method="post">

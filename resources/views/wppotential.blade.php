@@ -56,7 +56,7 @@
                         <button type="submit" class="del">X</button>
                     </form>
                 </td>
-                <td><button>Przenieś</button></td>
+                <td><a href="{{route('moveStudent.index', ['studentData' =>$info])}}"><button>Przenieś</button></a></td>
             </tr>
                 </div>
             @endforeach
