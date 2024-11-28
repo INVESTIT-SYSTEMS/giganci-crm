@@ -225,7 +225,7 @@ table select, textarea{
     padding: 5px 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
-    margin: 10px 45px 20px 10px;
+    margin: 10px 45px 10px 10px;
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
@@ -372,7 +372,7 @@ main{
     margin: 10px 5%;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 19px;
     /*margin: 20px auto;*/
     border-radius: 10px;
 }
@@ -896,7 +896,7 @@ body{
     padding: 5px 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
-    margin: 5px 5px 20px 10px;
+    margin: 5px 5px 10px 10px;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
 }
@@ -904,13 +904,13 @@ body{
 .looking input{
     padding: 10px;
     border: 1px solid black;
-    margin: 5px 0px 20px 45px;
+    margin: 5px 0px 10px 45px;
     border-radius: 15px;
 }
 
 .looking select{
     padding: 10px;
     border: 1px solid black;
-    margin: 5px 0px 20px 5px;
+    margin: 5px 0px 10px 5px;
     border-radius: 15px;
 }

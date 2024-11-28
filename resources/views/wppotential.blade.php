@@ -5,13 +5,27 @@
 
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
-    <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
-    <section class=" bg-gray-300 potentialuser">
-        <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
-            <input type="text" name="search" id="">
-            <input type="submit" value="Filtruj">
-        </form>
-        <h2></h2>
+    <div class="contener">
+        <div class="looking">
+            <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+{{--                <select name="NameGroup">--}}
+{{--                    <option value="">Nazwa Grupy</option>--}}
+{{--                    @foreach($group as $GroupName)--}}
+{{--                        <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+                <button>Szukaj</button>
+                <a href="{{route('potentialStudents.index')}}"> <button>Reset</button> </a>
+            </form>
+        </div>
+
+        <div class="add">
+            <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
+        </div>
+    </div>
+
+    <section class="bg-gray-300 potentialuser">
         <table class="tablescale">
             <tr>
                 <th><input type="checkbox" name="" id=""></th>

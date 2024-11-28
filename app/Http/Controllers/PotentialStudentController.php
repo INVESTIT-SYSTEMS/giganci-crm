@@ -14,24 +14,23 @@ class PotentialStudentController extends Controller
      * Display a listing of the resource.
      */
 
-   public function index(Request $request): View
+   public function index(Request $request)
     {
-        $data = PO
-//        $query = PotentialStudent::query();
-//        if (request()->has('status') || request()->has('search')){
-//            $status = request()->get('status','');
-//            $search = request()->get('search','');
-//            $query->where('status','like',"%$status%")->where('name', 'like', "%$search$");
-//        }
-//       $query = PotentialStudent::when($request->has('status'), function ( Builder $q){
-//           $q->
-//       })
-//           ->
-
-
-        $status = request()->get('status','');
-//        $data = $query -> get();
-        return view('wppotential', ['user' => $data, 'status'=>$status]);
+        $query = PotentialStudent::
+        when($request->get('search'), function (Builder $query) use ($request){
+            $query->where(function ($query)use ($request) {
+                $query->orwhere('name','like','%' . $request->get('search') . '%')
+                    ->orwhere('surname','like','%' . $request->get('search') . '%')
+                    ->orwhere('birth_year','like','%' . $request->get('search') . '%')
+                    ->orwhere('comment','like','%' . $request->get('search') . '%')
+                    ->orwhere('parent_name','like','%' . $request->get('search') . '%')
+                    ->orwhere('parent_surname','like','%' . $request->get('search') . '%')
+                    ->orwhere('parent_phone_number','like','%' . $request->get('search') . '%')
+                    ->orwhere('parent_email','like','%' . $request->get('search') . '%');
+            })
+            ->get();
+        });
+        return view('wppotential', ['user' => $query]);
 
     }
 
