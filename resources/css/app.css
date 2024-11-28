@@ -449,6 +449,10 @@ main h3{
     padding-top: 5px;
 }
 
+.footerp{
+    z-index: 1001;
+}
+
 footer{
     height: 7.5vh;
     width: 100vw;
