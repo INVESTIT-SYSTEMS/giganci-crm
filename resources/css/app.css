@@ -101,7 +101,7 @@ tr:hover td{
     /*align-items: center;*/
     /*justify-content: center;*/
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -137,9 +137,10 @@ table{
 }
 
 .addpotential{
-    background-color: #ff6213;
+    background-color: #7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     float: right;
@@ -158,9 +159,10 @@ table{
 }
 
 table button{
-    background-color: #ae14cb;
+    background-color: #7043aa;
+    color: white;
     border-radius: 15px;
-    border: #9c1fb5 solid 2px;
+    border: #7043aa solid 2px;
     padding: 5px;
     margin: 5px;
 }
@@ -185,7 +187,7 @@ table form, a{
 
 .contentpotential{
     /*background-color: #ff6213;*/
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -213,9 +215,11 @@ table form, a{
 }
 
 .addstudent{
-    background-color: #ff6213;
+    /*background-color: #ff6213;*/
+    background-color:#7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     float: right;
@@ -231,7 +235,6 @@ table form, a{
 
 .student{
     text-align: center;
-    background-color:#7043aa;
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -249,7 +252,7 @@ table form, a{
 }
 
 .contentteacher{
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -258,9 +261,10 @@ table form, a{
 }
 
 .addteacher{
-    background-color: #ff6213;
+    background-color: #7043aa;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    color: white;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     float: right;
@@ -276,7 +280,6 @@ table form, a{
 
 .teacher{
     text-align: center;
-    background-color: #9c1fb5;
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -294,7 +297,7 @@ table form, a{
 }
 
 .contentgroup{
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -303,9 +306,10 @@ table form, a{
 }
 
 .addgroup{
-    background-color: #ff6213;
+    background-color: #7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     float: right;
@@ -321,7 +325,7 @@ table form, a{
 
 .group{
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -405,7 +409,7 @@ main h3{
 }
 
 .contentlocation{
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -414,9 +418,10 @@ main h3{
 }
 
 .addlocation{
-    background-color: #ff6213;
+    background-color: #7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     float: right;
@@ -432,7 +437,7 @@ main h3{
 
 .location{
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -551,7 +556,7 @@ footer{
 
 .contentpotentialedit{
     /*background-color: #ff6213;*/
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -572,7 +577,7 @@ footer{
 .potentialuseredit{
 
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -594,9 +599,10 @@ footer{
 }
 
 .editpotential{
-    background-color: #ff6213;
+    background-color: #7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     box-shadow: black 5px 5px 10px;
@@ -612,7 +618,7 @@ footer{
 
 .contentpotentialadd{
     /*background-color: #ff6213;*/
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -633,7 +639,7 @@ footer{
 .potentialuseradd{
 
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -655,9 +661,10 @@ footer{
 }
 
 .potentialadd{
-    background-color: #ff6213;
+    background-color: #7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     box-shadow: black 5px 5px 10px;
@@ -673,7 +680,7 @@ footer{
 
 .contentstudentadd{
     /*background-color: #ff6213;*/
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -694,7 +701,7 @@ footer{
 .studentsectionadd{
 
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -716,9 +723,9 @@ footer{
 }
 
 .studentadd{
-    background-color: #ff6213;
+    background-color: #7043aa;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     box-shadow: black 5px 5px 10px;
@@ -734,7 +741,7 @@ footer{
 
 .contentstudentedit{
     /*background-color: #ff6213;*/
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -755,7 +762,7 @@ footer{
 .studentsectionedit{
 
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -777,9 +784,10 @@ footer{
 }
 
 .studentedit{
-    background-color: #ff6213;
+    background-color: #7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     box-shadow: black 5px 5px 10px;
@@ -795,7 +803,7 @@ footer{
 
 .contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd, .contentteacheredit, .contentteacheradd{
     /*background-color: #ff6213;*/
-    background: linear-gradient(180deg, #ff691f, #e35400);
+    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -816,7 +824,7 @@ footer{
 .groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd, .teachercontentedit, .teachercontentadd{
 
     text-align: center;
-    background-color: #9c1fb5;
+    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -838,9 +846,10 @@ footer{
 }
 
 .groupadd, .groupedit, .locationedit, .locationadd, .teacheredit, .teacheradd{
-    background-color: #ff6213;
+    background-color: #7043aa;
+    color: white;
     padding: 5px 10px;
-    border: #9c1fb5 solid 3px;
+    border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
     box-shadow: black 5px 5px 10px;
@@ -856,4 +865,8 @@ footer{
 
 body{
     overflow: hidden;
+}
+
+.tablescale{
+    scale: 0.9;
 }

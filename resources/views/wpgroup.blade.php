@@ -5,7 +5,7 @@
 <section class="contentgroup">
     <h1>Grupy</h1>
     <a href="{{route('groups.create')}}"> <button type="submit" class="addgroup">Dodaj grupe</button></a>
-    <section class="group">
+    <section class=" bg-gray-300 group">
         <table class="">
             <tr>
                 <th>Nazwa</th>

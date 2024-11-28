@@ -6,15 +6,15 @@
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
     <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
-    <section class="potentialuser">
+    <section class=" bg-gray-300 potentialuser">
         <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
             <input type="text" name="search" id="">
             <input type="submit" value="Filtruj">
         </form>
         <h2></h2>
-        <table class="">
+        <table class="tablescale">
             <tr>
-                <th>Zaznacz <br> <input type="checkbox" name="" id=""></th>
+                <th><input type="checkbox" name="" id=""></th>
                 <th>Imie</th>
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
@@ -31,8 +31,8 @@
                 <th>Numer telefonu rodzica</th>
                 <th>E-mail rodzica</th>
                 <th>Ostatnia edycja</th>
-                <th>Edytor</th>
-                <th>Przenieś</th>
+                <th></th>
+                <th></th>
             </tr>
             @foreach($user as $info)
                 <div class="gap">

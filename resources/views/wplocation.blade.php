@@ -5,7 +5,7 @@
 <section class="contentlocation">
     <h1>Lokalizacje</h1>
     <a href="{{route('locations.create')}}"> <button type="submit" class="addlocation">Dodaj lokalizacje</button></a>
-    <section class="location">
+    <section class="bg-gray-300 location">
         <table class="">
             <tr>
                 <th>Miasto</th>

@@ -14,28 +14,23 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $saved_students = Student::all();
-//        $query = Student::query();
-//        if (request()->has('search')){
-//            $search = request()->get('search','');
-//            $query->where('surname', 'like', '%' . $search . '%')
-//            ->whereany([
-//                'name',
-//                'parent_name'
-//            ],
-//                'like', '%' . $search . '%');
-//
-//            $query->where(, 'like', '%' . $search . '%');
-//        }
-//       if (request()->has('searchGroup')){
-//            $search = request()->get('searchGroup','');
-//            $query->where();
-//       }
+
         $savedGroups = Group::all();
-//        $saved_students = $query->get();
-        return view('wpstudent', ['student' => $saved_students, 'group' => $savedGroups]);
+        $query = Student::when($request->get('search' || $request->get('NameGroup')), function (Builder $query) use ($request){
+            $query->where('name','like','%' . $request->get('search') . '%')
+                ->orWhere('surname','like','%' . $request->get('search') . '%')
+                ->orWhere('birth_year','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_name','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_surname','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_phone_number','like','%' . $request->get('search') . '%')
+                ->orWhere('parent_email','like','%' . $request->get('search') . '%')
+                ->orWhere('group_id','like','%' . $request->get('NameGroup') . '%');
+        })
+            ->get();
+
+        return view('wpstudent', ['student' => $query, 'group' => $savedGroups]);
     }
 
     /**

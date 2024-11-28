@@ -5,7 +5,7 @@
 
 <section class="contentlocationedit">
     <h1>Edytuj lokalizacje</h1>
-    <section class="locationsectionedit">
+    <section class="bg-gray-300 locationsectionedit">
         <form action="{{ route('locations.update', ['location'=> $locations])}}" method="post">
             @csrf
             @method('put')

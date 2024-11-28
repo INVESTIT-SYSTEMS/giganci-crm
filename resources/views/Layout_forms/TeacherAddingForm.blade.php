@@ -5,7 +5,7 @@
 
 <section class="contentteacheradd">
     <h1>Dodaj nauczyciela</h1>
-    <section class="teachercontentadd">
+    <section class="bg-gray-300 teachercontentadd">
         <form action="{{route('teachers.store')}}" method="POST">
             @csrf
             <table class="">
