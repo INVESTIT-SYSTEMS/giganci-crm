@@ -7,13 +7,24 @@
     <h1>Potencjalni uczniowie</h1>
     <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
     <section class="potentialuser">
+        <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
+            <input type="text" name="search" id="">
+            <input type="submit" value="Filtruj">
+        </form>
+        <h2></h2>
         <table class="">
             <tr>
                 <th>Zaznacz <br> <input type="checkbox" name="" id=""></th>
                 <th>Imie</th>
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
-                <th>Status</th>
+                <th>Status
+                    <select name="status" form="search">
+                        <option @if($status == 'Wszystkie') selected @endif value="">Wszystkie</option>
+                        <option @if($status == 'Zapis na zajęcia pokazowe') selected @endif value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
+                        <option @if($status == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>
+                    </select>
+                </th>
                 <th>Komentarz</th>
                 <th>Imie rodzica</th>
                 <th>Nazwisko rodzica</th>
@@ -52,6 +63,7 @@
         </table>
     </section>
 </section>
+
 @include('Layout_forms.footerlayout')
 
 

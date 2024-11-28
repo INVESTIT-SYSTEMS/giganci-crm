@@ -15,8 +15,15 @@ class PotentialStudentController extends Controller
 
    public function index(): View
     {
-        $data = PotentialStudent::all();
-        return view('wppotential', ['user' => $data]);
+        $query = PotentialStudent::query();
+        if (request()->has('status') || request()->has('search')){
+            $status = request()->get('status','');
+            $search = request()->get('search','');
+            $query->where('status','like',"%$status%")->where('name', 'like', "%$search$");
+        }
+        $status = request()->get('status','');
+        $data = $query -> get();
+        return view('wppotential', ['user' => $data, 'status'=>$status]);
 
     }
 

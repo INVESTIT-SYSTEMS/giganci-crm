@@ -25,10 +25,8 @@
                     <td>Status:</td>
                     <td>
                         <select name="status" form="potential">
-                            <option value="jeden">opcja pierwsza</option>
-                            <option value="dwa">opcja druga</option>
-                            <option value="trzy">opcja trzecia</option>
-                            <option value="cztery">opcja czwarta</option>
+                            <option value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
+                            <option value="Rezygnacja">Rezygnacja</option>
                         </select>
                     </td>
                 </tr>
