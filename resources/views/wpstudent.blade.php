@@ -7,7 +7,7 @@
     <h1 class="">Uczniowie</h1>
     <div class="contener">
         <div class="looking">
-            <form method="get" action="{{route ('students.index')}}">
+            <form method="get" action="{{route ('students.index')}}" id="search">
             <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
             <select name="NameGroup">
                 <option value="">Nazwa Grupy</option>

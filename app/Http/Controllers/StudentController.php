@@ -31,9 +31,6 @@ class StudentController extends Controller
                 ->orWhere('parent_phone_number','like','%' . $request->get('search') . '%')
                 ->orWhere('parent_email','like','%' . $request->get('search') . '%');
             });
-
-
-
         })->when($request->get('NameGroup'), function ($query) use ($request) {
             $query->where('group_id', $request->get('NameGroup'));
         })

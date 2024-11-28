@@ -8,8 +8,8 @@
     <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
     <section class=" bg-gray-300 potentialuser">
         <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
-            <input type="text" name="search" id="">
-            <input type="submit" value="Filtruj">
+            <input type="text" name="search">
+            <button>Szukaj</button>
         </form>
         <h2></h2>
         <table class="tablescale">
