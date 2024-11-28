@@ -4,8 +4,8 @@
 
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
-    <h1>Uczniowie</h1>
-    <div class="border">
+    <h1 class="">Uczniowie</h1>
+    <div class="contener">
         <div class="looking">
             <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
             <select name="NameGroup" form="search">

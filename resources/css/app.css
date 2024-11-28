@@ -399,6 +399,11 @@ main{
     overflow: auto;
 }
 
+.contentmain a{
+    margin: auto;
+    padding: 0px 20px 0px 20px;
+}
+
 main h1{
     text-align: center;
     font-size: 25px;

@@ -15,25 +15,25 @@
     <h3>Siema Marcin</h3>
 
     <section class="bg-gray-300 contentmain">
-        <div class="maindiv">
+        <a href="{{ route('students.index') }}"><div class="maindiv">
             <p><b>Uczniowie</b></p>
-        </div>
+        </div></a>
 
-        <div class="maindiv">
+        <a href="{{ route('teachers.index') }}"><div class="maindiv">
             <p><b>Nauczyciele</b></p>
-        </div>
+        </div></a>
 
-        <div class="maindiv">
+        <a href="{{ route('potentialStudents.index') }}"><div class="maindiv">
             <P><b>Potencjalni uczniowie</b></P>
-        </div>
+        </div></a>
 
-        <div class="maindiv">
+        <a href="{{route('groups.index')}}"><div class="maindiv">
             <P><b>Grupy</b></P>
-        </div>
+        </div></a>
 
-        <div class="maindiv">
+        <a href="{{route('locations.index')}}"><div class="maindiv">
             <P><b>Lokalizacja</b></P>
-        </div>
+        </div></a>
     </section>
 </main>
 @include('Layout_forms.footerlayout')
