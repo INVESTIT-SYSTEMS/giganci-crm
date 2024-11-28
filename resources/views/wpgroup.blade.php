@@ -5,6 +5,23 @@
 <section class="contentgroup">
     <h1>Grupy</h1>
     <a href="{{route('groups.create')}}"> <button type="submit" class="addgroup">Dodaj grupe</button></a>
+    <form method="get" action="{{route ('groups.index')}}">
+        <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+        <select name="Location">
+            <option value="">Lokalizacja</option>
+            @foreach($location as $locations)
+                <option value="{{$locations->id}}">{{$locations->town}}</option>
+            @endforeach
+        </select>
+        <select name="Teacher">
+            <option value="">Nauczyciel</option>
+            @foreach($teacher as $teachers)
+                <option value="{{$teachers->id}}">{{$teachers->name}} {{$teachers->surname}}</option>
+            @endforeach
+        </select>
+        <button>Szukaj</button>
+        <a href="{{route('groups.index')}}"> <button>Reset</button> </a>
+    </form>
     <section class=" bg-gray-300 group">
         <table class="">
             <tr>
