@@ -810,7 +810,7 @@ footer{
     background-color: #cc531c;
 }
 
-.contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd, .contentteacheredit, .contentteacheradd{
+.contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd, .contentteacheredit, .contentteacheradd, .contentsms{
     /*background-color: #ff6213;*/
     /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
@@ -822,7 +822,7 @@ footer{
 
 }
 
-.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1, .contentteacheredit h1, .contentteacheradd h1{
+.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1, .contentteacheredit h1, .contentteacheradd h1, .contentsms h1{
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -830,7 +830,7 @@ footer{
     padding-bottom: 30px;
 }
 
-.groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd, .teachercontentedit, .teachercontentadd{
+.groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd, .teachercontentedit, .teachercontentadd, .smssection{
 
     text-align: center;
     /*background-color: #9c1fb5;*/

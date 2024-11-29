@@ -1,8 +1,8 @@
 @include('Layout_forms.headlayout')
 
-<section class="contentmove">
+<section class="contentsms">
 
-    <section class="bg-gray-300 movesection">
+    <section class="bg-gray-300 smssection">
 
     </section>
 
