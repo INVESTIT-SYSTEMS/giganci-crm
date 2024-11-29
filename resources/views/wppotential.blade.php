@@ -31,9 +31,7 @@
                 <th>Imie</th>
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
-                <th>Status
-
-                </th>
+                <th>Status</th>
                 <th>Komentarz</th>
                 <th>Imie rodzica</th>
                 <th>Nazwisko rodzica</th>
