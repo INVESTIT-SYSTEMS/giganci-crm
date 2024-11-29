@@ -6,8 +6,8 @@
 
 <section class="contentstudentadd">
     <h1>Przenieś ucznia</h1>
-    <h2>Sprawdź czy wszystkie dane się zgadzają</h2>
-    <section class="studentsectionadd">
+    <h2>Sprawdź poprawność danych</h2>
+    <section class="bg-gray-300 studentsectionadd">
 
         <form action="{{route('students.store')}}" method="POST" id="StudentForm">
             @csrf
