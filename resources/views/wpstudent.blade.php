@@ -76,7 +76,6 @@
                                <td class="colored">
                                     <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
-                                        @csrf
                                         @method('delete')
                                         <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                                     </form>
