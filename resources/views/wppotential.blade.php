@@ -39,8 +39,8 @@
                 <th>Numer telefonu rodzica</th>
                 <th>E-mail rodzica</th>
                 <th>Ostatnia edycja</th>
-                <th></th>
-                <th></th>
+                <th colspan="2"></th>
+
             </tr>
             @foreach($user as $info)
                 <div class="gap">
