@@ -901,6 +901,12 @@ body{
     font-weight: bold;
 }
 
+.looking button:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
 .looking input{
     padding: 10px;
     border: 1px solid black;
@@ -913,4 +919,23 @@ body{
     border: 1px solid black;
     margin: 5px 0px 10px 5px;
     border-radius: 15px;
+}
+
+.smsbutton{
+    /*background-color: #ff6213;*/
+    background-color:#7043aa;
+    color: white;
+    padding: 5px 10px;
+    border: #7043aa solid 3px;
+    border-radius: 15px;
+    margin: 10px 10px 10px 10px;
+    float: right;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.smsbutton:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
 }

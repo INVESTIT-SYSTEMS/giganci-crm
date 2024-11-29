@@ -21,6 +21,7 @@
 
         <div class="add">
             <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
+            <a href="wpsms.blade.php"> <button class="smsbutton">Korespondencja</button> </a>
         </div>
     </div>
 
