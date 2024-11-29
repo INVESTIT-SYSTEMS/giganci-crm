@@ -21,6 +21,7 @@
 
         <div class="add">
             <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
+            <a href={{route('message.index')}}> <button class="smsbutton">Korespondencja</button> </a>
         </div>
     </div>
 
@@ -31,9 +32,7 @@
                 <th>Imie</th>
                 <th>Nazwisko</th>
                 <th>Rok urodzenia</th>
-                <th>Status
-
-                </th>
+                <th>Status</th>
                 <th>Komentarz</th>
                 <th>Imie rodzica</th>
                 <th>Nazwisko rodzica</th>

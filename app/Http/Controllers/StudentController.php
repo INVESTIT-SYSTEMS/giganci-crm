@@ -19,7 +19,6 @@ class StudentController extends Controller
     {
 
         $savedGroups = Group::all();
-//        $query = Student::where('group_id', $request->get('NameGroup'))->get();
         $query = Student::
         when($request->get('search'), function (Builder $query) use ($request){
             $query->where(function ($query)use ($request){
@@ -83,15 +82,7 @@ class StudentController extends Controller
      */
     public function show(Request $request)
     {
-//        $search = $request->search ?? null;
-//
-//        if ($search)
-//        {
-//            $saved_students = Student::where('name', "like", "%".$search."%")->get();
-//        }else{
-//            $saved_students = Student::all();
-//        }
-//        return view('wpstudent', compact('students', 'search'));
+        return view('wpsms');
     }
 
     /**
@@ -137,5 +128,12 @@ public function moveStudent(PotentialStudent $studentData): View
     $groups = Group::all();
     return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
 }
+
+public function message(Student $student)
+{
+    $student = Student::all();
+    return view('wpsms', []);
+}
+
 
 }
