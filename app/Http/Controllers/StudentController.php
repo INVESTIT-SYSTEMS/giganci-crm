@@ -129,10 +129,15 @@ public function moveStudent(PotentialStudent $studentData): View
     return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
 }
 
-public function message(Student $student)
+public function message(Request $request)
 {
-    $student = Student::all();
-    return view('wpsms', []);
+    $cos = $request->all();
+    $query = Student::where(function (Builder $query) use($cos){
+        $query->where("id", $cos);
+
+    })->get();
+
+    return view('wpsms', ['student'=>$query]);
 }
 
 
