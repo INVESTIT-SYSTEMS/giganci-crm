@@ -25,4 +25,6 @@ Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);
 
+Route::get('/corespodation', [StudentController::class, 'corespodation'])->name('corespodation.index');
+
 Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent'])->name('moveStudent.index');
