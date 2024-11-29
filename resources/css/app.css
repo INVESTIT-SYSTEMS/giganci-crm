@@ -1006,3 +1006,7 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+span{
+    color: red;
+}

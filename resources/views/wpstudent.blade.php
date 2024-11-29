@@ -25,8 +25,6 @@
             </select>
             <button><i class="fa-solid fa-magnifying-glass"></i></button>
             <a href="{{route('students.index')}}"> <button><i class="fa-solid fa-rotate-left"></i></button> </a>
-            <button>Szukaj</button>
-            <a href="{{route('students.index')}}"> <button>Reset</button> </a>
             </form>
         </div>
 
