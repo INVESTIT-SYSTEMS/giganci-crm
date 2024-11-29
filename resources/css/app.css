@@ -725,7 +725,7 @@ footer{
 
     text-align: center;
     /*background-color: #9c1fb5;*/
-    overflow: auto;
+    overflow: hidden;
     width: 95vw;
     margin: auto;
     border-radius: 10px;
