@@ -4,24 +4,35 @@
 @include('Layout_forms.headlayout')
 <section class="contentgroup">
     <h1>Grupy</h1>
-    <a href="{{route('groups.create')}}"> <button type="submit" class="addgroup"><i class="fa-solid fa-plus"></i></button></a>
-    <form method="get" action="{{route ('groups.index')}}">
-        <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
-        <select name="Location">
-            <option value="">Lokalizacja</option>
-            @foreach($location as $locations)
-                <option value="{{$locations->id}}">{{$locations->town}}</option>
-            @endforeach
-        </select>
-        <select name="Teacher">
-            <option value="">Nauczyciel</option>
-            @foreach($teacher as $teachers)
-                <option value="{{$teachers->id}}">{{$teachers->name}} {{$teachers->surname}}</option>
-            @endforeach
-        </select>
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        <a href="{{route('groups.index')}}"> <button>Reset</button> </a>
-    </form>
+    <div class="contener">
+        <div class="looking">
+            <form method="get" action="{{route ('groups.index')}}">
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+                <select name="Location">
+                    <option value="">Lokalizacja</option>
+                    @foreach($location as $locations)
+                        <option value="{{$locations->id}}">{{$locations->town}}</option>
+                    @endforeach
+                </select>
+                <select name="Teacher">
+                    <option value="">Nauczyciel</option>
+                    @foreach($teacher as $teachers)
+                        <option value="{{$teachers->id}}">{{$teachers->name}} {{$teachers->surname}}</option>
+                    @endforeach
+                </select>
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <a href="{{route('groups.index')}}"> <button><i class="fa-solid fa-rotate-left"></i></button> </a>
+            </form>
+        </div>
+
+        <div class="add">
+
+            <a href="{{route('groups.create')}}"> <button type="submit" class="addgroup"><i class="fa-solid fa-plus"></i></button></a>
+            <form action="{{route('message.index')}}" method="get" id="send">
+                <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
+            </form>
+        </div>
+    </div>
     <section class=" bg-gray-300 group">
         <table class="">
             <tr>
@@ -31,8 +42,7 @@
                 <th>Godzina</th>
                 <th>Nauczyciel</th>
                 <th>Lokalizacja</th>
-                <th>Edytor</th>
-                <th>Podgląd grupy</th>
+                <th colspan="2"></th>
             </tr>
             @foreach($group as $info)
                 <div class="gap">
@@ -51,9 +61,9 @@
                                 <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
-                        <td>
+                        <td class="colored">
                             <form action="{{route('groups.show', ['group'=>$info])}}" method="get">
-                                <button type="submit">Podgląd grupy</button>
+                                <button type="submit">Podgląd</button>
                             </form>
                         </td>
                     </tr>
