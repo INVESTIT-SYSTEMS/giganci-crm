@@ -32,6 +32,7 @@
                 <th>Nauczyciel</th>
                 <th>Lokalizacja</th>
                 <th>Edytor</th>
+                <th>Podgląd grupy</th>
             </tr>
             @foreach($group as $info)
                 <div class="gap">
@@ -44,10 +45,15 @@
                         <td class="colored">{{$info->location ? $info->location->town:'brak lokalizacji'  }}</td>
                         <td>
                             <a href="{{ route('groups.edit', ['group' => $info])}}"><button>Edit</button></a> <br>
-                            <form action="{{ route('groups.destroy', ['group' => $info]) }}" method="post">
+                            <form action="{{ route('groups.destroy', ['group' => $info['id']]) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="del">X</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{route('groups.show', ['group'=>$info])}}" method="get">
+                                <button type="submit">Podgląd grupy</button>
                             </form>
                         </td>
                     </tr>
