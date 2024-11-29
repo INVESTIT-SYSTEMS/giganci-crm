@@ -27,7 +27,7 @@ header{
     background: linear-gradient(180deg, #7043aa, #8a4fd6);
     color: white;
     font-weight: bold;
-    box-shadow: black 15px 0px 20px;
+    box-shadow: black 15px 0 20px;
     border-bottom: solid 1px black;
 }
 
@@ -155,7 +155,7 @@ table{
 }
 
 .del{
-    padding: 0px 13px;
+    padding: 0 13px;
 }
 
 table button{
@@ -391,7 +391,7 @@ main{
     margin: auto;
     border-collapse: collapse;
     border-radius: 30px;
-    padding: 0px 20px 0px 20px;
+    padding: 0 20px 0 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -401,7 +401,7 @@ main{
 
 .contentmain a{
     margin: auto;
-    padding: 0px 20px 0px 20px;
+    padding: 0 20px 0 20px;
 }
 
 main h1{
@@ -487,7 +487,6 @@ footer{
     left: 0;
     width: 100%;
     height: 50px;
-    /*background: url("https://i.ibb.co/wQZVxxk/wave.png");*/
     background: url("https://i.ibb.co/nkPQ7Cb/wave1.png");
 
     background-size: 1000px 100px;
@@ -495,28 +494,28 @@ footer{
 
 .wave#wave1 {
     z-index: 1000;
-    opacity: 0.5;
+    opacity: 0.6;
     bottom: 0;
     animation: ani1 4s linear infinite;
 }
 
 .wave#wave2 {
     z-index: 999;
-    opacity: 0.3;
+    opacity: 0.4;
     bottom: 10px;
     animation: ani2 4s linear infinite !important;
 }
 
 .wave#wave3 {
     z-index: 1000;
-    opacity: 0.2;
+    opacity: 0.3;
     bottom: 15px;
     animation: ani1 3s linear infinite;
 }
 
 .wave#wave4 {
     z-index: 999;
-    opacity: 0.4;
+    opacity: 0.5;
     bottom: 20px;
     animation: ani2 3s linear infinite;
 }
@@ -526,7 +525,7 @@ footer{
         background-position-x: 1000px;
     }
     100% {
-        background-positon-x: 0px;
+        background-position-x: 0px;
     }
 }
 
@@ -535,7 +534,7 @@ footer{
         background-position-x: -1000px;
     }
     100% {
-        background-positon-x: 0px;
+        background-position-x: 0px;
     }
 }
 
@@ -850,7 +849,7 @@ footer{
     padding: 5px;
 }
 
-.groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr, .locationsectionedit td, .locationsectionedit tr, .locationsectionadd td, .locationsectionadd tr, .teachercontentedit td, .teachercontentedit tr, teachercontentadd td, .teachercontentadd tr{
+.groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr, .locationsectionedit td, .locationsectionedit tr, .locationsectionadd td, .locationsectionadd tr, .teachercontentedit td, .teachercontentedit tr, .teachercontentadd td, .teachercontentadd tr{
     border: 0px;
 }
 
@@ -938,4 +937,47 @@ body{
     scale: 1.1;
     transition: all 0.35s;
     background-color: #cc531c;
+}
+
+.send{
+    /*background-color: #ff6213;*/
+    background-color:#7043aa;
+    color: white;
+    padding: 5px 10px;
+    border: #7043aa solid 3px;
+    border-radius: 15px;
+    margin: 10px 10px 10px 10px;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.send:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.message, .message textarea{
+    width: 70vw;
+    text-align: center;
+    height: 30vh;
+}
+
+.sendmessage table{
+    width: 70vw;
+}
+
+.studentmessage{
+    overflow: auto;
+    height: 20vh;
+    width: 80vw;
+}
+
+.studentmessage::-webkit-scrollbar{
+    display: none;
+}
+
+.studentmessage{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
