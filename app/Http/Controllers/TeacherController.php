@@ -58,7 +58,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        return view('layout_forms.TeacherEdit', ['teachers'=> $teacher]);
+        return view('Layout_forms.TeacherEdit', ['teachers'=> $teacher]);
     }
 
     /**
