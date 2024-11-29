@@ -31,6 +31,9 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'town' => 'required',
+        ]);
         Location::create([
             'town' => $request->get('town'),
         ]);
@@ -58,6 +61,10 @@ class LocationController extends Controller
      */
     public function update(Request $request, Location $location)
     {
+        $request->validate([
+            'town' => 'required',
+        ]);
+
         $location -> update([
             'town' => $request->get('town'),
         ]);

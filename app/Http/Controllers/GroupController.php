@@ -58,13 +58,13 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
      */
     public function store(Request $request): RedirectResponse
     {
-//        $request-> validate([
-//                'name' => 'required',
-//                'classes_day' => 'required',
-//                'classes_hour' => 'required',
-//                'teacher_id' => 'required',
-//                'location_id' => 'required',
-//        ]);
+        $request-> validate([
+                'name' => 'required',
+                'classes_day' => 'required',
+                'classes_hour' => 'required',
+                'teacher_id' => 'required',
+                'location_id' => 'required',
+        ]);
         Group::create([
             'name' => $request->get('name'),
             'classes_day' => $request->get('classes_day'),
@@ -110,6 +110,13 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
      */
     public function update(Request $request, Group $group): RedirectResponse
     {
+        $request-> validate([
+            'name' => 'required',
+            'classes_day' => 'required',
+            'classes_hour' => 'required',
+            'teacher_id' => 'required',
+            'location_id' => 'required',
+        ]);
         $group ->update([
             'name' => $request->get('name'),
             'classes_day' => $request->get('classes_day'),

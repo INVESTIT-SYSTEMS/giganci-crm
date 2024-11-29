@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('surname');
             $table->year('birth_year');
             $table->string('status');
-            $table->longText('comment');
+            $table->longText('comment')->nullable();
             $table->string('parent_name');
             $table->string('parent_surname');
             $table->string('parent_phone_number');
-            $table->string('parent_email');
+            $table->string('parent_email')->nullable();
             $table->timestamps();
         });
     }

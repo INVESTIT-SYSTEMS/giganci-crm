@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('parent_name');
             $table->string('parent_surname');
             $table->string('parent_phone_number');
-            $table->string('parent_email');
+            $table->string('parent_email')->nullable();
             $table->foreignId('group_id')->nullable()->constrained('groups')->nullOnDelete();
             $table->timestamps();
         });

@@ -49,19 +49,28 @@ class PotentialStudentController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-            PotentialStudent::create([
-                'name' => $request->get('name'),
-                'surname' => $request->get('surname'),
-                'birth_year' => $request->get('birth_year'),
-                'status' => $request->get('status'),
-                'comment' => $request->get('comment'),
-                'parent_name' => $request->get('parent_name'),
-                'parent_surname' => $request->get('parent_surname'),
-                'parent_phone_number' => $request->get('parent_phone_number'),
-                'parent_email' => $request->get('parent_email'),
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'birth_year' => 'required',
+            'status' => 'required',
+            'parent_name' => 'required',
+            'parent_surname' => 'required',
+            'parent_phone_number' => 'required',
+            'parent_email' => 'email',
+        ]);
 
-
-            ]);
+        PotentialStudent::create([
+            'name' => $request->get('name'),
+            'surname' => $request->get('surname'),
+            'birth_year' => $request->get('birth_year'),
+            'status' => $request->get('status'),
+            'comment' => $request->get('comment'),
+            'parent_name' => $request->get('parent_name'),
+            'parent_surname' => $request->get('parent_surname'),
+            'parent_phone_number' => $request->get('parent_phone_number'),
+            'parent_email' => $request->get('parent_email|email'),
+        ]);
             return redirect()->route('potentialStudents.index');
     }
 
@@ -86,6 +95,16 @@ class PotentialStudentController extends Controller
      */
     public function update(Request $request, PotentialStudent $potentialStudent)
     {
+        $data = $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'birth_year' => 'required',
+            'status' => 'required',
+            'parent_name' => 'required',
+            'parent_surname' => 'required',
+            'parent_phone_number' => 'required',
+            'parent_email' => 'email',
+        ]);
         $potentialStudent->update([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
@@ -96,8 +115,6 @@ class PotentialStudentController extends Controller
             'parent_surname' => $request->get('parent_surname'),
             'parent_phone_number' => $request->get('parent_phone_number'),
             'parent_email' => $request->get('parent_email'),
-
-
         ]);
         return redirect()->route('potentialStudents.index');
     }

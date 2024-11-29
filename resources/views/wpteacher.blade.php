@@ -21,7 +21,7 @@
                         <td class="colored">{{$info->name}}</td>
                         <td>{{$info->surname}}</td>
                         <td class="colored">{{$info->phone_number}}</td>
-                        <td>{{$info->email}}</td>
+                        <td>{{$info->email ?? 'brak'}}</td>
                         <td class="colored">
                             <a href="{{ route('teachers.edit', ['teacher' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                             <form action="{{ route('teachers.destroy', ['teacher' => $info]) }}" method="post">

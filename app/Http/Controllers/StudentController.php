@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Location;
 use App\Models\PotentialStudent;
 use App\Models\Student;
 use App\Models\Group;
@@ -19,6 +20,7 @@ class StudentController extends Controller
     {
 
         $savedGroups = Group::all();
+        $savedLocations = Location::all();
         $query = Student::
         when($request->get('search'), function (Builder $query) use ($request){
             $query->where(function ($query)use ($request){
@@ -32,11 +34,13 @@ class StudentController extends Controller
             });
         })->when($request->get('NameGroup'), function ($query) use ($request) {
             $query->where('group_id', $request->get('NameGroup'));
+        })->when($request->get('Location'), function ($query) use ($request){
+            $query->where('location_id', $request->get('Location'));
         })
             ->get();
 
 
-        return view('wpstudent', ['student' => $query, 'group' => $savedGroups]);
+        return view('wpstudent', ['student' => $query, 'group' => $savedGroups, 'location' => $savedLocations]);
     }
 
     /**
@@ -61,7 +65,7 @@ class StudentController extends Controller
             'parent_name' => 'required',
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|min:9|max:9',
-            'parent_email' => 'required',
+            'parent_email' => 'email',
         ]);
 
         Student::create([
@@ -82,7 +86,7 @@ class StudentController extends Controller
      */
     public function show(Request $request)
     {
-        return view('wpsms');
+        //
     }
 
     /**
@@ -106,7 +110,7 @@ class StudentController extends Controller
             'parent_name' => 'required',
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|min:9|max:9',
-            'parent_email' => 'required',
+            'parent_email' => 'email',
             'group_id' => 'required'
         ]);
         $student->update($data);

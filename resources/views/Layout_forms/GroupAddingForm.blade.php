@@ -12,7 +12,9 @@
             <table class="">
                 <tr>
                     <td>Nazwa grupy:</td>
-                    <td><input type="text" name="name" id="" placeholder="Podaj nazwe grupy"></td>
+                    <td><input type="text" name="name" id="" placeholder="Podaj nazwe grupy">
+                        <br>
+                        <span>@error('name'){{$message}}@enderror</span></td></td>
                 </tr>
                 <tr>
                     <td>Dzień tygodnia:</td>
@@ -30,7 +32,9 @@
                 </tr>
                 <tr>
                     <td>Godzina zajęć:</td>
-                    <td><input type="text" name="classes_hour" id="" placeholder="Podaj godzinę zajęć"></td>
+                    <td><input type="text" name="classes_hour" id="" placeholder="Podaj godzinę zajęć">
+                        <br>
+                        <span>@error('classes_hour'){{$message}}@enderror</span></td></td>
                 </tr>
                 <tr>
                     <td>Nauczyciel:</td>

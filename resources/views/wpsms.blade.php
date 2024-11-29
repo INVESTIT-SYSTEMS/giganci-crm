@@ -20,28 +20,16 @@
                     <th>Numer telefonu</th>
                     <th>E-mail</th>
                 </tr>
+                @foreach($student as $info)
                 <tr>
-                    <td>A</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td class="colored">{{$info->name}} {{$info->surname}}</td>
+                    <td>{{$info->parent_name}} {{$info->parent_surname}}</td>
+                    <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
+                    <td>{{$info->parent_phone_number}}</td>
+                    <td class="colored">{{$info->parent_email}}</td>
+                    <td>{{$info->group->location->town}}</td>
                 </tr>
-                <tr>
-                    <td>B</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>C</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-
+                @endforeach
             </table>
             </div>
             <button class="send">Wyślij</button>
