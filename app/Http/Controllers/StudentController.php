@@ -129,7 +129,7 @@ public function moveStudent(PotentialStudent $studentData): View
     return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
 }
 
-public function corespodation(Student $student)
+public function message(Student $student)
 {
     $student = Student::all();
     return view('wpsms', []);

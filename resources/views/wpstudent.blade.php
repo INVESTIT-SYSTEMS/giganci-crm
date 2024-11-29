@@ -30,7 +30,7 @@
         <div class="add">
 
             <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
-            <a href={{route('corespodation.index')}}> <button class="smsbutton">Korespondencja</button> </a>
+            <a href={{route('message.index')}}> <button class="smsbutton">Korespondencja</button> </a>
         </div>
     </div>
 
