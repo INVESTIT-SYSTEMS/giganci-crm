@@ -15,6 +15,7 @@
     <div class="contener">
         <div class="looking">
             <form method="get" action="{{route ('students.index')}}" id="search">
+                @csrf
             <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
             <select name="NameGroup">
                 <option value="">Nazwa Grupy</option>
@@ -31,6 +32,8 @@
 
             <a href="{{route('students.create')}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
             <form action="{{route('message.index')}}" method="get" id="send">
+                @csrf
+             <button type="submit " class="smsbutton">Korespondencja</button>
              <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
@@ -41,6 +44,7 @@
 
 
         <form action="">
+            @csrf
             <table class="">
                 <tr>
                     <th><input type="checkbox" name="" id="" onclick="checkAll(this)"></th>
@@ -52,6 +56,7 @@
                     <th>Numer telefonu rodzica</th>
                     <th>E-mail rodzica</th>
                     <th>Nazwa grupy</th>
+                    <th>Lokalizacaja</th>
                     <th>Edytor</th>
                 </tr>
 
@@ -67,6 +72,7 @@
                                 <td>{{$info->parent_phone_number}}</td>
                                 <td class="colored">{{$info->parent_email}}</td>
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
+                                <td>{{$info->group->location->town}}</td>
                                <td class="colored">
                                     <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
