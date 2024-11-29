@@ -15,7 +15,7 @@
                         <option @if($user == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>
                     </select>
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                <a href="{{route('potentialStudents.index')}}"> <button>Reset</button> </a>
+                <a href="{{route('potentialStudents.index')}}"> <button><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
         </div>
 
@@ -40,7 +40,6 @@
                 <th>E-mail rodzica</th>
                 <th>Ostatnia edycja</th>
                 <th colspan="2"></th>
-
             </tr>
             @foreach($user as $info)
                 <div class="gap">
