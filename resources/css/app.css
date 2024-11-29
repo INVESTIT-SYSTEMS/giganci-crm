@@ -603,7 +603,8 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 2%;
+    /*align-items: center;*/
 }
 
 .potentialuseredit input{
@@ -665,7 +666,8 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
+    padding-top: 2%;
 }
 
 .potentialuseradd input{
@@ -722,10 +724,9 @@ footer{
 }
 
 .studentsectionadd{
-
     text-align: center;
     /*background-color: #9c1fb5;*/
-    overflow: hidden;
+    overflow: auto;
     width: 95vw;
     margin: auto;
     border-radius: 10px;
@@ -733,7 +734,12 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
+    padding-top: 2%;
+}
+
+.studentsectionadd table{
+    overflow: hidden;
 }
 
 .studentsectionadd input{
@@ -794,7 +800,8 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
+    padding-top: 2%;
 }
 
 .studentsectionedit input{
@@ -856,7 +863,8 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
+    padding-top: 2%;
 }
 
 .groupsectionadd input, .groupsectionedit input, .locationsectionedit input, .locationsectionadd input, .teachercontentedit input, .teachercontentadd input{
