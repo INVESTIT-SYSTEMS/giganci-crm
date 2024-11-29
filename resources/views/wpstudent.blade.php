@@ -33,7 +33,6 @@
             <a href="{{route('students.create')}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
             <form action="{{route('message.index')}}" method="get" id="send">
                 @csrf
-             <button type="submit " class="smsbutton">Korespondencja</button>
              <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>

@@ -139,7 +139,8 @@ table{
 .addpotential{
     background-color: #7043aa;
     color: white;
-    padding: 5px 10px;
+    font-size: 18px;
+    padding: 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
@@ -226,7 +227,8 @@ table select, textarea{
     /*background-color: #ff6213;*/
     background-color:#7043aa;
     color: white;
-    padding: 5px 10px;
+    font-size: 18px;
+    padding: 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 10px 10px;
@@ -270,7 +272,8 @@ table select, textarea{
 
 .addteacher{
     background-color: #7043aa;
-    padding: 5px 10px;
+    padding: 10px;
+    font-size: 18px;
     color: white;
     border: #7043aa solid 3px;
     border-radius: 15px;
@@ -316,7 +319,8 @@ table select, textarea{
 .addgroup{
     background-color: #7043aa;
     color: white;
-    padding: 5px 10px;
+    padding: 10px;
+    font-size: 18px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
@@ -433,7 +437,8 @@ main h3{
 .addlocation{
     background-color: #7043aa;
     color: white;
-    padding: 5px 10px;
+    font-size: 18px;
+    padding: 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
@@ -707,7 +712,13 @@ footer{
     font-weight: bold;
     font-size: 20px;
     padding-top: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
+}
+
+.contentstudentadd h2{
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 10px;
 }
 
 .studentsectionadd{
@@ -896,12 +907,13 @@ body{
 .looking button{
     background-color:#7043aa;
     color: white;
-    padding: 5px 10px;
+    padding: 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 5px 5px 10px 10px;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .looking button:hover{
@@ -928,13 +940,14 @@ body{
     /*background-color: #ff6213;*/
     background-color:#7043aa;
     color: white;
-    padding: 5px 10px;
+    padding: 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 10px 10px 10px;
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .smsbutton:hover{
