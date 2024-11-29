@@ -43,7 +43,7 @@
     <section class="bg-gray-300 student">
 
 
-        <form action="">
+
 
             <table class="">
                 <tr>
@@ -85,7 +85,6 @@
                         </div>
                     @endforeach
             </table>
-        </form>
     </section>
 </section>
 @include('Layout_forms.footerlayout')
