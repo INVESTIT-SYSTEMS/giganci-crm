@@ -30,7 +30,9 @@
         <div class="add">
 
             <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
-            <a href={{route('message.index')}}> <button class="smsbutton">Korespondencja</button> </a>
+            <form action="{{route('message.index')}}" method="get" id="send">
+             <button type="submit " class="smsbutton">Korespondencja</button>
+            </form>
         </div>
     </div>
 
@@ -56,7 +58,7 @@
                     @foreach($student as $info)
                         <div class="gap">
                             <tr>
-                                <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
+                                <td><input type="checkbox" class="checkboxes" name="check[]" form="send" value="{{$info->id}}"></td>
                                 <td class="colored">{{$info->name}}</td>
                                 <td>{{$info->surname}}</td>
                                 <td class="colored">{{$info->birth_year}}</td>
