@@ -74,7 +74,7 @@
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                                 <td>{{$info->group ? $info->group->location->town:'Brak lokalizacji'}}</td>
                                <td class="colored">
-                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
+                                    <a href="{{ route('students.edit', ['student' => $info])}}"><i class="fa-solid fa-pencil fa-sm"></i></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
                                         @csrf
                                         @method('delete')
