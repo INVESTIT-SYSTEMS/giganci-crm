@@ -1,31 +1,51 @@
 @include('Layout_forms.headlayout')
 
 <section class="contentsms">
-
+    <h1>Korespondencja seryjna</h1>
     <section class="bg-gray-300 smssection">
-        @foreach($student as $info)
-            <div class="gap">
+
+        <div class="sendmessage">
+            <h3>SMS & E-mail</h3>
+            <table class="message">
                 <tr>
-                    <td><input type="checkbox" class="checkboxes" name="check[]" form="send" value="{{$info->id}}"></td>
-                    <td class="colored">{{$info->name}}</td>
-                    <td>{{$info->surname}}</td>
-                    <td class="colored">{{$info->birth_year}}</td>
-                    <td>{{$info->parent_name}}</td>
-                    <td class="colored">{{$info->parent_surname}}</td>
-                    <td>{{$info->parent_phone_number}}</td>
-                    <td class="colored">{{$info->parent_email}}</td>
-                    <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
-                    <td class="colored">
-                        <a href="{{ route('students.edit', ['student' => $info])}}"><button>Edit</button></a> <br>
-                        <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="del">X</button>
-                        </form>
-                    </td>
+                    <td> <textarea placeholder="Wpisz swoją wiadomość"></textarea></td>
                 </tr>
+            </table>
+            <div class="studentmessage">
+            <table>
+                <tr>
+                    <th>Imie i nazwisko ucznia</th>
+                    <th>Imie i nazwisko rodzica</th>
+                    <th>Grupa ucznia</th>
+                    <th>Numer telefonu</th>
+                    <th>E-mail</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table>
             </div>
-        @endforeach
+            <button class="send">Wyślij</button>
+
     </section>
 
 </section>
