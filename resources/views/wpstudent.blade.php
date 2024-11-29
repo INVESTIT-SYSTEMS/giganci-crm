@@ -68,11 +68,11 @@
                                 <td class="colored">{{$info->parent_email}}</td>
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                                <td class="colored">
-                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button>Edit</button></a> <br>
+                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="del">X</button>
+                                        <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
