@@ -33,6 +33,7 @@
             <a href="{{route('students.create')}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
             <form action="{{route('message.index')}}" method="get" id="send">
                 @csrf
+             <button type="submit " class="smsbutton">Korespondencja</button>
              <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
@@ -73,7 +74,7 @@
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                                 <td>{{$info->group ? $info->group->location->town:'Brak lokalizacji'}}</td>
                                <td class="colored">
-                                    <a href="{{ route('students.edit', ['student' => $info])}}"><i class="fa-solid fa-pencil fa-sm"></i></a> <br>
+                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
                                         @csrf
                                         @method('delete')
