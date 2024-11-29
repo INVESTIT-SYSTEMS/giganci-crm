@@ -14,14 +14,14 @@
                         <option @if($user == 'Zapis na zajęcia pokazowe') selected @endif value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
                         <option @if($user == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>
                     </select>
-                <button>Szukaj</button>
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 <a href="{{route('potentialStudents.index')}}"> <button>Reset</button> </a>
             </form>
         </div>
 
         <div class="add">
-            <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential">Dodaj potencjalnego ucznia</button></a>
-            <a href={{route('message.index')}}> <button class="smsbutton">Korespondencja</button> </a>
+            <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential"><i class="fa-solid fa-plus"></i></button></a>
+            <a href={{route('message.index')}}> <button class="smsbutton"><i class="fa-solid fa-envelope"></i></button> </a>
         </div>
     </div>
 
@@ -57,11 +57,11 @@
                 <td class="colored">{{$info->parent_email}}</td>
                 <td>{{$info->updated_at}}</td>
                 <td class="colored">
-                    <a href="{{ route('potentialStudents.edit', ['potentialStudent' => $info])}}"><button>Edit</button></a> <br>
+                    <a href="{{ route('potentialStudents.edit', ['potentialStudent' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                     <form action="{{ route('potentialStudents.destroy', ['potentialStudent' => $info]) }}" method="post">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="del">X</button>
+                        <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                     </form>
                 </td>
                 <td><a href="{{route('moveStudent.index', ['studentData' =>$info])}}"><button>Przenieś</button></a></td>

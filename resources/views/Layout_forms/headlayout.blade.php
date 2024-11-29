@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Giganci Programowania</title>
     @vite('resources/css/app.css')
+    <script src="https://kit.fontawesome.com/04436fe658.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="text-center">

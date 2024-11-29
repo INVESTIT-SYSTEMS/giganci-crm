@@ -22,15 +22,15 @@
                     <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
                 @endforeach
             </select>
-            <button>Szukaj</button>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
             <a href="{{route('students.index')}}"> <button>Reset</button> </a>
             </form>
         </div>
 
         <div class="add">
 
-            <a href="{{route('students.create')}}"> <button type="submit" class="addstudent">Dodaj ucznia</button></a>
-            <a href={{route('message.index')}}> <button class="smsbutton">Korespondencja</button> </a>
+            <a href="{{route('students.create')}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+            <a href={{route('message.index')}}> <button class="smsbutton"><i class="fa-solid fa-envelope"></i></button> </a>
         </div>
     </div>
 
@@ -66,11 +66,11 @@
                                 <td class="colored">{{$info->parent_email}}</td>
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                                <td class="colored">
-                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button>Edit</button></a> <br>
+                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="del">X</button>
+                                        <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

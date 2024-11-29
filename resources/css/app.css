@@ -155,7 +155,11 @@ table{
 }
 
 .del{
-    padding: 0 13px;
+    padding: 8px;
+}
+
+.edit{
+    padding: 10px;
 }
 
 table button{
