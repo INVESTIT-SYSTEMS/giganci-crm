@@ -44,7 +44,7 @@
 
 
         <form action="">
-            @csrf
+
             <table class="">
                 <tr>
                     <th><input type="checkbox" name="" id="" onclick="checkAll(this)"></th>
