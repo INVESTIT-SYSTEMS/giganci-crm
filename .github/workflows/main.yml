@@ -41,6 +41,8 @@ jobs:
             cd ~/public_html
             php composer.phar install --optimize-autoloader --no-dev  
             php artisan migrate --force
+            npm install
+            npm run build
             php artisan storage:link
             php artisan optimize:clear
             php artisan config:cache
