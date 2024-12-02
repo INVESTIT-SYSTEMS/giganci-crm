@@ -15,27 +15,56 @@
             <h1>Giganci Programowania</h1>
         </section>
         <section class="navigator">
-            <a href="../main"><div class="">
+
+{{--            <input type="checkbox" id="menu-toggle">--}}
+{{--            <label  class="menu-button-nontainer" for="menu-toggle">--}}
+{{--                <div class="menu-button">X</div>--}}
+{{--            </label>--}}
+
+                <div class="hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+
+        <nav class="menu" id="menu">
+
+{{--            <div class="hamburger" id="hamburger">--}}
+{{--                <div class="line"></div>--}}
+{{--                <div class="line"></div>--}}
+{{--                <div class="line"></div>--}}
+{{--            </div>--}}
+
+            <a href="../main"><div class="n">
                 <p>Strona Główna</p>
             </div></a>
-            <a href="{{ route('students.index') }}"><div class="">
+            <a href="{{ route('students.index') }}"><div class="n">
                 <p>Uczniowie</p>
             </div></a>
-            <a href="{{ route('teachers.index') }}"><div class="">
+            <a href="{{ route('teachers.index') }}"><div class="n">
                 <p>Nauczyciele</p>
             </div></a>
-            <a href="{{ route('potentialStudents.index') }}"><div class="">
+            <a href="{{ route('potentialStudents.index') }}"><div class="n">
                 <p>Potencjalni uczniowie</p>
             </div></a>
-            <a href="{{route('groups.index')}}"><div class="">
+            <a href="{{route('groups.index')}}"><div class="n">
                 <p>Grupy</p>
             </div></a>
-            <a href="{{route('locations.index')}}"><div class="">
+            <a href="{{route('locations.index')}}"><div class="n">
                <p>Lokalizacja</p>
             </div></a>
+        </nav>
         </section>
     </header>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
 {{--@include('navi')--}}
 </body>
 </html>
