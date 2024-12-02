@@ -40,7 +40,9 @@ jobs:
           first_ssh: |
             cd ~/public_html
             php composer.phar install --optimize-autoloader --no-dev
+            fnm use --install-if-missing 22
             php artisan migrate --force
+            npm run build
             php artisan storage:link
             php artisan optimize:clear
             php artisan config:cache
