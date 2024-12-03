@@ -217,7 +217,7 @@ table select, textarea{
     background-color:#7043aa;
     color: white;
     font-size: 18px;
-    padding: 10px;
+    padding: 10px 11px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 10px 10px;
@@ -894,11 +894,18 @@ body{
 .looking{
    float: left;
     width: 50%;
+    height: 100%;
 }
 
 .add{
     float: left;
     width: 50%;
+    height: 100%;
+}
+
+.helpo{
+    height: 21vh;
+
 }
 
 .looking button{
@@ -1062,8 +1069,66 @@ span{
         gap: 5px;
         cursor: pointer;
         flex-direction: column;
+        margin-right: 5px;
     }
+
+
+
+
+
+
 }
+
+@media screen and (max-width: 767px){
+
+    .looking input{
+        width: 100px;
+        margin: 0 0 0 10px;
+        font-size: 10px;
+    }
+
+    .looking select{
+        width: 100px;
+        font-size: 10px;
+        margin-right: 80px;
+        margin-left: 10px;
+    }
+
+    .looking button{
+        margin: 0 5px 0 10px;
+        scale: 0.9;
+    }
+
+    .add .addstudent{
+        margin-top: 40px;
+    }
+
+    .add button{
+        scale: 0.9;
+        margin: 5px 10px 0 5px;
+    }
+
+    .add{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .looking{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo{
+        margin-left: 5px;
+    }
+
+    .student{
+        height: 65%;
+        margin-top: 5px;
+    }
+
+}
+
 
 @media screen and (min-width: 950px) {
     .hamburger{
@@ -1107,6 +1172,7 @@ span{
         border-collapse: collapse;
         background-color: #6b40a1;
     }
+
 }
 
 

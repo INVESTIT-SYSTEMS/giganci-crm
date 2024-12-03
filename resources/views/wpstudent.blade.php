@@ -12,7 +12,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
     <h1 class="">Uczniowie</h1>
-    <div class="contener">
+    <div class="helpo">
         <div class="looking">
             <form method="get" action="{{route ('students.index')}}" id="search">
             <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
