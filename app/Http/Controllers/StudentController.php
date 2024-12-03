@@ -64,7 +64,7 @@ class StudentController extends Controller
             'birth_year' => 'required|min:4|max:4',
             'parent_name' => 'required',
             'parent_surname' => 'required',
-            'parent_phone_number' => 'required|min:9|max:9',
+            'parent_phone_number' => 'required|min:9|max:9|numeric',
             'parent_email' => 'email',
         ]);
 
@@ -109,7 +109,7 @@ class StudentController extends Controller
             'birth_year' => 'required|min:4|max:4',
             'parent_name' => 'required',
             'parent_surname' => 'required',
-            'parent_phone_number' => 'required|min:9|max:9',
+            'parent_phone_number' => 'required|min:9|max:9|numeric',
             'parent_email' => 'email',
             'group_id' => 'required'
         ]);
@@ -143,6 +143,4 @@ public function message(Request $request)
 
     return view('wpsms', ['student'=>$query]);
 }
-
-
 }

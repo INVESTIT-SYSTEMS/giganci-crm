@@ -33,7 +33,7 @@ class TeacherController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'phone_number' => 'required|min:9|max:9',
+            'phone_number' => 'required|min:9|max:9|numeric',
             'email' => 'required',
         ]);
 
@@ -66,10 +66,11 @@ class TeacherController extends Controller
      */
     public function update(Teacher $teacher, Request $request)
     {
+
         $data =$request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'phone_number' => 'required|min:9|max:9',
+            'phone_number' => 'required|min:9|max:9|numeric',
             'email' => 'required',
         ]);
         $teacher->update($data);

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->year('birth_year');
             $table->string('parent_name');
             $table->string('parent_surname');
-            $table->string('parent_phone_number');
+            $table->integer('parent_phone_number');
             $table->string('parent_email')->nullable();
             $table->foreignId('group_id')->nullable()->constrained('groups')->nullOnDelete();
             $table->timestamps();

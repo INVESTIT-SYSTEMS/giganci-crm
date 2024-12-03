@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longText('comment')->nullable();
             $table->string('parent_name');
             $table->string('parent_surname');
-            $table->string('parent_phone_number');
+            $table->integer('parent_phone_number');
             $table->string('parent_email')->nullable();
             $table->timestamps();
         });
