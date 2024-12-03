@@ -35,7 +35,7 @@
 {{--                <div class="line"></div>--}}
 {{--            </div>--}}
 
-            <a href="../main"><div class="n">
+            <a href="{{route('main.index')}}"><div class="n">
                 <p>Strona Główna</p>
             </div></a>
             <a href="{{ route('students.index') }}"><div class="n">

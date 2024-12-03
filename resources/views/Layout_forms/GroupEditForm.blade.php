@@ -19,13 +19,13 @@
                 <tr>
                     <td>Dzień tygodnia:</td>
                     <td><select name="classes_day" form="group" >
-                            <option @if($groups['classes_day'] == 'Poniedziałek')selected @endif value="Poniedziałek">Poniedziałek</option>
-                            <option @if($groups['classes_day'] == 'Wtorek')selected @endif value="Wtorek">Wtorek</option>
-                            <option @if($groups['classes_day'] == 'Środa')selected @endif value="Środa">Środa</option>
-                            <option @if($groups['classes_day'] == 'Czwartek')selected @endif value="Czwartek">Czwartek</option>
-                            <option @if($groups['classes_day'] == 'Piątek')selected @endif value="Piątek">Piątek</option>
-                            <option @if($groups['classes_day'] == 'Sobota')selected @endif value="Sobota">Sobota</option>
-                            <option @if($groups['classes_day'] == 'Niedziela')selected @endif value="Niedziela">Niedziela</option>
+                            <option @selected($groups->classes_day == 'Poniedziałek') value="Poniedziałek">Poniedziałek</option>
+                            <option @selected($groups->classes_day == 'Wtorek') value="Wtorek">Wtorek</option>
+                            <option @selected($groups->classes_day == 'Środa') value="Środa">Środa</option>
+                            <option @selected($groups->classes_day == 'Czwartek') value="Czwartek">Czwartek</option>
+                            <option @selected($groups->classes_day == 'Piątek') value="Piątek">Piątek</option>
+                            <option @selected($groups->classes_day == 'Sobota') value="Sobota">Sobota</option>
+                            <option @selected($groups->classes_day == 'Niedziela') value="Niedziela">Niedziela</option>
 
                         </select>
                     </td>
@@ -40,14 +40,7 @@
                     <td>Nauczyciel:</td>
                     <td><select name="teacher_id" form="group">
                             @foreach($teachers as $teacher)
-                                <option
-                                    @if($teacher['id'] == $groups['teacher_id'])
-                                        selected value="{{$teacher['id']}}"
-                                    @else
-                                        value="{{$teacher['id']}}"
-                                    @endif
-                                >
-                                    {{$teacher['name']}} {{ $teacher['surname']}}</option>
+                                <option @selected($groups->teacher_id == $teacher->id)>{{$teacher->name}} {{ $teacher->surname}}</option>
                             @endforeach
                         </select>
                     </td>
@@ -56,14 +49,7 @@
                     <td>Lokalizacja:</td>
                     <td><select name="location_id" form="group">
                             @foreach($locations as $location)
-                                <option
-                                    @if($location['id'] == $groups['location_id'])
-                                        selected value="{{$location['id']}}"
-                                    @else
-                                        value="{{ $location['id'] }}"
-                                    @endif
-                                >
-                                    {{$location['town']}}</option>
+                                <option @selected($groups->location_id == $location->id)>{{$location->town}}</option>
                             @endforeach
                         </select>
                     </td>
