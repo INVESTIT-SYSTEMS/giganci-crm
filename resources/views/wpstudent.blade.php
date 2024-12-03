@@ -22,7 +22,7 @@
                     <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
                 @endforeach
             </select>
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
             <a href="{{route('students.index')}}"> <button><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
         </div>

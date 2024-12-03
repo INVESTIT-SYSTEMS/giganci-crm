@@ -13,7 +13,7 @@
 
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
-    <div class="contener">
+    <div class="helpo">
         <div class="looking">
             <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
                 <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">

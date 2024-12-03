@@ -1095,16 +1095,19 @@ span{
     }
 
     .looking button{
-        margin: 0 5px 0 10px;
-        scale: 0.9;
+        margin: 0 5px 0 5px;
+    }
+
+    .looking .look{
+        margin-left: 10px;
     }
 
     .add .addstudent{
-        margin-top: 40px;
+        margin-top: 35px;
+        margin-bottom: 5px;
     }
 
     .add button{
-        scale: 0.9;
         margin: 5px 10px 0 5px;
     }
 
