@@ -70,7 +70,7 @@
                                 <td>{{$info->parent_phone_number}}</td>
                                 <td class="colored">{{$info->parent_email}}</td>
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
-                                <td class="colored">{{$info->group ? $info->group->location->town:'Brak lokalizacji'}}</td>
+                                <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
                                <td>
                                     <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">

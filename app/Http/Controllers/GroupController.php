@@ -62,8 +62,6 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
                 'name' => 'required',
                 'classes_day' => 'required',
                 'classes_hour' => 'required',
-                'teacher_id' => 'required',
-                'location_id' => 'required',
         ]);
         Group::create([
             'name' => $request->get('name'),
@@ -71,9 +69,6 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
             'classes_hour' => $request->get('classes_hour'),
             'teacher_id' => $request->get('teacher_id'),
             'location_id' => $request->get('location_id'),
-
-
-
         ]);
         return redirect()->route('groups.index');
     }
@@ -114,8 +109,6 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
             'name' => 'required',
             'classes_day' => 'required',
             'classes_hour' => 'required',
-            'teacher_id' => 'required',
-            'location_id' => 'required',
         ]);
         $group ->update([
             'name' => $request->get('name'),
