@@ -11,28 +11,28 @@
             <table class="">
                 <tr>
                     <td>Imie:</td>
-                    <td><input type="text" name="name" id="name" placeholder="Podaj imie">
+                    <td><input type="text" name="name" id="name" placeholder="Podaj imie" value="{{old('name')}}">
                         <br>
                         <span>@error('name'){{$message}}@enderror</span>
                     </td>
                 </tr>
                 <tr>
                     <td>Nazwisko:</td>
-                    <td><input type="text" name="surname" id="surname" placeholder="Podaj nazwisko">
+                    <td><input type="text" name="surname" id="surname" placeholder="Podaj nazwisko" value="{{old('surname')}}">
                         <br>
                         <span>@error('surname'){{$message}}@enderror</span>
                     </td>
                 </tr>
                 <tr>
                     <td>Numer telefonu:</td>
-                    <td><input type="text" name="phone_number" id="phone_number" placeholder="Podaj numer telefonu">
+                    <td><input type="text" name="phone_number" id="phone_number" placeholder="Podaj numer telefonu" value="{{old('phone_number')}}">
                         <br>
                         <span>@error('phone_number'){{$message}}@enderror</span>
                     </td>
                 </tr>
                 <tr>
                     <td>E-mail:</td>
-                    <td><input type="text" name="email" id="email" placeholder="Podaj e-mail">
+                    <td><input type="text" name="email" id="email" placeholder="Podaj e-mail" value="{{old('email')}}">
                         <br>
                         <span>@error('email'){{$message}}@enderror</span>
                     </td>

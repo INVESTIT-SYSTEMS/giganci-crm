@@ -12,7 +12,7 @@
             <table class="">
                 <tr>
                     <td>Nazwa grupy:</td>
-                    <td><input type="text" name="name" id="" value="{{$groups['name']}}">
+                    <td><input type="text" name="name" id="" value="{{$groups->name}}">
                         <br>
                         <span>@error('name'){{$message}}@enderror</span></td>
                 </tr>
@@ -32,7 +32,7 @@
                 </tr>
                 <tr>
                     <td>Godzina zajęć:</td>
-                    <td><input type="text" name="classes_hour" id="" value="{{$groups['classes_hour']}}">
+                    <td><input type="text" name="classes_hour" id="" value="{{$groups->classes_hour}}">
                         <br>
                         <span>@error('classes_hour'){{$message}}@enderror</span></td>
                 </tr>
