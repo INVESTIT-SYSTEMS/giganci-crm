@@ -49,7 +49,7 @@
                         </select></td>
                 </tr>
             </table>
-            <button type="submit" class="studentadd">Dodaj Ucznia</button>
+            <button type="submit" class="studentadd">Przenieś Ucznia</button>
         </form>
     </section>
 </section>
