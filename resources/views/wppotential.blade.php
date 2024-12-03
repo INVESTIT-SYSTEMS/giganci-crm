@@ -16,15 +16,16 @@
     <div class="contener">
         <div class="looking">
             <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
-                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
                     <select name="status" form="search">
-                        <option @if($user == 'Wszystkie') selected @endif value="">Wszystkie</option>
-                        <option @if($user == 'Zapis na zajęcia pokazowe') selected @endif value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
-                        <option @if($user == 'Rezygnacja') selected @endif value="Rezygnacja">Rezygnacja</option>
+                        <option  value="">Wszystkie</option>
+                        <option @selected(request('status') == 'Zapis na zajęcia pokazowe') value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
+                        <option @selected(request('status') == 'Rezygnacja') value="Rezygnacja">Rezygnacja</option>
                     </select>
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                <a href="{{route('potentialStudents.index')}}"> <button><i class="fa-solid fa-rotate-left"></i></button> </a>
+                <a href="{{route('potentialStudents.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
+
         </div>
 
         <div class="add">

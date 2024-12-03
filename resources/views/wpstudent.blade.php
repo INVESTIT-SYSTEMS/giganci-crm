@@ -61,7 +61,7 @@
                     @foreach($student as $info)
                         <div class="gap">
                             <tr>
-                                <td><input type="checkbox" class="checkboxes[]" name="check" id="{{$info->id}}"></td>
+                                <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
                                 <td class="colored">{{$info->name}}</td>
                                 <td>{{$info->surname}}</td>
                                 <td class="colored">{{$info->birth_year}}</td>

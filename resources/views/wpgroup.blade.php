@@ -7,21 +7,21 @@
     <div class="contener">
         <div class="looking">
             <form method="get" action="{{route ('groups.index')}}">
-                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
                 <select name="Location">
                     <option value="">Lokalizacja</option>
                     @foreach($location as $locations)
-                        <option value="{{$locations->id}}">{{$locations->town}}</option>
+                        <option value="{{$locations->id}}" @selected(request('Location') == $locations->id)>{{$locations->town}}</option>
                     @endforeach
                 </select>
                 <select name="Teacher">
                     <option value="">Nauczyciel</option>
                     @foreach($teacher as $teachers)
-                        <option value="{{$teachers->id}}">{{$teachers->name}} {{$teachers->surname}}</option>
+                        <option value="{{$teachers->id}}" @selected(request('Teacher') == $teachers->id)>{{$teachers->name}} {{$teachers->surname}}</option>
                     @endforeach
                 </select>
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                <a href="{{route('groups.index')}}"> <button><i class="fa-solid fa-rotate-left"></i></button> </a>
+                <a href="{{route('groups.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
         </div>
 
