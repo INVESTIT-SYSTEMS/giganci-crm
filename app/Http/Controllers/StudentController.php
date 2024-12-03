@@ -61,11 +61,10 @@ class StudentController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'birth_year' => 'required|min:4|max:4',
+            'birth_year' => 'required|numeric',
             'parent_name' => 'required',
             'parent_surname' => 'required',
-            'parent_phone_number' => 'required|min:9|max:9|numeric',
-            'parent_email' => 'email',
+            'parent_phone_number' => 'required|numeric',
         ]);
 
         Student::create([
@@ -106,11 +105,10 @@ class StudentController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'birth_year' => 'required|min:4|max:4',
+            'birth_year' => 'required|numeric',
             'parent_name' => 'required',
             'parent_surname' => 'required',
-            'parent_phone_number' => 'required|min:9|max:9|numeric',
-            'parent_email' => 'email',
+            'parent_phone_number' => 'required|numeric',
             'group_id' => 'required'
         ]);
         $student->update($data);

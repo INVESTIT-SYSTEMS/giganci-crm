@@ -49,18 +49,16 @@ class PotentialStudentController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-
-
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'birth_year' => 'required',
+            'birth_year' => 'required|numeric',
             'status' => 'required',
             'parent_name' => 'required',
             'parent_surname' => 'required',
-            'parent_phone_number' => 'required|numeric|min:9|max:9',
-            'parent_email' => 'email',
-        ],$message);
+            'parent_phone_number' => 'required|numeric',
+//            'parent_email' => 'email',
+        ]);
 
         PotentialStudent::create([
             'name' => $request->get('name'),
@@ -100,12 +98,12 @@ class PotentialStudentController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'birth_year' => 'required',
+            'birth_year' => 'required|numeric',
             'status' => 'required',
             'parent_name' => 'required',
             'parent_surname' => 'required',
-            'parent_phone_number' => 'required|numeric|min:9|max:9',
-            'parent_email' => 'email',
+            'parent_phone_number' => 'required|numeric',
+//            'parent_email' => 'email',
         ]);
         $potentialStudent->update([
             'name' => $request->get('name'),

@@ -33,8 +33,8 @@ class TeacherController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'phone_number' => 'required|min:9|max:9|numeric',
-            'email' => 'required',
+            'phone_number' => 'required|numeric',
+            'email' => 'required|email',
         ]);
 
         Teacher::create([
@@ -70,8 +70,8 @@ class TeacherController extends Controller
         $data =$request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'phone_number' => 'required|min:9|max:9|numeric',
-            'email' => 'required',
+            'phone_number' => 'required|numeric',
+            'email' => 'required|email',
         ]);
         $teacher->update($data);
         return redirect(route('teachers.index'))->with('success', 'Updated');
