@@ -217,7 +217,7 @@ table select, textarea{
     background-color:#7043aa;
     color: white;
     font-size: 18px;
-    padding: 10px;
+    padding: 10px 11px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 10px 10px;
@@ -405,13 +405,13 @@ main h1{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    padding: 15px 0px 10px 0px;
+    padding: 15px 0 10px 0;
 }
 
 main h3{
     text-align: center;
     font-size: 22px;
-    padding: 10px 0px 25px 0px;
+    padding: 10px 0 25px 0;
 }
 
 .contentlocation{
@@ -523,7 +523,7 @@ footer{
         background-position-x: 1000px;
     }
     100% {
-        background-position-x: 0px;
+        background-position-x: 0;
     }
 }
 
@@ -532,7 +532,7 @@ footer{
         background-position-x: -1000px;
     }
     100% {
-        background-position-x: 0px;
+        background-position-x: 0;
     }
 }
 
@@ -602,7 +602,7 @@ footer{
 }
 
 .potentialuseredit td,.potentialuseredit tr {
-    border: 0px;
+    border: 0;
 }
 
 .editpotential{
@@ -665,7 +665,7 @@ footer{
 }
 
 .potentialuseradd td,.potentialuseradd tr {
-    border: 0px;
+    border: 0;
 }
 
 .potentialadd{
@@ -737,7 +737,7 @@ footer{
 }
 
 .studentsectionadd td,.studentsectionadd tr {
-    border: 0px;
+    border: 0;
 }
 
 .studentadd{
@@ -799,7 +799,7 @@ footer{
 }
 
 .studentsectionedit td,.studentsectionedit tr {
-    border: 0px;
+    border: 0;
 }
 
 .studentedit{
@@ -862,7 +862,7 @@ footer{
 }
 
 .groupsectionadd td,.groupsectionadd tr, .groupsectionedit td, .groupsectionedit tr, .locationsectionedit td, .locationsectionedit tr, .locationsectionadd td, .locationsectionadd tr, .teachercontentedit td, .teachercontentedit tr, .teachercontentadd td, .teachercontentadd tr{
-    border: 0px;
+    border: 0;
 }
 
 .groupadd, .groupedit, .locationedit, .locationadd, .teacheredit, .teacheradd{
@@ -894,11 +894,18 @@ body{
 .looking{
    float: left;
     width: 50%;
+    height: 100%;
 }
 
 .add{
     float: left;
     width: 50%;
+    height: 100%;
+}
+
+.helpo{
+    height: 21vh;
+
 }
 
 .looking button{
@@ -922,14 +929,14 @@ body{
 .looking input{
     padding: 10px;
     border: 1px solid black;
-    margin: 5px 0px 10px 45px;
+    margin: 5px 0 10px 45px;
     border-radius: 15px;
 }
 
 .looking select{
     padding: 10px;
     border: 1px solid black;
-    margin: 5px 0px 10px 5px;
+    margin: 5px 0 10px 5px;
     border-radius: 15px;
 }
 
@@ -1062,8 +1069,69 @@ span{
         gap: 5px;
         cursor: pointer;
         flex-direction: column;
+        margin-right: 5px;
     }
+
+
+
+
+
+
 }
+
+@media screen and (max-width: 767px){
+
+    .looking input{
+        width: 100px;
+        margin: 0 0 0 10px;
+        font-size: 10px;
+    }
+
+    .looking select{
+        width: 100px;
+        font-size: 10px;
+        margin-right: 210px;
+        margin-left: 10px;
+    }
+
+    .looking button{
+        margin: 0 5px 0 5px;
+    }
+
+    .looking .look{
+        margin-left: 10px;
+    }
+
+    .add .addstudent{
+        margin-top: 35px;
+        margin-bottom: 5px;
+    }
+
+    .add button{
+        margin: 5px 10px 0 5px;
+    }
+
+    .add{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .looking{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo{
+        margin-left: 5px;
+    }
+
+    .student{
+        height: 65%;
+        margin-top: 5px;
+    }
+
+}
+
 
 @media screen and (min-width: 950px) {
     .hamburger{
@@ -1107,5 +1175,132 @@ span{
         border-collapse: collapse;
         background-color: #6b40a1;
     }
+
 }
 
+
+
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    border-radius: 15px;
+}
+
+.center h1{
+    text-align: center;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px dotted silver;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.center form{
+    padding: 0 40px 10px;
+    box-sizing: border-box;
+}
+
+.center form .text_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.text_field input{
+    width: 100%;
+    padding: 0 1px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.text_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #7043aa;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.text_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #7043aa;
+    transition: .5s;
+}
+
+.text_field input:focus ~ label,
+.text_field input:valid ~ label{
+    top: -3px;
+    color: #7043aa;
+}
+
+.text_field input:focus ~ span::before,
+.text_field input:valid ~ span::before{
+    width: 100%;
+}
+
+.pass{
+    margin: -5px 0 20px 5px;
+    color: black;
+    cursor: pointer;
+}
+
+.pass:hover{
+    text-decoration: dotted underline;
+}
+
+.center input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #7043aa;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.center input[type="submit"]:hover{
+    border-color: #7043aa;
+    transition: .5s;
+    scale: 1.05;
+}
+
+.singup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    /* font-family: fantasy; */
+    color: white;
+}
+
+.singup_link a{
+    color: #7043aa;
+    text-decoration: none;
+}
+
+.singup_link a:hover{
+    text-decoration: underline dotted;
+    cursor: pointer;
+}
+
+
+.login{
+    height: 92.5vh;
+    position: relative;
+}

@@ -12,7 +12,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
     <h1 class="">Uczniowie</h1>
-    <div class="contener">
+    <div class="helpo">
         <div class="looking">
             <form method="get" action="{{route ('students.index')}}" id="search">
             <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
@@ -22,7 +22,7 @@
                     <option @selected(request('NameGroup') == $GroupName->id) value="{{$GroupName->id}}">{{$GroupName->name}}</option>
                 @endforeach
             </select>
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
             <a href="{{route('students.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
         </div>

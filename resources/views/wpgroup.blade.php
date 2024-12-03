@@ -4,7 +4,7 @@
 @include('Layout_forms.headlayout')
 <section class="contentgroup">
     <h1>Grupy</h1>
-    <div class="contener">
+    <div class="helpo">
         <div class="looking">
             <form method="get" action="{{route ('groups.index')}}">
                 <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
