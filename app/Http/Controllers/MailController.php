@@ -23,7 +23,7 @@ class MailController extends Controller
             Mail::to(new Address(config('dev.test-mail')))->send(new SendingMail($mailData));
         } catch (\Exception $err)
         {
-            Log::info('ERROR-MAIL: '.$err->getMessage());
+            return $err->getMessage();
         }
     return "<p>";
     }
