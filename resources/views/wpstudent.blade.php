@@ -12,14 +12,14 @@
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
     <h1 class="">Uczniowie</h1>
-    <div class="helpo">
+    <div class="contener">
         <div class="looking">
             <form method="get" action="{{route ('students.index')}}" id="search">
-            <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
+            <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
             <select name="NameGroup">
                 <option value="">Nazwa Grupy</option>
                 @foreach($group as $GroupName)
-                    <option @selected(request('NameGroup') == $GroupName->id) value="{{$GroupName->id}}">{{$GroupName->name}}</option>
+                    <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
                 @endforeach
             </select>
             <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>

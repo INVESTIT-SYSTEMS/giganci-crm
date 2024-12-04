@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <td>Rok urodzenia:</td>
-                    <td><input type="number" name="birth_year" id="" placeholder="Podaj rok urodzin" value="{{old('birth_year')}}">
+                    <td><input type="text" name="birth_year" id="" placeholder="Podaj rok urodzin" value="{{old('birth_year')}}">
                         <br>
                         <span>@error('birth_year'){{$message}}@enderror</span>
                     </td>

@@ -25,9 +25,12 @@ Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);
 
-Route::post('/message', [StudentController::class, 'message'])->name('message.index');
+Route::get('/message', [StudentController::class, 'message'])->name('message.index');
 
 Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent'])->name('moveStudent.index');
+
+Route::get('send-mail', [MailController::class, 'index']);
+
 
 
 //Perla
