@@ -129,7 +129,7 @@ table{
     background-color: #7043aa;
     color: white;
     font-size: 18px;
-    padding: 10px;
+    padding: 10px 11px;
     border: #7043aa solid 3px;
     border-radius: 15px;
     margin: 10px 45px 20px 10px;
@@ -210,26 +210,6 @@ table select, textarea{
     align-items: center;
     justify-content: center;
     margin: auto;
-}
-
-.addstudent{
-    /*background-color: #ff6213;*/
-    background-color:#7043aa;
-    color: white;
-    font-size: 18px;
-    padding: 10px 11px;
-    border: #7043aa solid 3px;
-    border-radius: 15px;
-    margin: 10px 45px 10px 10px;
-    float: right;
-    box-shadow: black 5px 5px 10px;
-    font-weight: bold;
-}
-
-.addstudent:hover{
-    scale: 1.1;
-    transition: all 0.35s;
-    background-color: #cc531c;
 }
 
 .student{
@@ -891,74 +871,77 @@ body{
     scale: 0.9;
 }
 
-.looking{
-   float: left;
-    width: 50%;
-    height: 100%;
-}
+/*.looking{*/
+/*   float: left;*/
+/*    width: 55%;*/
+/*    height: 100%;*/
+/*}*/
 
-.add{
-    float: left;
-    width: 50%;
-    height: 100%;
-}
+/*.butttons{*/
+/*    float: left;*/
+/*    height: 100%;*/
+/*    width: 15%;*/
+/*}*/
 
-.helpo{
-    height: 21vh;
+/*.add{*/
+/*    float: left;*/
+/*    width: 30%;*/
+/*    height: 100%;*/
+/*}*/
 
-}
 
-.looking button{
-    background-color:#7043aa;
-    color: white;
-    padding: 10px;
-    border: #7043aa solid 3px;
-    border-radius: 15px;
-    margin: 5px 5px 10px 10px;
-    box-shadow: black 5px 5px 10px;
-    font-weight: bold;
-    font-size: 18px;
-}
+/*.butttons button{*/
+/*    background-color:#7043aa;*/
+/*    color: white;*/
+/*    padding: 10px;*/
+/*    border: #7043aa solid 3px;*/
+/*    border-radius: 15px;*/
+/*    margin: 5px 5px 10px 10px;*/
+/*    box-shadow: black 5px 5px 10px;*/
+/*    font-weight: bold;*/
+/*    font-size: 18px;*/
+/*}*/
 
-.looking button:hover{
-    scale: 1.1;
-    transition: all 0.35s;
-    background-color: #cc531c;
-}
 
-.looking input{
-    padding: 10px;
-    border: 1px solid black;
-    margin: 5px 0 10px 45px;
-    border-radius: 15px;
-}
+/*.butttons button:hover{*/
+/*    scale: 1.1;*/
+/*    transition: all 0.35s;*/
+/*    background-color: #cc531c;*/
+/*}*/
 
-.looking select{
-    padding: 10px;
-    border: 1px solid black;
-    margin: 5px 0 10px 5px;
-    border-radius: 15px;
-}
+/*.looking input{*/
+/*    padding: 10px;*/
+/*    border: 1px solid black;*/
+/*    margin: 5px 0 10px 45px;*/
+/*    border-radius: 15px;*/
+/*}*/
 
-.smsbutton{
-    /*background-color: #ff6213;*/
-    background-color:#7043aa;
-    color: white;
-    padding: 10px;
-    border: #7043aa solid 3px;
-    border-radius: 15px;
-    margin: 10px 10px 10px 10px;
-    float: right;
-    box-shadow: black 5px 5px 10px;
-    font-weight: bold;
-    font-size: 18px;
-}
+/*.looking select{*/
+/*    padding: 10px;*/
+/*    border: 1px solid black;*/
+/*    margin: 5px 0 10px 5px;*/
+/*    border-radius: 15px;*/
+/*}*/
 
-.smsbutton:hover{
-    scale: 1.1;
-    transition: all 0.35s;
-    background-color: #cc531c;
-}
+/*.smsbutton{*/
+/*    !*background-color: #ff6213;*!*/
+/*    background-color:#7043aa;*/
+/*    color: white;*/
+/*    padding: 10px;*/
+/*    border: #7043aa solid 3px;*/
+/*    border-radius: 15px;*/
+/*    margin: 10px 10px 10px 10px;*/
+/*    float: right;*/
+/*    box-shadow: black 5px 5px 10px;*/
+/*    font-weight: bold;*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*.smsbutton:hover{*/
+/*    scale: 1.1;*/
+/*    transition: all 0.35s;*/
+/*    background-color: #cc531c;*/
+/*}*/
 
 .send{
     /*background-color: #ff6213;*/
@@ -1082,7 +1065,7 @@ span{
 @media screen and (max-width: 767px){
 
     .looking input{
-        width: 100px;
+        width: 150px;
         margin: 0 0 0 10px;
         font-size: 10px;
     }
@@ -1092,19 +1075,12 @@ span{
         font-size: 10px;
         margin-right: 210px;
         margin-left: 10px;
+        height: 20px;
+        padding: 0 0 0 5px;
     }
 
-    .looking button{
-        margin: 0 5px 0 5px;
-    }
+    .butttons button{
 
-    .looking .look{
-        margin-left: 10px;
-    }
-
-    .add .addstudent{
-        margin-top: 35px;
-        margin-bottom: 5px;
     }
 
     .add button{
@@ -1114,20 +1090,58 @@ span{
     .add{
         display: flex;
         flex-direction: column;
+        align-items: end;
+        justify-content: end;
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+
+    .butttons{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;
+        float: left;
+        height: 100%;
+        width: 20%;
     }
 
     .looking{
         display: flex;
         flex-direction: column;
+        justify-content: end;
+        float: left;
+        width: 50%;
+        height: 100%;
     }
 
     .logo{
         margin-left: 5px;
     }
 
-    .student{
+    .student, .potentialuser, .group{
         height: 65%;
-        margin-top: 5px;
+    }
+
+
+    .butttons button{
+        background-color:#7043aa;
+        color: white;
+        padding: 10px;
+        border: #7043aa solid 3px;
+        border-radius: 15px;
+        margin: 5px 10px 0 5px;
+        box-shadow: black 5px 5px 10px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+
+    .butttons button:hover{
+        scale: 1.1;
+        transition: all 0.35s;
+        background-color: #cc531c;
     }
 
 }
@@ -1303,4 +1317,122 @@ span{
 .login{
     height: 92.5vh;
     position: relative;
+}
+
+.addstudent, .smsbutton, .look, .refresh{
+    /*background-color: #ff6213;*/
+    background-color:#7043aa;
+    color: white;
+    font-size: 18px;
+    padding: 10px 11px;
+    border: #7043aa solid 3px;
+    border-radius: 15px;
+    /*margin: 10px 45px 10px 10px;*/
+    float: right;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.addstudent:hover,  .smsbutton:hover, .look:hover, .refresh:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.searchinput input{
+    padding: 0 10px;
+    border: 1px solid black;
+    margin: auto 10px auto 25px;
+    border-radius: 15px;
+    width: 50%;
+    text-align: center;
+    height: 100%;
+}
+
+.searchinput select{
+    padding: 0 10px;
+    border: 1px solid black;
+    margin: auto 10px;
+    border-radius: 15px;
+    width: 40%;
+    text-align: center;
+    height: 100%;
+}
+
+.searchinput, .buttsearch, .addimail{
+    float: left;
+    margin-bottom: 10px;
+}
+
+
+
+.searchinput{
+    width: 60%;
+    height: 100%;
+}
+
+.buttsearch{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+.addimail{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.buttsearch button{
+    float: left;
+    /*margin: auto 15px auto 5px;*/
+}
+
+.buttsearch a{
+    margin: auto 15px;
+    padding: 0;
+}
+
+.addimail button{
+    /*float: right;*/
+    /*margin: auto 15px auto 5px;*/
+}
+
+.addimail a{
+    margin: 0;
+    padding: 0;
+}
+
+.addimail a{
+    margin-right: 25px;
+}
+
+.helpo{
+    height: 7vh;
+}
+
+#search{
+    height: 100%;
+}
+
+#send{
+    height: 100%;
+    float: right;
+}
+
+.addimail form{
+    padding: 0;
+    margin: 0;
+    /*height: 100%;*/
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.smsbutton{
+    margin-right: 25px;
 }

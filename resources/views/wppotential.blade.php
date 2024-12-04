@@ -22,11 +22,12 @@
                         <option @selected(request('status') == 'Zapis na zajęcia pokazowe') value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
                         <option @selected(request('status') == 'Rezygnacja') value="Rezygnacja">Rezygnacja</option>
                     </select>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+                <div class="butttons">
+                <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <a href="{{route('potentialStudents.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
-
-        </div>
+                </div>
 
         <div class="add">
             <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential"><i class="fa-solid fa-plus"></i></button></a>

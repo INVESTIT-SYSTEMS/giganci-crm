@@ -34,9 +34,10 @@ class StudentController extends Controller
             });
         })->when($request->get('NameGroup'), function ($query) use ($request) {
             $query->where('group_id', $request->get('NameGroup'));
-        })->when($request->get('Location'), function ($query) use ($request){
-            $query->where('location_id', $request->get('Location'));
         })
+//            ->when($request->get('Location'), function ($query) use ($request){
+//            $query->where('location_id', $request->get('Location'));
+//        })
             ->get();
 
 
@@ -49,8 +50,9 @@ class StudentController extends Controller
     public function create()
     {
         $saved_students = Student::all();
+        $locations = Location::all();
         $groups= Group::all();
-        return view('Layout_forms.StudentAddingForm', ['student'=>$saved_students], ['group'=>$groups]);
+        return view('Layout_forms.StudentAddingForm', ['student'=>$saved_students, 'group'=>$groups, 'location'=>$locations]);
     }
 
     /**
@@ -65,6 +67,7 @@ class StudentController extends Controller
             'parent_name' => 'required',
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|numeric',
+            'group_id' => 'required'
         ]);
 
         Student::create([

@@ -13,26 +13,29 @@
 <section class="contentstudent">
     <h1 class="">Uczniowie</h1>
     <div class="helpo">
-        <div class="looking">
+
+        <div class="searchinput">
             <form method="get" action="{{route ('students.index')}}" id="search">
-            <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
-            <select name="NameGroup">
-                <option value="">Nazwa Grupy</option>
-                @foreach($group as $GroupName)
-                    <option @selected(request('NameGroup') == $GroupName->id) value="{{$GroupName->id}}">{{$GroupName->name}}</option>
-                @endforeach
-            </select>
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+                <select name="NameGroup">
+                    <option value="">Nazwa Grupy</option>
+                    @foreach($group as $GroupName)
+                        <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
+                    @endforeach
+                </select>
+        </div>
+
+        <div class="buttsearch">
             <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <a href="{{route('students.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
+            <a href="{{route('students.index')}}"> <button class="refresh" type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
         </div>
 
-        <div class="add">
-
-            <a href="{{route('students.create')}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+        <div class="addimail">
             <form action="{{route('message.index')}}" method="get" id="send">
-                @csrf
-             <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
+            <a href="{{route('students.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+
+                <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
     </div>
