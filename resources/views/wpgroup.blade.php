@@ -6,7 +6,7 @@
     <h1>Grupy</h1>
     <div class="helpo">
         <div class="looking">
-            <form method="get" action="{{route ('groups.index')}}">
+            <div method="get" action="{{route ('groups.index')}}">
                 <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
                 <select name="Location">
                     <option value="">Lokalizacja</option>
@@ -20,10 +20,12 @@
                         <option value="{{$teachers->id}}" @selected(request('Teacher') == $teachers->id)>{{$teachers->name}} {{$teachers->surname}}</option>
                     @endforeach
                 </select>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="butttons">
+                <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
                 <a href="{{route('groups.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
-        </div>
+            </div>
 
         <div class="add">
 
