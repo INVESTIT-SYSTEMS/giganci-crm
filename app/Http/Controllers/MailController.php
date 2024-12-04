@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\SendingMail;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Address;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
@@ -14,11 +15,17 @@ class MailController extends Controller
      */
     public function index()
     {
-        $mailData = [
-            'title' => 'Siema siema',
-            'body' => 'Witam się z tobą',
-        ];
-        Mail::to(new Address(config('dev.test-mail')))->send(new SendingMail($mailData));
+        try {
+            $mailData = [
+                'title' => 'Siema siema',
+                'body' => 'Witam się z tobą',
+            ];
+            Mail::to(new Address(config('dev.test-mail')))->send(new SendingMail($mailData));
+        } catch (\Exception $err)
+        {
+            Log::info('ERROR-MAIL: '.$err->getMessage());
+        }
+
     }
 
     /**
