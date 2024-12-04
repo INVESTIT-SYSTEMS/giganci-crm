@@ -1,47 +1,38 @@
+<html>
 <head>
-    <title>Dodaj potencjalnego ucznia</title>
+    <title>Dodaj ucznia</title>
 </head>
 @include('Layout_forms.headlayout')
 
-<section class="contentpotentialadd">
-    <h1>Dodaj potencjalnego ucznia</h1>
-    <section class="bg-gray-300 potentialuseradd">
-        <form action="{{route('potentialStudents.store')}}" method="post" id="potential">
+<section class="contentstudentadd">
+    <h1>Dodaj ucznia</h1>
+    <section class="bg-gray-300 studentsectionadd">
+        <form action="{{route('StudentInGroup.store', ['group'=>$group])}}" method="POST" id="StudentForm">
             @csrf
             <table class="">
                 <tr>
                     <td>Imie:</td>
-                    <td><input type="text" name="name" id="" placeholder="Podaj imie" value="{{old('name')}}">
+                    <td><input type="text" name="name" id="name" placeholder="Podaj imie" value="{{old('name')}}">
                         <br>
                         <span>@error('name'){{$message}}@enderror</span>
                     </td>
+
                 </tr>
+
                 <tr>
                     <td>Nazwisko:</td>
-                    <td><input type="text" name="surname" id="" placeholder="Podaj nazwisko" value="{{old('surname')}}">
+                    <td><input type="text" name="surname" id="surname" placeholder="Podaj nazwisko" value="{{old('surname')}}">
                         <br>
                         <span>@error('surname'){{$message}}@enderror</span>
                     </td>
+
                 </tr>
                 <tr>
                     <td>Rok urodzenia:</td>
-                    <td><input type="text" name="birth_year" id="" placeholder="Podaj rok urodzin" value="{{old('birth_year')}}">
+                    <td><input type="text" name="birth_year" id="birth_year" placeholder="Podaj rok urodzin" value="{{old('birth_year')}}">
                         <br>
                         <span>@error('birth_year'){{$message}}@enderror</span>
                     </td>
-                </tr>
-                <tr>
-                    <td>Status:</td>
-                    <td>
-                        <select name="status" form="potential">
-                            <option value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
-                            <option value="Rezygnacja">Rezygnacja</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Komentarz:</td>
-                    <td><textarea form="potential" name="comment">{{old('comment')}}</textarea></td>
                 </tr>
                 <tr>
                     <td>Imie rodzica:</td>
@@ -66,14 +57,19 @@
                 </tr>
                 <tr>
                     <td>E-mail rodzica:</td>
-                    <td><input type="email" name="parent_email" id="" placeholder="Podaj e-mail rodzica" value="{{old('parent_email')}}">
+                    <td><input type="email" name="parent_email" id="" placeholder="Podaj e-mail rodzica" value="{{old('email')}}">
                         <br>
                         <span>@error('parent_email'){{$message}}@enderror</span>
                     </td>
                 </tr>
+                <tr>
+                    <td>Grupa:</td>
+                    <td>{{$group}}</td>
+                </tr>
             </table>
-            <button type="submit" class="potentialadd">Dodaj Użytkownika</button>
+            <button type="submit" class="studentadd">Dodaj Ucznia</button>
         </form>
     </section>
 </section>
 @include('Layout_forms.footerlayout')
+</html>

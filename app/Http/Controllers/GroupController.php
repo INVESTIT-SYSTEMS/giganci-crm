@@ -78,7 +78,9 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
      */
     public function show(Request $request, Group $group)
     {
-       $groups = $group['id'];
+        $groupName = $group['name'];
+
+        $groups = $group['id'];
         $savedLocations = Location::all();
         $savedGroups = Group::all();
 
@@ -87,7 +89,7 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
 
      })->get();
 
-        return view('wpstudent', ['student' => $query, 'location' => $savedLocations, 'group' => $savedGroups]);
+        return view('groupView', ['student' => $query, 'location' => $savedLocations, 'group' => $groupName]);
     }
 
     /**
