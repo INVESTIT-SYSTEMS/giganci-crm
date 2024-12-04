@@ -25,7 +25,7 @@ class MailController extends Controller
         {
             Log::info('ERROR-MAIL: '.$err->getMessage());
         }
-
+    return "<p>";
     }
 
     /**
