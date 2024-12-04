@@ -136,12 +136,13 @@ public function moveStudent(PotentialStudent $studentData): View
 
 public function message(Request $request)
 {
-    $cos = $request->all();
-    $query = Student::where(function (Builder $query) use($cos){
-        $query->where("id", $cos);
 
-    })->get();
+    $query = Student::whereIn('id',$request->get('check'))->get();
 
-    return view('wpsms', ['student'=>$query]);
+
+    return view('wpsms', ['student'=>$query,
+        'location' => Location::all(),
+        'group' => Group::all(),
+        ]);
 }
 }

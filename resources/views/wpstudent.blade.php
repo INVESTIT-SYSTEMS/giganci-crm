@@ -3,7 +3,7 @@
 </head>
 <script>
     function checkAll(source) {
-        checkboxes = document.getElementsByName('check');
+        checkboxes = document.getElementsByName('check[]');
         for(var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.checked;
         }
@@ -13,14 +13,14 @@
 <section class="contentstudent">
     <h1 class="">Uczniowie</h1>
     <div class="helpo">
-
+        <form method="get" action="{{route ('students.index')}}" id="search">
         <div class="searchinput">
-            <form method="get" action="{{route ('students.index')}}" id="search">
-                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
                 <select name="NameGroup">
                     <option value="">Nazwa Grupy</option>
                     @foreach($group as $GroupName)
-                        <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
+                        <option @selected(request('NameGroup') == $GroupName->id) value="{{$GroupName->id}}">{{$GroupName->name}}</option>
                     @endforeach
                 </select>
         </div>
@@ -28,9 +28,9 @@
         <div class="buttsearch">
             <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
             <a href="{{route('students.index')}}"> <button class="refresh" type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
-            </form>
-        </div>
 
+        </div>
+        </form>
         <div class="addimail">
             <form action="{{route('message.index')}}" method="get" id="send">
             <a href="{{route('students.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
@@ -60,11 +60,11 @@
                     <th>Lokalizacaja</th>
                     <th>Edytor</th>
                 </tr>
-
+                <form action="">
                     @foreach($student as $info)
                         <div class="gap">
                             <tr>
-                                <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
+                                <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
                                 <td class="colored">{{$info->name}}</td>
                                 <td>{{$info->surname}}</td>
                                 <td class="colored">{{$info->birth_year}}</td>
@@ -75,7 +75,7 @@
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                                 <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
                                <td>
-                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
+                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit" type="button"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
                                         @csrf
                                         @method('delete')
@@ -85,6 +85,7 @@
                             </tr>
                         </div>
                     @endforeach
+                </form>
             </table>
     </section>
 </section>
