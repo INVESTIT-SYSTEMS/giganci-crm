@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendingMail;
+use App\Models\Group;
+use App\Models\Location;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Log;
@@ -13,39 +16,43 @@ class MailController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function message(Request $request)
+    {
+
+        $emailList = $request->get('check');
+
+
+        return view('wpsms', ['student'=> Student::whereIn('id', $emailList)->get(),
+            'location' => Location::all(),
+            'group' => Group::all(),
+        ]);
+
+
+    }
     public function index(Request $request)
     {
-         $data = $request->get('check');
-         dd($data);
-         return view();
+            $data = $request->all();
 
-//        try {
-//            $mailData = [
-//                'title' => 'Siema siema',
-//                'body' => 'Witam się z tobą',
-//            ];
-//            $addresses = [
-//                new Address(''),
-//                new Address(''),
-//                new Address(''),
-//                new Address(''),
-//            ];
-//                Mail::to($addresses)->send(new SendingMail($mailData));
-//
-//        } catch (\Exception $err)
-//        {
-//            return $err->getMessage();
-//        }
+            for ($i=$data; $i>=$data; $i--){
+                $tablica[$i] = $data;
+            }
 
+
+            $mailData = [
+                'title' => 'Siema siema',
+                'body' => 'super',
+            ];
+
+            Mail::to(new Address('jakub.janczak@zsp1jarocin.edu.pl'))->send(new SendingMail($mailData));
+
+
+    return "<p>";
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -79,11 +86,23 @@ class MailController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+
+//    public function create()
+//    {
+//    }
+//    public function store(Request $request)
+//    {
+//    }
+//    public function show(string $id)
+//    {
+//    }
+//    public function edit(string $id)
+//    {
+//    }
+//    public function update(Request $request, string $id)
+//    {
+//    }
+//    public function destroy(string $id)
+//    {
+//    }
 }
