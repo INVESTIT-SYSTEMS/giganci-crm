@@ -1057,7 +1057,9 @@ span{
         margin-right: 5px;
     }
 
-
+    .addteacher, .addlocation{
+        margin: 10px 20px 20px 10px;
+    }
 
 
 
@@ -1069,7 +1071,7 @@ span{
     .searchinput input{
         padding: 0 10px;
         border: 1px solid black;
-        margin: auto 10px 5px 10px;
+        margin: 1% 10px;
         border-radius: 15px;
         width: 95%;
         text-align: center;
@@ -1079,7 +1081,7 @@ span{
     .searchinput select{
         padding: 0 10px;
         border: 1px solid black;
-        margin: auto 10px 5px 10px;
+        margin: 1% 10px;
         border-radius: 15px;
         width: 95%;
         text-align: center;
@@ -1100,9 +1102,9 @@ span{
         float: left;
         margin-bottom: 10px;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        flex-direction: column;
+
     }
 
 
@@ -1115,7 +1117,6 @@ span{
     .buttsearch{
         width: 20%;
         height: 100%;
-
     }
 
     .addimail{
@@ -1129,9 +1130,10 @@ span{
     }
 
     .buttsearch a{
-        margin: auto 15px;
+        margin: 0;
         padding: 0;
     }
+
 /*Tomek Sigma*/
 
 
@@ -1141,7 +1143,11 @@ span{
     }
 
     .addimail button{
-        margin: auto 15px;
+        margin: 13% 10px;
+    }
+
+    .buttsearch button{
+        margin: 10% 15px;
     }
 
     .addimail a{
@@ -1150,7 +1156,6 @@ span{
 
     .helpo{
         height: 18vh;
-
     }
 
     #search{
@@ -1162,6 +1167,7 @@ span{
         height: 100%;
         float: right;
         display: flex;
+        align-items: center;
         flex-direction: column;
     }
 
@@ -1170,7 +1176,6 @@ span{
         margin: 0;
         float: right;
         display: flex;
-        align-items: center;
     }
 
 
@@ -1180,7 +1185,7 @@ span{
     }
 
     .student, .potentialuser, .group{
-        height: 65%;
+        height: 68%;
     }
 
 
