@@ -6,6 +6,7 @@ use App\Mail\SendingMail;
 use App\Models\Group;
 use App\Models\Location;
 use App\Models\Student;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Log;
@@ -32,20 +33,16 @@ class MailController extends Controller
     }
     public function index(Request $request)
     {
-            $data = $request->all();
 
-            for ($i=$data; $i>=$data; $i--){
-                $tablica[$i] = $data;
-            }
-
-
+    $users = Student::whereIn('parent_email', $request->get('emails'))->get();
             $mailData = [
                 'title' => 'Siema siema',
                 'body' => 'super',
             ];
 
-            Mail::to(new Address('jakub.janczak@zsp1jarocin.edu.pl'))->send(new SendingMail($mailData));
-
+            foreach ($users as $user) {
+            Mail::to($user->parent_email)->send(new SendingMail($mailData));
+        }
 
     return "<p>";
     }
