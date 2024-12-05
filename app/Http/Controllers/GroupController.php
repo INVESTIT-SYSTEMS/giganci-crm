@@ -125,4 +125,10 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
         $group -> delete();
         return redirect()->route('groups.index');
     }
+
+    public function  ShowGroups(Group $group)
+    {
+        return view('layout_forms.StudentInGroupAddingForm');
+    }
+
 }

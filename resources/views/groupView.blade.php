@@ -10,6 +10,7 @@
     }
 </script>
 @include('Layout_forms.headlayout')
+<form action="{{view('showGroups', ['group'=>$group])}}" method="get">
 <section class="contentstudent">
     <h1 class="">Uczniowie z grupy {{$group}}</h1>
     <div class="helpo">
@@ -30,15 +31,8 @@
                 <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
-
     </div>
-
-
     <section class="bg-gray-300 student">
-
-
-
-
             <table class="">
                 <tr>
                     <th><input type="checkbox" name="" id="" onclick="checkAll(this)"></th>
@@ -53,32 +47,35 @@
                     <th>Lokalizacaja</th>
                     <th>Edytor</th>
                 </tr>
-
                     @foreach($student as $info)
                         <div class="gap">
-                            <tr>
-                                <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
-                                <td class="colored">{{$info->name}}</td>
-                                <td>{{$info->surname}}</td>
-                                <td class="colored">{{$info->birth_year}}</td>
-                                <td>{{$info->parent_name}}</td>
-                                <td class="colored">{{$info->parent_surname}}</td>
-                                <td>{{$info->parent_phone_number}}</td>
-                                <td class="colored">{{$info->parent_email}}</td>
-                                <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
-                                <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
-                               <td>
-                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
-                                    <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
-                                    </form>
-                                </td>
-                            </tr>
+
+                                <tr>
+                                    <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
+                                    <td class="colored">{{$info->name}}</td>
+                                    <td>{{$info->surname}}</td>
+                                    <td class="colored">{{$info->birth_year}}</td>
+                                    <td>{{$info->parent_name}}</td>
+                                    <td class="colored">{{$info->parent_surname}}</td>
+                                    <td>{{$info->parent_phone_number}}</td>
+                                    <td class="colored">{{$info->parent_email}}</td>
+                                    <td><input hidden name="groupName" value="{{$info->group ? $info->group->name:'Brak grupy'}}">
+                                        {{$info->group ? $info->group->name:'Brak grupy'}}
+                                    </td>
+                                    <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
+                                   <td>
+                                        <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
+                                        <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
                         </div>
                     @endforeach
             </table>
     </section>
 </section>
+</form>
 @include('Layout_forms.footerlayout')

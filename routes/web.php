@@ -33,6 +33,7 @@ Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent
 
 Route::get('/send-mail', [MailController::class, 'index'])->name('mail.send');
 
+Route::get('/addStudentInGroup', [GroupController::class, 'ShowGroups'])->name('showGroups');
 
 
 //Perla t gej
