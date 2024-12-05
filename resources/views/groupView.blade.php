@@ -12,17 +12,25 @@
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
     <h1 class="">Uczniowie z grupy {{$group}}</h1>
-    <div class="contener">
+    <div class="helpo">
+
+        <div class="searchinput">
+
+        </div>
+
+        <div class="buttsearch">
+
+        </div>
 
 
-        <div class="add">
-
-{{--            <a href="{{route('StudentInGroupForm.index', ['group'=>$group])}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>--}}
+        <div class="addimail">
             <form action="{{route('message.index')}}" method="get" id="send">
-                @csrf
-             <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
+                <a href="{{route('students.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+
+                <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
+
     </div>
 
 

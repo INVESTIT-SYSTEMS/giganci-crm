@@ -1104,9 +1104,7 @@ span{
         display: flex;
         align-items: center;
         flex-direction: column;
-
     }
-
 
 
     .searchinput{
@@ -1632,5 +1630,7 @@ span{
 .addstudent{
     padding: 10px 12px;
 }
+
+
 
 
