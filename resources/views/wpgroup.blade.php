@@ -4,37 +4,41 @@
 @include('Layout_forms.headlayout')
 <section class="contentgroup">
     <h1>Grupy</h1>
+
     <div class="helpo">
-        <div class="looking">
-            <div method="get" action="{{route ('groups.index')}}">
+        <div class="searchinput">
+            <form method="get" action="{{route ('groups.index')}}" id="search">
                 <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
-                <select name="Location">
+                <select name="Location" class="select2">
                     <option value="">Lokalizacja</option>
                     @foreach($location as $locations)
                         <option value="{{$locations->id}}" @selected(request('Location') == $locations->id)>{{$locations->town}}</option>
                     @endforeach
                 </select>
-                <select name="Teacher">
+                <select name="Teacher" class="select2">
                     <option value="">Nauczyciel</option>
                     @foreach($teacher as $teachers)
                         <option value="{{$teachers->id}}" @selected(request('Teacher') == $teachers->id)>{{$teachers->name}} {{$teachers->surname}}</option>
                     @endforeach
                 </select>
-            </div>
-            <div class="butttons">
-                <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <a href="{{route('groups.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
+        </div>
+
+        <div class="buttsearch">
+            <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="{{route('groups.index')}}"> <button class="refresh" type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
-            </div>
+        </div>
 
-        <div class="add">
 
-            <a href="{{route('groups.create')}}"> <button type="submit" class="addgroup"><i class="fa-solid fa-plus"></i></button></a>
+        <div class="addimail">
             <form action="{{route('message.index')}}" method="get" id="send">
-                <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
+                <a href="{{route('groups.create')}}"><button type="button" class="addgroup"><i class="fa-solid fa-plus"></i></button></a>
+
+                <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
     </div>
+
     <section class=" bg-gray-300 group">
         <table class="">
             <tr>

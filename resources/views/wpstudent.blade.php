@@ -13,10 +13,11 @@
 <section class="contentstudent">
     <h1 class="">Uczniowie</h1>
     <div class="helpo">
-        <form method="get" action="{{route ('students.index')}}" id="search">
-        <div class="searchinput">
 
-                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
+
+        <div class="searchinput">
+            <form method="get" action="{{route ('students.index')}}" id="search">
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
                 <select name="NameGroup">
                     <option value="">Nazwa Grupy</option>
                     @foreach($group as $GroupName)
@@ -28,9 +29,10 @@
         <div class="buttsearch">
             <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
             <a href="{{route('students.index')}}"> <button class="refresh" type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
-
+            </form>
         </div>
-        </form>
+
+
         <div class="addimail">
             <form action="{{route('message.index')}}" method="get" id="send">
             <a href="{{route('students.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
@@ -60,7 +62,7 @@
                     <th>Lokalizacaja</th>
                     <th>Edytor</th>
                 </tr>
-                <form action="">
+
                     @foreach($student as $info)
                         <div class="gap">
                             <tr>
