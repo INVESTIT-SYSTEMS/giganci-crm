@@ -1020,6 +1020,7 @@ span{
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transform: translateY(-100%);
         opacity: 0;
+        z-index: 1001;
     }
 
     .menu.active {
@@ -1065,57 +1066,114 @@ span{
 
 @media screen and (max-width: 767px){
 
-    .looking input{
-        width: 150px;
-        margin: 0 0 0 10px;
-        font-size: 10px;
+    .searchinput input{
+        padding: 0 10px;
+        border: 1px solid black;
+        margin: auto 10px 5px 10px;
+        border-radius: 15px;
+        width: 95%;
+        text-align: center;
+        height: 45%;
     }
 
-    .looking select{
-        width: 100px;
-        font-size: 10px;
-        margin-right: 210px;
-        margin-left: 10px;
-        height: 20px;
-        padding: 0 0 0 5px;
+    .searchinput select{
+        padding: 0 10px;
+        border: 1px solid black;
+        margin: auto 10px 5px 10px;
+        border-radius: 15px;
+        width: 95%;
+        text-align: center;
+        height: 45%;
     }
 
-    .butttons button{
-
+    .searchinput .select2{
+        padding: 0 10px;
+        border: 1px solid black;
+        margin: auto 10px;
+        border-radius: 15px;
+        width: 95%;
+        text-align: center;
+        height: 20%;
     }
 
-    .add button{
-        margin: 5px 10px 0 5px;
-    }
-
-    .add{
+    .searchinput, .buttsearch, .addimail{
+        float: left;
+        margin-bottom: 10px;
         display: flex;
         flex-direction: column;
-        align-items: end;
-        justify-content: end;
-        float: left;
-        width: 30%;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    .searchinput{
+        width: 60%;
         height: 100%;
     }
 
-    .butttons{
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        justify-content: end;
-        float: left;
-        height: 100%;
+    .buttsearch{
         width: 20%;
+        height: 100%;
+
     }
 
-    .looking{
+    .addimail{
+        width: 20%;
+        height: 100%;
+        float: left;
+    }
+
+    .buttsearch button{
+        float: left;
+    }
+
+    .buttsearch a{
+        margin: auto 15px;
+        padding: 0;
+    }
+/*Tomek Sigma*/
+
+
+    .addimail a{
+        margin: 0;
+        padding: 0;
+    }
+
+    .addimail button{
+        margin: auto 15px;
+    }
+
+    .addimail a{
+        /*margin-right: 25px;*/
+    }
+
+    .helpo{
+        height: 18vh;
+
+    }
+
+    #search{
+        height: 100%;
+        margin: auto;
+    }
+
+    #send{
+        height: 100%;
+        float: right;
         display: flex;
         flex-direction: column;
-        justify-content: end;
-        float: left;
-        width: 50%;
-        height: 100%;
     }
+
+    .addimail form{
+        padding: 0;
+        margin: 0;
+        float: right;
+        display: flex;
+        align-items: center;
+    }
+
+
 
     .logo{
         margin-left: 5px;
@@ -1126,24 +1184,6 @@ span{
     }
 
 
-    .butttons button{
-        background-color:#7043aa;
-        color: white;
-        padding: 10px;
-        border: #7043aa solid 3px;
-        border-radius: 15px;
-        margin: 5px 10px 0 5px;
-        box-shadow: black 5px 5px 10px;
-        font-weight: bold;
-        font-size: 18px;
-    }
-
-
-    .butttons button:hover{
-        scale: 1.1;
-        transition: all 0.35s;
-        background-color: #cc531c;
-    }
 
 }
 
@@ -1190,6 +1230,119 @@ span{
         border-collapse: collapse;
         background-color: #6b40a1;
     }
+
+
+
+    .searchinput input{
+        padding: 0 10px;
+        border: 1px solid black;
+        margin: auto 10px auto 25px;
+        border-radius: 15px;
+        width: 50%;
+        text-align: center;
+        height: 100%;
+    }
+
+    .searchinput select{
+        padding: 0 10px;
+        border: 1px solid black;
+        margin: auto 10px;
+        border-radius: 15px;
+        width: 40%;
+        text-align: center;
+        height: 100%;
+    }
+
+    .searchinput .select2{
+        padding: 0 10px;
+        border: 1px solid black;
+        margin: auto 10px;
+        border-radius: 15px;
+        width: 20%;
+        text-align: center;
+        height: 100%;
+    }
+
+    .searchinput, .buttsearch, .addimail{
+        float: left;
+        margin-bottom: 10px;
+    }
+
+
+
+    .searchinput{
+        width: 60%;
+        height: 100%;
+    }
+
+    .buttsearch{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+    }
+
+    .addimail{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        justify-content: flex-end;
+        float: left;
+    }
+
+    .buttsearch button{
+        float: left;
+        /*margin: auto 15px auto 5px;*/
+    }
+
+    .buttsearch a{
+        margin: auto 15px;
+        padding: 0;
+    }
+
+    .addimail button{
+        /*float: right;*/
+        /*margin: auto 15px auto 5px;*/
+    }
+
+    .addimail a{
+        margin: 0;
+        padding: 0;
+    }
+
+    .addimail a{
+        margin-right: 25px;
+    }
+
+    .helpo{
+        height: 7vh;
+    }
+
+    #search{
+        height: 100%;
+    }
+
+    #send{
+        height: 100%;
+        float: right;
+    }
+
+    .addimail form{
+        padding: 0;
+        margin: 0;
+        /*height: 100%;*/
+        float: right;
+        display: flex;
+        align-items: center;
+    }
+
+    .smsbutton{
+        margin-right: 25px;
+    }
+
+
 
 }
 
@@ -1340,111 +1493,8 @@ span{
     background-color: #cc531c;
 }
 
-.searchinput input{
-    padding: 0 10px;
-    border: 1px solid black;
-    margin: auto 10px auto 25px;
-    border-radius: 15px;
-    width: 50%;
-    text-align: center;
-    height: 100%;
-}
-
-.searchinput select{
-    padding: 0 10px;
-    border: 1px solid black;
-    margin: auto 10px;
-    border-radius: 15px;
-    width: 40%;
-    text-align: center;
-    height: 100%;
-}
-
-.searchinput .select2{
-    padding: 0 10px;
-    border: 1px solid black;
-    margin: auto 10px;
-    border-radius: 15px;
-    width: 20%;
-    text-align: center;
-    height: 100%;
-}
-
-.searchinput, .buttsearch, .addimail{
-    float: left;
-    margin-bottom: 10px;
+.addstudent{
+    padding: 10px 12px;
 }
 
 
-
-.searchinput{
-    width: 60%;
-    height: 100%;
-}
-
-.buttsearch{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    height: 100%;
-
-}
-
-.addimail{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    justify-content: flex-end;
-    float: left;
-}
-
-.buttsearch button{
-    float: left;
-    /*margin: auto 15px auto 5px;*/
-}
-
-.buttsearch a{
-    margin: auto 15px;
-    padding: 0;
-}
-
-.addimail button{
-    /*float: right;*/
-    /*margin: auto 15px auto 5px;*/
-}
-
-.addimail a{
-    margin: 0;
-    padding: 0;
-}
-
-.addimail a{
-    margin-right: 25px;
-}
-
-.helpo{
-    height: 7vh;
-}
-
-#search{
-    height: 100%;
-}
-
-#send{
-    height: 100%;
-    float: right;
-}
-
-.addimail form{
-    padding: 0;
-    margin: 0;
-    /*height: 100%;*/
-    float: right;
-    display: flex;
-    align-items: center;
-}
-
-.smsbutton{
-    margin-right: 25px;
-}
