@@ -114,7 +114,16 @@ class StudentController extends Controller
             'parent_phone_number' => 'required|numeric',
             'group_id' => 'required'
         ]);
-        $student->update($data);
+        $student->update([
+            'name'=>$request->get('name'),
+            'surname'=>$request->get('surname'),
+            'birth_year'=>$request->get('birth_year'),
+            'parent_name'=>$request->get('parent_name'),
+            'parent_surname'=>$request->get('parent_surname'),
+            'parent_phone_number'=>$request->get('parent_phone_number'),
+            'parent_email'=>$request->get('parent_email'),
+            'group_id'=>$request->get('group_id'),
+        ]);
 
         return redirect(route('students.index'))->with('success', 'Updated');
     }

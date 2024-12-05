@@ -57,7 +57,7 @@
                 </tr>
                 <tr>
                     <td>E-mail rodzica:</td>
-                    <td><input type="email" name="parent_email" id="" placeholder="Podaj e-mail rodzica" value="{{old('email')}}">
+                    <td><input type="email" name="parent_email" id="" placeholder="Podaj e-mail rodzica" value="{{old('parent_email')}}">
                         <br>
                         <span>@error('parent_email'){{$message}}@enderror</span>
                     </td>
