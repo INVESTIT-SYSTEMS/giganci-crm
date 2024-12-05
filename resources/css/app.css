@@ -1143,11 +1143,11 @@ span{
     }
 
     .addimail button{
-        margin: 13% 10px;
+        margin: 10% 10px;
     }
 
-    .buttsearch button{
-        margin: 10% 15px;
+    .buttsearch label button{
+        margin: 10% 10px;
     }
 
     .addimail a{
@@ -1168,6 +1168,13 @@ span{
         float: right;
         display: flex;
         align-items: center;
+        flex-direction: column;
+    }
+
+    .helpo label{
+        height: 100%;
+        margin: auto;
+        display: flex;
         flex-direction: column;
     }
 
@@ -1478,7 +1485,7 @@ span{
     position: relative;
 }
 
-.addstudent, .smsbutton, .look, .refresh{
+.addstudent, .smsbutton{
     /*background-color: #ff6213;*/
     background-color:#7043aa;
     color: white;
@@ -1488,6 +1495,17 @@ span{
     border-radius: 15px;
     /*margin: 10px 45px 10px 10px;*/
     float: right;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+}
+
+.look, .refresh{
+    background-color:#7043aa;
+    color: white;
+    font-size: 18px;
+    padding: 10px 11px;
+    border: #7043aa solid 3px;
+    border-radius: 15px;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
 }

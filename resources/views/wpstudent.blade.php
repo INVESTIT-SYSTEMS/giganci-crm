@@ -27,9 +27,11 @@
         </div>
 
         <div class="buttsearch">
+            <label>
             <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
             <a href="{{route('students.index')}}"> <button class="refresh" type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
-            </form>
+            </label>
+                </form>
         </div>
 
 
