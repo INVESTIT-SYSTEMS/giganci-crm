@@ -247,7 +247,7 @@ table select, textarea{
     color: white;
     border: #7043aa solid 3px;
     border-radius: 15px;
-    margin: 10px 45px 20px 10px;
+    margin: 10px 45px 10px 10px;
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
@@ -411,7 +411,7 @@ main h3{
     padding: 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
-    margin: 10px 45px 20px 10px;
+    margin: 10px 45px 10px 10px;
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
@@ -1058,7 +1058,7 @@ span{
     }
 
     .addteacher, .addlocation{
-        margin: 10px 20px 20px 10px;
+        margin: 10px 20px 10px 10px;
     }
 
 
@@ -1073,7 +1073,7 @@ span{
         border: 1px solid black;
         margin: 1% 10px;
         border-radius: 15px;
-        width: 95%;
+        width: 98%;
         text-align: center;
         height: 45%;
     }
@@ -1083,7 +1083,7 @@ span{
         border: 1px solid black;
         margin: 1% 10px;
         border-radius: 15px;
-        width: 95%;
+        width: 98%;
         text-align: center;
         height: 45%;
     }
@@ -1093,7 +1093,7 @@ span{
         border: 1px solid black;
         margin: auto 10px 5px 10px;
         border-radius: 15px;
-        width: 95%;
+        width: 98%;
         text-align: center;
         height: 20%;
     }
@@ -1144,6 +1144,7 @@ span{
 
     .addimail button{
         margin: 10% 10px;
+        float: right;
     }
 
     .buttsearch label button{
@@ -1173,9 +1174,11 @@ span{
 
     .helpo label{
         height: 100%;
-        margin: auto;
+        /*margin: auto;*/
+        margin: auto auto auto 0;
         display: flex;
         flex-direction: column;
+        float: left;
     }
 
     .addimail form{
