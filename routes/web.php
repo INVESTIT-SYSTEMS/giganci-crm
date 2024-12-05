@@ -31,7 +31,7 @@ Route::get('/message', [StudentController::class, 'message'])->name('message.ind
 
 Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent'])->name('moveStudent.index');
 
-Route::get('send-mail', [MailController::class, 'index']);
+Route::get('send-mail', [MailController::class, 'index'])->name('mail');
 
 
 

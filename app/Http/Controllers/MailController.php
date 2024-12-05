@@ -13,19 +13,30 @@ class MailController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        try {
-            $mailData = [
-                'title' => 'Siema siema',
-                'body' => 'Witam się z tobą',
-            ];
-            Mail::to(new Address(config('dev.test-mail')))->send(new SendingMail($mailData));
-        } catch (\Exception $err)
-        {
-            return $err->getMessage();
-        }
-    return "<p>";
+         $data = $request->get('check');
+         dd($data);
+         return view();
+
+//        try {
+//            $mailData = [
+//                'title' => 'Siema siema',
+//                'body' => 'Witam się z tobą',
+//            ];
+//            $addresses = [
+//                new Address(''),
+//                new Address(''),
+//                new Address(''),
+//                new Address(''),
+//            ];
+//                Mail::to($addresses)->send(new SendingMail($mailData));
+//
+//        } catch (\Exception $err)
+//        {
+//            return $err->getMessage();
+//        }
+
     }
 
     /**
