@@ -13,27 +13,34 @@
 
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
-    <div class="helpo">
-        <div class="looking">
-            <form action="{{route('potentialStudents.index')}}" method="get" id="search" >
-                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
-                    <select name="status" form="search">
-                        <option  value="">Wszystkie</option>
-                        <option @selected(request('status') == 'Zapis na zajęcia pokazowe') value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
-                        <option @selected(request('status') == 'Rezygnacja') value="Rezygnacja">Rezygnacja</option>
-                    </select>
-        </div>
-                <div class="butttons">
-                <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <a href="{{route('potentialStudents.index')}}"> <button type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
-            </form>
-                </div>
 
-        <div class="add">
-            <a href="{{route('potentialStudents.create')}}"> <button type="submit" class="addpotential"><i class="fa-solid fa-plus"></i></button></a>
-            <a href={{route('message.index')}}> <button class="smsbutton"><i class="fa-solid fa-envelope"></i></button> </a>
+    <div class="helpo">
+            <div class="searchinput">
+                <form method="get" action="{{route ('students.index')}}" id="search">
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
+                <select name="status" form="search">
+                    <option  value="">Wszystkie</option>
+                    <option @selected(request('status') == 'Zapis na zajęcia pokazowe') value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
+                    <option @selected(request('status') == 'Rezygnacja') value="Rezygnacja">Rezygnacja</option>
+                </select>
+            </div>
+
+            <div class="buttsearch">
+                <button class="look"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <a href="{{route('potentialStudents.index')}}"> <button class="refresh" type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
+                </form>
+            </div>
+
+
+        <div class="addimail">
+            <form action="{{route('message.index')}}" method="get" id="send">
+                <a href="{{route('potentialStudents.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+
+                <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
+            </form>
         </div>
     </div>
+
 
     <section class="bg-gray-300 potentialuser">
         <table class="tablescale">

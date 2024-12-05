@@ -14,6 +14,7 @@
     <h1 class="">Uczniowie</h1>
     <div class="helpo">
 
+
         <div class="searchinput">
             <form method="get" action="{{route ('students.index')}}" id="search">
                 <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
@@ -30,6 +31,7 @@
             <a href="{{route('students.index')}}"> <button class="refresh" type="button"><i class="fa-solid fa-rotate-left"></i></button> </a>
             </form>
         </div>
+
 
         <div class="addimail">
             <form action="{{route('message.index')}}" method="get" id="send">
