@@ -27,7 +27,7 @@
                     <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                     <td>{{$info->parent_phone_number}}</td>
                     <td class="colored">{{$info->parent_email}}</td>
-                    <td>{{$info->group->location->town}}</td>
+{{--                    <td>{{$info->group->location->town}}</td>--}}
                 </tr>
                 @endforeach
             </table>

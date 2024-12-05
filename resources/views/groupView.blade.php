@@ -17,7 +17,7 @@
 
         <div class="add">
 
-            <a href="{{route('StudentInGroupForm.index', ['group'=>$group])}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+{{--            <a href="{{route('StudentInGroupForm.index', ['group'=>$group])}}"> <button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>--}}
             <form action="{{route('message.index')}}" method="get" id="send">
                 @csrf
              <button type="submit " class="smsbutton"><i class="fa-solid fa-envelope"></i></button>

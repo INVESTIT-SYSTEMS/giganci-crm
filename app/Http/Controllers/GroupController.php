@@ -76,20 +76,15 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, Group $group)
+    public function show(Group $group): View
     {
-        $groupName = $group['name'];
 
-        $groups = $group['id'];
-        $savedLocations = Location::all();
-        $savedGroups = Group::all();
 
-     $query = Student::where(function (Builder $query) use($groups){
-        $query->where("group_id", $groups    );
-
-     })->get();
-
-        return view('groupView', ['student' => $query, 'location' => $savedLocations, 'group' => $groupName]);
+        return view('groupView', [
+            'student' => Student::where("group_id", $group->id)->get(),
+            'location' => Location::all(),
+            'group' => $group->name,
+        ]);
     }
 
     /**

@@ -3,7 +3,7 @@
 </head>
 <script>
     function checkAll(source) {
-        checkboxes = document.getElementsByName('check');
+        checkboxes = document.getElementsByName('check[]');
         for(var i=0, n=checkboxes.length;i<n;i++) {
             checkboxes[i].checked = source.checked;
         }
@@ -21,7 +21,7 @@
                 <select name="NameGroup">
                     <option value="">Nazwa Grupy</option>
                     @foreach($group as $GroupName)
-                        <option value="{{$GroupName->id}}">{{$GroupName->name}}</option>
+                        <option @selected(request('NameGroup') == $GroupName->id) value="{{$GroupName->id}}">{{$GroupName->name}}</option>
                     @endforeach
                 </select>
         </div>
@@ -66,7 +66,7 @@
                     @foreach($student as $info)
                         <div class="gap">
                             <tr>
-                                <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
+                                <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
                                 <td class="colored">{{$info->name}}</td>
                                 <td>{{$info->surname}}</td>
                                 <td class="colored">{{$info->birth_year}}</td>
@@ -77,7 +77,7 @@
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                                 <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
                                <td>
-                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
+                                    <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit" type="button"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                     <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
                                         @csrf
                                         @method('delete')
@@ -87,6 +87,7 @@
                             </tr>
                         </div>
                     @endforeach
+                </form>
             </table>
     </section>
 </section>
