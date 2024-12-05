@@ -87,7 +87,7 @@
                             </tr>
                         </div>
                     @endforeach
-                </form>
+
             </table>
     </section>
 </section>

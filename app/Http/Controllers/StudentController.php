@@ -112,6 +112,7 @@ class StudentController extends Controller
             'parent_name' => 'required',
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|numeric',
+            'parent_email' => 'required',
             'group_id' => 'required'
         ]);
         $student->update($data);
@@ -134,15 +135,35 @@ public function moveStudent(PotentialStudent $studentData): View
     return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
 }
 
-public function message(Request $request)
-{
 
-    $query = Student::whereIn('id',$request->get('check'))->get();
-
-
-    return view('wpsms', ['student'=>$query,
-        'location' => Location::all(),
-        'group' => Group::all(),
-        ]);
-}
+//public function message(Request $request)
+//{
+//
+//    $emailList = $request->get('check');
+//
+//
+//    return view('wpsms', ['student'=> Student::whereIn('id', $emailList)->get(),
+//        'location' => Location::all(),
+//        'group' => Group::all(),
+//        ]);
+//
+//
+//}
+//    public function mailSend()
+//    {
+//
+//        dd('super');
+////        try {
+////
+////            $mailData = [
+////                'title' => 'Siema siema',
+////                'body' => 'jesteś super nie zmieniaj się nie albo w sumie zmień sie, niezły z ciebie przewodniczący, nie rozjeb się, powodzenia w miłości, przyrstów na ławie ',
+////            ];
+////            Mail::to(new Address(config('dev.test-mail')))->send(new SendingMail($mailData));
+////        } catch (\Exception $err)
+////        {
+////            return $err->getMessage();
+////        }
+//        return "<p>";
+//    }
 }

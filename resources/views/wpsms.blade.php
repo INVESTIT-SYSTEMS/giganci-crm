@@ -3,7 +3,8 @@
 <section class="contentsms">
     <h1>Korespondencja seryjna</h1>
     <section class="bg-gray-300 smssection">
-
+        <form action="{{route('mail.send')}}" method="get">
+            @csrf
         <div class="sendmessage">
             <h3>SMS & E-mail</h3>
             <table class="message">
@@ -26,14 +27,13 @@
                     <td>{{$info->parent_name}} {{$info->parent_surname}}</td>
                     <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                     <td>{{$info->parent_phone_number}}</td>
-                    <td class="colored">{{$info->parent_email}}</td>
-{{--                    <td>{{$info->group->location->town}}</td>--}}
+                    <td class="colored"><input hidden name="emails[]" value="{{$info->parent_email}}">{{$info->parent_email}}</td>
                 </tr>
                 @endforeach
             </table>
             </div>
-            <button class="send">Wyślij</button>
-
+            <button type="submit" class="send">Wyślij</button></a>
+        </form>
     </section>
 
 </section>
