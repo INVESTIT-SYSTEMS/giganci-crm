@@ -1089,7 +1089,7 @@ span{
     .searchinput .select2{
         padding: 0 10px;
         border: 1px solid black;
-        margin: auto 10px;
+        margin: auto 10px 5px 10px;
         border-radius: 15px;
         width: 95%;
         text-align: center;
