@@ -67,7 +67,7 @@ class MailController extends Controller
 
     public function sendStudent(Request $request)
     {
-        if ($request->has('emails')) {
+//        if ($request->has('emails')) {
             $users = Student::whereIn('parent_email', $request->get('emails'))->get();
 
             $mailData = [
@@ -81,16 +81,17 @@ class MailController extends Controller
             }
 
             return redirect(route('main.index'))->with('send', 'pomyślne wysłano wiadomść');
-        } else {
-            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
-
-        }
+//        }
+// else {
+//            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
+//
+//        }
 
 
     }
     public function sendPotentialStudent(Request $request)
     {
-        if ($request->has('emails')) {
+//        if ($request->has('emails')) {
             $users = PotentialStudent::whereIn('parent_email', $request->get('emails'))->get();
 
 
@@ -105,10 +106,10 @@ class MailController extends Controller
             }
 
             return redirect(route('main.index'))->with('send', 'pomyślne wysłano wiadomść');
-        } else {
-            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
-
-        }
+//        } else {
+//            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
+//
+//        }
 
 
     }
