@@ -35,7 +35,7 @@
                 @foreach($student as $info)
                 <tr>
                     <td class="colored">{{$info->name}} {{$info->surname}}</td>
-                    <td>{{$info->parent_name}} {{$info->parent_surname}}</td>
+                    <td><input hidden name="name" value="{{$info->parent_name}}">{{$info->parent_name}} {{$info->parent_surname}}</td>
                     <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                     <td>{{$info->parent_phone_number}}</td>
                     <td class="colored"><input hidden name="emails[]" value="{{$info->parent_email}}">{{$info->parent_email}}</td>
