@@ -33,7 +33,8 @@ Route::get('/message/Group', [MailController::class, 'messageGroup'])->name('mes
 
 Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent'])->name('moveStudent.index');
 
-Route::get('/send-mail', [MailController::class, 'index'])->name('mail.send');
+Route::get('/send-mail/Student', [MailController::class, 'sendStudent'])->name('mailStudent.send');
+Route::get('/send-mail/PotentialStudent', [MailController::class, 'sendPotentialStudent'])->name('mailPotentialStudent.send');
 
 Route::get('/addStudentInGroup', [GroupController::class, 'ShowGroups'])->name('showGroups');
 

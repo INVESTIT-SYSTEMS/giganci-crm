@@ -9,7 +9,7 @@
         @if(session('sucess'))
             <p>{{session('succes')}}</p>
         @endif
-        <form action="{{route('mailStudent.send')}}" method="get">
+        <form action="{{route('mailPotentialStudent.send')}}" method="get">
             @csrf
         <div class="sendmessage">
             <h3>SMS & E-mail</h3>
