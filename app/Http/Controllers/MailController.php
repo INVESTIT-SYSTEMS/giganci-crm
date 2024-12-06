@@ -73,6 +73,7 @@ class MailController extends Controller
             $mailData = [
                 'title' => $request->get('title'),
                 'body' => $request->get('message'),
+                'name' => $request->get('name')
             ];
 
             foreach ($users as $user) {
