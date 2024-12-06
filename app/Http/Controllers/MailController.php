@@ -39,7 +39,7 @@ class MailController extends Controller
     {
         if ($request->has('check')) {
             $emailList = $request->get('check');
-            return view('wpsms', ['student' => PotentialStudent::whereIn('id', $emailList)->get(),
+            return view('wpsmsPotentialStudent', ['student' => PotentialStudent::whereIn('id', $emailList)->get(),
                 'location' => Location::all(),
                 'group' => Group::all(),
             ]);
