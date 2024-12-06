@@ -29,7 +29,8 @@ class GroupController extends Controller
             });
             })->when($request->get('Location'), function ($query) use ($request) {
                 $query->where('location_id', $request->get('Location'));
-            })->when($request->get('Teacher'), function ($query) use ($request) {
+            })
+            ->when($request->get('Teacher'), function ($query) use ($request) {
                 $query->where('teacher_id', $request->get('Teacher'));
                 })
                     ->get();
@@ -113,9 +114,6 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
         return redirect()->route('groups.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Group $group): RedirectResponse
     {
         $group -> delete();

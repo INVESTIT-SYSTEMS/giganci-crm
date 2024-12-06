@@ -26,7 +26,6 @@
                             <option @selected($groups->classes_day == 'Piątek') value="Piątek">Piątek</option>
                             <option @selected($groups->classes_day == 'Sobota') value="Sobota">Sobota</option>
                             <option @selected($groups->classes_day == 'Niedziela') value="Niedziela">Niedziela</option>
-
                         </select>
                     </td>
                 </tr>

@@ -71,9 +71,8 @@ class MailController extends Controller
             $users = Student::whereIn('parent_email', $request->get('emails'))->get();
 
             $mailData = [
-                'title' => 'Siema siema',
+                'title' => $request->get('title'),
                 'body' => $request->get('message'),
-                'footer' => 'Tak',
             ];
 
             foreach ($users as $user) {

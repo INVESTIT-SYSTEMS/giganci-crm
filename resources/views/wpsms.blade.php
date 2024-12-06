@@ -16,7 +16,7 @@
 
             <table class="message">
                 <tr>
-                    <td><input type="text" name="" id="" placeholder="Podaj tytuł"></td>
+                    <td><input type="text" name="title" id="" placeholder="Podaj tytuł"></td>
                 </tr>
                 <tr>
                     <td> <textarea name="message" placeholder="Wpisz swoją wiadomość"></textarea></td>

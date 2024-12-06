@@ -1,8 +1,3 @@
-<h1> Hello {{$mailData['title']}} </h1>
-<p>{{$mailData['body']}}</p>
-<h2>{{$mailData['footer']}}</h2>
-
-
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -176,17 +171,17 @@
                                             <tbody>
                                             <tr>
                                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;line-height:24px;text-align:left;color:#212b35;">{{$title}}</div>
+                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:20px;font-weight:bold;line-height:24px;text-align:left;color:#212b35;">{{$mailData['title']}}</div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#637381;">Hi, {{$name}}</div>
+                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#637381;">Hi, Ktoś </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#637381;">{{$content}}</div>
+                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#637381;">{{$mailData['body']}}</div>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -242,7 +237,7 @@
                                             </tr>
                                             <tr>
                                                 <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#637381;">{{$location}}</div>
+                                                    <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;line-height:24px;text-align:left;color:#637381;">xlokacjax</div>
                                                 </td>
                                             </tr>
                                             </tbody>
