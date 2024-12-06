@@ -93,13 +93,14 @@ class MailController extends Controller
         if ($request->has('emails')) {
             $users = PotentialStudent::whereIn('parent_email', $request->get('emails'))->get();
 
-            $mailData = [
-                'title' => $request->get('title'),
-                'body' => $request->get('message'),
-                'name' => $request->get('name')
-            ];
+
 
             foreach ($users as $user) {
+                $mailData = [
+                    'title' => $request->get('title'),
+                    'body' => $request->get('message'),
+                    'name' => $request->get('name')
+                ];
                 Mail::to($user->parent_email)->send(new SendingMail($mailData));
             }
 
