@@ -69,7 +69,7 @@ class PotentialStudentController extends Controller
             'parent_name' => $request->get('parent_name'),
             'parent_surname' => $request->get('parent_surname'),
             'parent_phone_number' => $request->get('parent_phone_number'),
-            'parent_email' => $request->get('parent_email|email'),
+            'parent_email' => $request->get('parent_email'),
         ]);
             return redirect()->route('potentialStudents.index');
     }
