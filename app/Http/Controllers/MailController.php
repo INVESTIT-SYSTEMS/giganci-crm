@@ -39,7 +39,7 @@ class MailController extends Controller
     {
         if ($request->has('check')) {
             $emailList = $request->get('check');
-            return view('wpsms', ['student' => PotentialStudent::whereIn('id', $emailList)->get(),
+            return view('wpsmsPotentialStudent', ['student' => PotentialStudent::whereIn('id', $emailList)->get(),
                 'location' => Location::all(),
                 'group' => Group::all(),
             ]);
@@ -65,7 +65,7 @@ class MailController extends Controller
 
     }
 
-    public function index(Request $request)
+    public function sendStudent(Request $request)
     {
         if ($request->has('emails')) {
             $users = Student::whereIn('parent_email', $request->get('emails'))->get();
@@ -74,6 +74,28 @@ class MailController extends Controller
                 'title' => $request->get('title'),
                 'body' => $request->get('message'),
                 'name' => $request->get('name')
+            ];
+
+            foreach ($users as $user) {
+                Mail::to($user->parent_email)->send(new SendingMail($mailData));
+            }
+
+            return redirect(route('main.index'))->with('send', 'pomyślne wysłano wiadomść');
+        } else {
+            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
+
+        }
+
+
+    }
+    public function sendPotentialStudent(Request $request)
+    {
+        if ($request->has('emails')) {
+            $users = PotentialStudent::whereIn('parent_email', $request->get('emails'))->get();
+
+            $mailData = [
+                'title' => $request->get('title'),
+                'body' => $request->get('message'),
             ];
 
             foreach ($users as $user) {
