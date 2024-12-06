@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\SendingMail;
 use App\Models\Group;
 use App\Models\Location;
+use App\Models\PotentialStudent;
 use App\Models\Student;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
@@ -20,104 +21,75 @@ class MailController extends Controller
      * Display a listing of the resource.
      */
 
-    public function message(Request $request)
+    public function messageStudent(Request $request)
     {
-        if ($request->has('check')){
+        if ($request->has('check')) {
             $emailList = $request->get('check');
-            return view('wpsms', ['student'=> Student::whereIn('id', $emailList)->get(),
+            return view('wpsms', ['student' => Student::whereIn('id', $emailList)->get(),
                 'location' => Location::all(),
                 'group' => Group::all(),
             ]);
-        }
-        else{
+        } else {
             return redirect(route('students.index'))->with('send', 'wybierz uczniów ');
 
         }
-
-
-
-
-
     }
-    public function index(Request $request)
-    {
-    if ($request->has('emails'))
-    {
-        $users = Student::whereIn('parent_email', $request->get('emails'))->get();
 
-        $mailData = [
-                    'title' => 'Siema siema',
-                    'body' => $request->get('message'),
-                    'footer' => 'Tak',
-                ];
+    public function messagePotentialStudent(Request $request)
+    {
+        if ($request->has('check')) {
+            $emailList = $request->get('check');
+            return view('wpsms', ['student' => PotentialStudent::whereIn('id', $emailList)->get(),
+                'location' => Location::all(),
+                'group' => Group::all(),
+            ]);
+        } else {
+            return redirect(route('potentialStudents.index'))->with('send', 'wybierz uczniów ');
 
-        foreach ($users as $user) {
-            Mail::to($user->parent_email)->send(new SendingMail($mailData));
         }
 
-        return redirect(route('students.index'))->with('send', 'pomyślne wysłano wiadomść');
-    }else{
-        return redirect(route('students.index'))->with('send', 'wystąpił jakiś bląd');
-
     }
 
-
-
-    }
-
-
-
-
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function messageGroup(Request $request)
     {
-        //
+        if ($request->has('check')) {
+            $emailList = $request->get('check');
+            return view('wpsms', ['student' => Student::whereIn("group_id", $emailList)->get(),
+                'location' => Location::all(),
+                'group' => Group::all(),
+            ]);
+        } else {
+            return redirect(route('groups.index'))->with('send', 'wybierz grupę ');
+
+        }
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function index(Request $request)
     {
-        //
+        if ($request->has('emails')) {
+            $users = Student::whereIn('parent_email', $request->get('emails'))->get();
+
+            $mailData = [
+                'title' => 'Siema siema',
+                'body' => $request->get('message'),
+                'footer' => 'Tak',
+            ];
+
+            foreach ($users as $user) {
+                Mail::to($user->parent_email)->send(new SendingMail($mailData));
+            }
+
+            return redirect(route('main.index'))->with('send', 'pomyślne wysłano wiadomść');
+        } else {
+            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
+
+        }
+
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-
-//    public function create()
-//    {
-//    }
-//    public function store(Request $request)
-//    {
-//    }
-//    public function show(string $id)
-//    {
-//    }
-//    public function edit(string $id)
-//    {
-//    }
-//    public function update(Request $request, string $id)
-//    {
-//    }
-//    public function destroy(string $id)
-//    {
-//    }
 }
+
+
+

@@ -13,10 +13,13 @@
 
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
+    @if(session('send'))
+        <p>{{session('send')}}</p>
+    @endif
 
     <div class="helpo">
             <div class="searchinput">
-                <form method="get" action="{{route ('students.index')}}" id="search">
+                <form method="get" action="{{route ('potentialStudents.index')}}" id="search">
                 <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
                 <select name="status" form="search">
                     <option  value="">Wszystkie</option>
@@ -35,8 +38,9 @@
 
 
         <div class="addimail">
-            <form action="{{route('message.index')}}" method="get" id="send">
-                <a href="{{route('potentialStudents.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+            <a href="{{route('potentialStudents.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+            <form action="{{route('messagePotentialStudent.index')}}" method="get" id="send">
+
 
                 <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
@@ -63,7 +67,7 @@
             @foreach($user as $info)
                 <div class="gap">
             <tr>
-                <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
+                <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
                 <td class="colored">{{$info->name}}</td>
                 <td>{{$info->surname}}</td>
                 <td class="colored">{{$info->birth_year}}</td>

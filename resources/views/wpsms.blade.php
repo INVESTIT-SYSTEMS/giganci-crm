@@ -2,6 +2,9 @@
 
 <section class="contentsms">
     <h1>Korespondencja seryjna</h1>
+    @if(session('send'))
+        <p>{{session('send')}}</p>
+    @endif
     <section class="bg-gray-300 smssection">
         @if(session('sucess'))
             <p>{{session('succes')}}</p>

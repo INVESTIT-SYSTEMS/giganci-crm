@@ -20,7 +20,7 @@
 
         <div class="searchinput">
             <form method="get" action="{{route ('students.index')}}" id="search">
-                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość">
+                <input type="text" name="search" placeholder="Wpisz wyszukiwaną wartość" value="{{request('search')}}">
                 <select name="NameGroup">
                     <option value="">Nazwa Grupy</option>
                     @foreach($group as $GroupName)
@@ -39,7 +39,7 @@
 
 
         <div class="addimail">
-            <form action="{{route('message.index')}}" method="get" id="send">
+            <form action="{{route('messageStudent.index')}}" method="get" id="send">
             <a href="{{route('students.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
 
                 <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>

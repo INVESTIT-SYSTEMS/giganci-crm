@@ -40,7 +40,7 @@
                     <td>Nauczyciel:</td>
                     <td><select name="teacher_id" form="group">
                             @foreach($teachers as $teacher)
-                                <option @selected($groups->teacher_id == $teacher->id)>{{$teacher->name}} {{ $teacher->surname}}</option>
+                                <option @selected($groups->teacher_id == $teacher->id) value="{{$teacher->id}}">{{$teacher->name}} {{ $teacher->surname}}</option>
                             @endforeach
                         </select>
                     </td>
@@ -49,7 +49,7 @@
                     <td>Lokalizacja:</td>
                     <td><select name="location_id" form="group">
                             @foreach($locations as $location)
-                                <option @selected($groups->location_id == $location->id)>{{$location->town}}</option>
+                                <option @selected($groups->location_id == $location->id) value="{{$location->id}}">{{$location->town}}</option>
                             @endforeach
                         </select>
                     </td>

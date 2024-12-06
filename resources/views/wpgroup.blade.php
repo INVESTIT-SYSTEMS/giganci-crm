@@ -1,6 +1,14 @@
 <head>
     <title>Grupy</title>
 </head>
+<script>
+    function checkAll(source) {
+        checkboxes = document.getElementsByName('check[]');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+</script>
 @include('Layout_forms.headlayout')
 <section class="contentgroup">
     <h1>Grupy</h1>
@@ -33,7 +41,7 @@
 
 
         <div class="addimail">
-            <form action="{{route('message.index')}}" method="get" id="send">
+            <form action="{{route('messageGroup.index')}}" method="get" id="send">
                 <a href="{{route('groups.create')}}"><button type="button" class="addgroup"><i class="fa-solid fa-plus"></i></button></a>
 
                 <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
@@ -44,7 +52,7 @@
     <section class=" bg-gray-300 group">
         <table class="">
             <tr>
-                <th><input type="checkbox" name="" id=""></th>
+                <th><input type="checkbox" name="" id="" onclick="checkAll(this)"></th>
                 <th>Nazwa</th>
                 <th>Dzień</th>
                 <th>Godzina</th>
@@ -55,7 +63,7 @@
             @foreach($group as $info)
                 <div class="gap">
                     <tr>
-                        <td><input type="checkbox" name="" id=""></td>
+                        <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
                         <td class="colored">{{$info->name}}</td>
                         <td>{{$info->classes_day}}</td>
                         <td class="colored">{{$info->classes_hour}}</td>
