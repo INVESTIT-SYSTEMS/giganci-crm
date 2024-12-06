@@ -10,9 +10,9 @@
     }
 </script>
 @include('Layout_forms.headlayout')
-<form action="{{view('showGroups', ['group'=>$group])}}" method="get">
+<form action="{{route('showGroups', ['group'=>$group])}}" method="get">
 <section class="contentstudent">
-    <h1 class="">Uczniowie z grupy {{$group}}</h1>
+    <h1 class="">Uczniowie z grupy {{$group->name}}</h1>
     <div class="helpo">
 
         <div class="searchinput">
@@ -25,9 +25,8 @@
 
 
         <div class="addimail">
+            <a><button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
             <form action="{{route('message.index')}}" method="get" id="send">
-                <a href="{{route('students.create')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
-
                 <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
@@ -59,12 +58,12 @@
                                     <td class="colored">{{$info->parent_surname}}</td>
                                     <td>{{$info->parent_phone_number}}</td>
                                     <td class="colored">{{$info->parent_email}}</td>
-                                    <td><input hidden name="groupName" value="{{$info->group ? $info->group->name:'Brak grupy'}}">
+                                    <td><input hidden name="groupName" value="{{$group->id}}">
                                         {{$info->group ? $info->group->name:'Brak grupy'}}
                                     </td>
                                     <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
                                    <td>
-                                        <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
+                                        <a href="{{ route('students.edit', ['student' => $info])}}"><button type="button" class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
                                         <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
                                             @csrf
                                             @method('delete')

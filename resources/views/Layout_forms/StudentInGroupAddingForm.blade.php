@@ -7,7 +7,7 @@
 <section class="contentstudentadd">
     <h1>Dodaj ucznia</h1>
     <section class="bg-gray-300 studentsectionadd">
-        <form action="{{route('students.store', ['group'=>$group])}}" method="POST" id="StudentForm">
+        <form action="{{route('students.store')}}" method="POST" id="StudentForm">
             @csrf
             <table class="">
                 <tr>
@@ -64,6 +64,7 @@
                 </tr>
                 <tr>
                     <td>Grupa:</td>
+                    <input hidden value="{{request('groupName')}}" name="group_id">
                     <td>{{$group}}</td>
                 </tr>
             </table>

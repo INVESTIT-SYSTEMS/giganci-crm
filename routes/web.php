@@ -27,7 +27,9 @@ Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);
 
-Route::get('/message', [MailController::class, 'message'])->name('message.index');
+Route::get('/message/Student', [MailController::class, 'messageStudent'])->name('messageStudent.index');
+Route::get('/message/PotentialStudent', [MailController::class, 'messagePotentialStudent'])->name('messagePotentialStudent.index');
+Route::get('/message/Group', [MailController::class, 'messageGroup'])->name('messageGroup.index');
 
 Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent'])->name('moveStudent.index');
 

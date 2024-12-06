@@ -35,9 +35,6 @@ class StudentController extends Controller
         })->when($request->get('NameGroup'), function ($query) use ($request) {
             $query->where('group_id', $request->get('NameGroup'));
         })
-//            ->when($request->get('Location'), function ($query) use ($request){
-//            $query->where('location_id', $request->get('Location'));
-//        })
             ->get();
 
 
@@ -60,6 +57,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        $groups = Group::all();
+
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
@@ -67,7 +66,6 @@ class StudentController extends Controller
             'parent_name' => 'required',
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|numeric',
-            'group_id' => 'required'
         ]);
 
         Student::create([
@@ -80,7 +78,7 @@ class StudentController extends Controller
             'parent_email'=>$request->get('parent_email'),
             'group_id'=>$request->get('group_id'),
         ]);
-        return redirect()->route('students.index');
+        return redirect()->route('students.index' , ['groups'=>$groups]);
     }
 
     /**
@@ -113,7 +111,6 @@ class StudentController extends Controller
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|numeric',
             'parent_email' => 'required',
-            'group_id' => 'required'
         ]);
         $student->update([
             'name'=>$request->get('name'),
@@ -137,12 +134,12 @@ class StudentController extends Controller
         $student->delete();
         return redirect(route('students.index'));
     }
-public function moveStudent(PotentialStudent $studentData): View
-{
+    public function moveStudent(PotentialStudent $studentData): View
+    {
+        $groups = Group::all();
+        return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
+    }
 
-    $groups = Group::all();
-    return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
-}
 
 
 //public function message(Request $request)

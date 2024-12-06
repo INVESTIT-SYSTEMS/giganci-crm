@@ -26,17 +26,13 @@ class GroupController extends Controller
                   $query->orWhere('name','like','%' . $request->get('search') . '%')
                 ->orWhere('classes_day','like','%' . $request->get('search') . '%')
                 ->orWhere('classes_hour','like','%' . $request->get('search') . '%');
-
             });
-
-
-
-})->when($request->get('Location'), function ($query) use ($request) {
-    $query->where('location_id', $request->get('Location'));
-})->when($request->get('Teacher'), function ($query) use ($request) {
-            $query->where('teacher_id', $request->get('Teacher'));
-        })
-    ->get();
+            })->when($request->get('Location'), function ($query) use ($request) {
+                $query->where('location_id', $request->get('Location'));
+            })->when($request->get('Teacher'), function ($query) use ($request) {
+                $query->where('teacher_id', $request->get('Teacher'));
+                })
+                    ->get();
 
 
 return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teacher' => $savedTeachers]);
@@ -83,7 +79,7 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
         return view('groupView', [
             'student' => Student::where("group_id", $group->id)->get(),
             'location' => Location::all(),
-            'group' => $group->name,
+            'group' => $group,
         ]);
     }
 
@@ -126,9 +122,13 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
         return redirect()->route('groups.index');
     }
 
-    public function  ShowGroups(Group $group)
+    public function ShowGroups(Request $request)
     {
-        return view('layout_forms.StudentInGroupAddingForm');
+        $pickGroup = Group::where('id', $request->get('groupName'))->get('name');
+//        dd($pickGroup);
+        return view('Layout_forms.StudentInGroupAddingForm', [
+                'group' => $pickGroup,
+        ]);
     }
 
 }
