@@ -90,7 +90,7 @@ class MailController extends Controller
     public function sendPotentialStudent(Request $request)
     {
         if ($request->has('emails')) {
-            $users = Student::whereIn('parent_email', $request->get('emails'))->get();
+            $users = PotentialStudent::whereIn('parent_email', $request->get('emails'))->get();
 
             $mailData = [
                 'title' => $request->get('title'),
