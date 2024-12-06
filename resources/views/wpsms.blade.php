@@ -10,6 +10,8 @@
             <table class="message">
                 <tr>
                     <td><input type="text" name="" id="" placeholder="Podaj tytuł"></td>
+                </tr>
+                <tr>
                     <td> <textarea placeholder="Wpisz swoją wiadomość"></textarea></td>
                 </tr>
             </table>
