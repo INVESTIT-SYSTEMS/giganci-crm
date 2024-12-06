@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Mockery\Exception;
+use function Laravel\Prompts\alert;
 
 class MailController extends Controller
 {
@@ -20,31 +22,47 @@ class MailController extends Controller
 
     public function message(Request $request)
     {
+        if ($request->has('check')){
+            $emailList = $request->get('check');
+            return view('wpsms', ['student'=> Student::whereIn('id', $emailList)->get(),
+                'location' => Location::all(),
+                'group' => Group::all(),
+            ]);
+        }
+        else{
+            return redirect(route('students.index'))->with('send', 'wybierz uczniów ');
 
-        $emailList = $request->get('check');
+        }
 
 
-        return view('wpsms', ['student'=> Student::whereIn('id', $emailList)->get(),
-            'location' => Location::all(),
-            'group' => Group::all(),
-        ]);
+
 
 
     }
     public function index(Request $request)
     {
+    if ($request->has('emails'))
+    {
+        $users = Student::whereIn('parent_email', $request->get('emails'))->get();
 
-    $users = Student::whereIn('parent_email', $request->get('emails'))->get();
-            $mailData = [
-                'title' => 'Siema siema',
-                'body' => 'super',
-            ];
+        $mailData = [
+                    'title' => 'Siema siema',
+                    'body' => $request->get('message'),
+                    'footer' => 'Tak',
+                ];
 
-            foreach ($users as $user) {
+        foreach ($users as $user) {
             Mail::to($user->parent_email)->send(new SendingMail($mailData));
         }
 
-    return "<p>";
+        return redirect(route('students.index'))->with('send', 'pomyślne wysłano wiadomść');
+    }else{
+        return redirect(route('students.index'))->with('send', 'wystąpił jakiś bląd');
+
+    }
+
+
+
     }
 
 

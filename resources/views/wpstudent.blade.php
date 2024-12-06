@@ -12,6 +12,9 @@
 @include('Layout_forms.headlayout')
 <section class="contentstudent">
     <h1 class="">Uczniowie</h1>
+    @if(session('send'))
+        <p>{{session('send')}}</p>
+    @endif
     <div class="helpo">
 
 
