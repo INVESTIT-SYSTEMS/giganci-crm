@@ -15,6 +15,10 @@
     <h1>Giganci programowania CRM</h1>
     <h3>Siema Marcin</h3>
 
+
+    @if(session('send'))
+        <p>{{session('send')}}</p>
+    @endif
     <section class="modal-active" id="modal">
         @if(session('send'))
             <p>{{session('send')}}</p>
