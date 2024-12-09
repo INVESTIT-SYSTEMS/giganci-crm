@@ -57,7 +57,6 @@ class PotentialStudentController extends Controller
             'parent_name' => 'required',
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|numeric',
-//            'parent_email' => 'email',
         ]);
 
         PotentialStudent::create([

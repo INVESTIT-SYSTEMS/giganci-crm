@@ -110,7 +110,6 @@ class StudentController extends Controller
             'parent_name' => 'required',
             'parent_surname' => 'required',
             'parent_phone_number' => 'required|numeric',
-            'parent_email' => 'required',
         ]);
         $student->update([
             'name'=>$request->get('name'),
@@ -141,35 +140,4 @@ class StudentController extends Controller
     }
 
 
-
-//public function message(Request $request)
-//{
-//
-//    $emailList = $request->get('check');
-//
-//
-//    return view('wpsms', ['student'=> Student::whereIn('id', $emailList)->get(),
-//        'location' => Location::all(),
-//        'group' => Group::all(),
-//        ]);
-//
-//
-//}
-//    public function mailSend()
-//    {
-//
-//        dd('super');
-////        try {
-////
-////            $mailData = [
-////                'title' => 'Siema siema',
-////                'body' => 'jesteś super nie zmieniaj się nie albo w sumie zmień sie, niezły z ciebie przewodniczący, nie rozjeb się, powodzenia w miłości, przyrstów na ławie ',
-////            ];
-////            Mail::to(new Address(config('dev.test-mail')))->send(new SendingMail($mailData));
-////        } catch (\Exception $err)
-////        {
-////            return $err->getMessage();
-////        }
-//        return "<p>";
-//    }
 }

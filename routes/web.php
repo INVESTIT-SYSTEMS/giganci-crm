@@ -7,6 +7,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\SmsController;
 
 
 Route::get('/', function () {
@@ -26,6 +27,8 @@ Route::resource('locations', LocationController::class);
 Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);
+
+Route::get('/send-sms', [SmsController::class, 'index'])->name('sms.index');
 
 Route::get('/message/Student', [MailController::class, 'messageStudent'])->name('messageStudent.index');
 Route::get('/message/PotentialStudent', [MailController::class, 'messagePotentialStudent'])->name('messagePotentialStudent.index');

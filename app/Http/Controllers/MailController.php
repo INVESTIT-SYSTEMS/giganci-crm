@@ -13,6 +13,7 @@ use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Mockery\Exception;
+use Smsapi\Client\Feature\Sms\Bag\SendSmsBag;
 use function Laravel\Prompts\alert;
 
 class MailController extends Controller
@@ -29,10 +30,11 @@ class MailController extends Controller
                 'location' => Location::all(),
                 'group' => Group::all(),
             ]);
-        } else {
-            return redirect(route('students.index'))->with('send', 'Wybierz uczniów');
-
         }
+//        else {
+//            return redirect(route('students.index'))->with('send', 'Wybierz uczniów');
+//
+//        }
     }
 
     public function messagePotentialStudent(Request $request)
@@ -67,53 +69,57 @@ class MailController extends Controller
 
     public function sendStudent(Request $request)
     {
-//        if ($request->has('emails')) {
-            $users = Student::whereIn('parent_email', $request->get('emails'))->get();
+        if ($request->get('checkEmail') || $request->get('checkSMS')) {
+            if ($request->get('checkEmail')) {
+                if ($request->has('emails')) {
+                    $users = Student::whereIn('parent_email', $request->get('emails'))->get();
 
-            $mailData = [
-                'title' => $request->get('title'),
-                'body' => $request->get('message'),
-                'name' => $request->get('name')
-            ];
-
-            foreach ($users as $user) {
-                Mail::to($user->parent_email)->send(new SendingMail($mailData));
+                    foreach ($users as $user) {
+                        Mail::to($user->parent_email)->send(new SendingMail($mailData = [
+                            'title' => $request->get('title'),
+                            'body' => $request->get('message'),
+                            'name' => $user->parent_name,
+                        ]));
+                    }
+                } else {
+                    return redirect(route('messageStudent.index'))->with('send', 'Wystąpił błąd z wysyłką email');
+                }
             }
+            if ($request->get('checkSMS')) {
+                if ($request->has('number')) {
+                    $users = Student::whereIn('parent_phone_number', $request->get('parent_phone_numbers'))->get();
 
-            return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie!');
-//        }
-// else {
-//            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
-//
-//        }
-
-
+                    foreach ($users as $user) {
+                        $sms = SendSmsBag::withMessage($user->parent_phone_number, $request->get('message'));
+                    }
+                    return view('Layout_forms.navi');
+                }
+            } else {
+                return redirect(route('students.index'))->with('send', 'nie wybrano opcji wysyłki');
+            }
+        }
     }
     public function sendPotentialStudent(Request $request)
     {
-//        if ($request->has('emails')) {
+        if ($request->has('emails')) {
             $users = PotentialStudent::whereIn('parent_email', $request->get('emails'))->get();
 
 
 
             foreach ($users as $user) {
-                $mailData = [
+
+                Mail::to($user->parent_email)->send(new SendingMail($mailData = [
                     'title' => $request->get('title'),
                     'body' => $request->get('message'),
-                    'name' => $request->get('name')
-                ];
-                Mail::to($user->parent_email)->send(new SendingMail($mailData));
+                    'name' => $user->parent_name,
+                ]));
             }
 
             return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie!');
-//        } else {
-//            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
-//
-//        }
-
-
+        } else {
+            return redirect(route('messagePotentialStudent.index'))->with('send', 'wystąpił jakiś bląd');
+        }
     }
-
 }
 
 

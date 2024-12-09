@@ -23,9 +23,13 @@
                 <tr>
                     <td> <textarea name="message" placeholder="Wpisz swoją wiadomość"></textarea></td>
                 </tr>
+                <input type="checkbox" name="checkEmail" id="1"> Emial <br>
+                <input type="checkbox" name="checkSMS" id="2"> SMS
             </table>
             <div class="studentmessage">
+
             <table>
+                <form action="{{route('sms.index')}}" method="post">
                 <tr>
                     <th>Imie i nazwisko ucznia</th>
                     <th>Imie i nazwisko rodzica</th>
@@ -36,17 +40,30 @@
                 @if(!empty($student))
                 @foreach($student as $info)
                 <tr>
-                    <td class="colored"> {{$info->name}} {{$info->surname}}</td>
-                    <td> <input hidden name="name" value="{{$info->parent_name}}">{{$info->parent_name}} {{$info->parent_surname}}</td>
-                    <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
-                    <td>{{$info->parent_phone_number}}</td>
-                    <td class="colored"><input hidden name="emails[]" value="{{$info->parent_email}}">{{$info->parent_email}}</td>
+                    <td class="colored">
+                        <input hidden value="{{$info->name}}">{{$info->name}}
+                        <input hidden value="{{$info->surname}}">{{$info->surname}}
+                    </td>
+                    <td>
+                        <input hidden name="name" value="{{$info->parent_name}}">{{$info->parent_name}}
+                        <input hidden name="surname" value=" {{$info->parent_surname}}">{{$info->parent_surname}}
+                    </td>
+                    <td>
+                        <input hidden value="$info->group->name">{{$info->group ? $info->group->name:'Brak grupy'}}
+                    </td>
+                    <td>
+                        <input hidden name="parent_phone_numbers[]" value="{{$info->parent_phone_number}}">{{$info->parent_phone_number}}
+                    </td>
+                    <td class="colored">
+                        <input hidden name="emails[]" value="{{$info->parent_email}}">{{$info->parent_email}}
+                    </td>
                 </tr>
                 @endforeach
                 @endif
+                </form>
             </table>
             </div>
-            <button type="submit" class="send">Wyślij</button></a>
+            <button type="submit" class="send">Wyślij</button>
         </form>
     </section>
 

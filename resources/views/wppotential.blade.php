@@ -75,11 +75,11 @@
                 <td>{{$info->surname}}</td>
                 <td class="colored">{{$info->birth_year}}</td>
                 <td>{{$info->status}}</td>
-                <td class="colored">{{$info->comment ?? 'brak' }}</td>
+                <td class="colored">{{$info->comment ?? 'Brak' }}</td>
                 <td>{{$info->parent_name}}</td>
                 <td class="colored">{{$info->parent_surname}}</td>
                 <td>{{$info->parent_phone_number}}</td>
-                <td class="colored">{{$info->parent_email ?? 'brak'}}</td>
+                <td class="colored">{{$info->parent_email ?? 'Brak'}}</td>
                 <td>{{$info->updated_at}}</td>
                 <td class="colored">
                     <a href="{{ route('potentialStudents.edit', ['potentialStudent' => $info])}}"><button class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>

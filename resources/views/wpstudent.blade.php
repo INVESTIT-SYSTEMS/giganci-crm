@@ -81,7 +81,7 @@
                                 <td>{{$info->parent_name}}</td>
                                 <td class="colored">{{$info->parent_surname}}</td>
                                 <td>{{$info->parent_phone_number}}</td>
-                                <td class="colored">{{$info->parent_email}}</td>
+                                <td class="colored">{{$info->parent_email ?? 'Brak'}}</td>
                                 <td>{{$info->group ? $info->group->name:'Brak grupy'}}</td>
                                 <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
                                <td>

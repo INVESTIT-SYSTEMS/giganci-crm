@@ -35,8 +35,8 @@
                 <td>Status:</td>
                 <td>
                     <select name="status" form="potential">
-                        <option value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
-                        <option value="Rezygnacja">Rezygnacja</option>
+                        <option @selected($user->status == "Zapis na zajęcia pokazowe") value="Zapis na zajęcia pokazowe">Zapis na zajęcia pokazowe</option>
+                        <option @selected($user->status == "Rezygnacja") value="Rezygnacja">Rezygnacja</option>
                     </select>
                 </td>
             </tr>
