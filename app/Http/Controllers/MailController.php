@@ -105,7 +105,7 @@ class MailController extends Controller
                 Mail::to($user->parent_email)->send(new SendingMail($mailData));
             }
 
-            return redirect(route('main.index'))->with('send', 'pomyślne wysłano wiadomść');
+            return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie');
 //        } else {
 //            return redirect(route('messageStudent.index'))->with('send', 'wystąpił jakiś bląd');
 //

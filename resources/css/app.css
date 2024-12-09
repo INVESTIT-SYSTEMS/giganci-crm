@@ -1662,6 +1662,7 @@ span{
     border: 2px black solid;
     border-radius: 10px;
     z-index: 1000;
+    text-align: center;
 }
 
 .modal-active {
