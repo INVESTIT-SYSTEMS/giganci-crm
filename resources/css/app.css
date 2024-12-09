@@ -3,57 +3,10 @@
 @tailwind utilities;
 
 
-/*header div{*/
-/*    width: 10vw;*/
-/*    display: flex;*/
-/*    height: 55px;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    !*border-bottom: 6px solid #66007a;*!*/
-/*}*/
 
-/*header{*/
-
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    width: 100vw;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    height: 55px;*/
-/*    !*background-color: #ae14cb;*!*/
-/*    !*background: linear-gradient(180deg, #a01eb8, #9e2db3);*!*/
-/*    !*background: linear-gradient(180deg, #2fd0fa, #00a2c8);*!*/
-/*    !*background-color: #7043aa   ;*!*/
-/*    background: linear-gradient(180deg, #7043aa, #8a4fd6);*/
-/*    color: white;*/
-/*    font-weight: bold;*/
-/*    box-shadow: black 15px 0 20px;*/
-/*    border-bottom: solid 1px black;*/
-/*}*/
-
-/*.navigator{*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    width: 60vw;*/
-/*}*/
-
-/*.logo{*/
-/*    width: 40vw;*/
-/*    float: left;*/
-/*}*/
-
-/*header div:hover{*/
-/*    !*border-bottom: 6px solid #66007a;*!*/
-/*    border-bottom: 6px solid #51307a;*/
-/*    transition: all 0.15s;*/
-/*    border-collapse: collapse;*/
-/*    background-color: #6b40a1;*/
-/*    !*background-color: #008baa;*!*/
-/*}*/
 
 
 table, tr, td, th{
-    /*border-collapse: collapse;*/
     border: solid 2px black;
 }
 
@@ -86,11 +39,7 @@ tr:hover td{
 
 
 .potentialuser{
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -184,15 +133,11 @@ table select, textarea{
 }
 
 .contentpotential{
-    /*background-color: #ff6213;*/
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     margin: auto;
-    /*box-shadow: black 15px 0px 20px;*/
-
 }
 
 .contentpotential h1{
@@ -204,7 +149,6 @@ table select, textarea{
 
 
 .contentstudent{
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -232,7 +176,6 @@ table select, textarea{
 }
 
 .contentteacher{
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -278,7 +221,6 @@ table select, textarea{
 }
 
 .contentgroup{
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -293,7 +235,6 @@ table select, textarea{
     font-size: 18px;
     border: #7043aa solid 3px;
     border-radius: 15px;
-    /*margin: 10px 45px 20px 10px;*/
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
@@ -307,7 +248,6 @@ table select, textarea{
 
 .group{
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -315,9 +255,6 @@ table select, textarea{
     padding: 5px;
     height: 80%;
     box-shadow: black 5px 5px 20px;
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
 }
 
 .contentgroup h1{
@@ -328,7 +265,6 @@ table select, textarea{
 }
 
 main{
-    /*background: linear-gradient(180deg, #b4efff, #7ccddc);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -337,26 +273,20 @@ main{
 }
 
 .maindiv{
-    /*background-color: darkgrey;*/
-    /*background-color: #3cb5d8;*/
     background-color: #ef7d00;
     width: 192px;
     height: 20vh;
-    /*float: left;*/
     display: flex;
     flex-wrap: wrap;
-    /*padding: 20px 20px;*/
     text-align: center;
     margin: 10px 5%;
     align-items: center;
     justify-content: center;
     font-size: 19px;
-    /*margin: 20px auto;*/
     border-radius: 10px;
 }
 
 .maindiv:hover{
-    /*background-color: darkgrey;*/
     background-color: #ef7d00;
     transition: all 0.3s;
     scale: 1.1;
@@ -396,7 +326,6 @@ main h3{
 }
 
 .contentlocation{
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
@@ -425,7 +354,6 @@ main h3{
 
 .location{
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -454,8 +382,6 @@ footer{
     align-items: center;
     justify-content: center;
     position: relative;
-    /*background: linear-gradient(180deg, #2fd0fa, #00a2c8);*/
-    /*background: linear-gradient(180deg, #7043aa, #8a4fd6);*/
     background: linear-gradient(180deg, #844fc8, #6c3ea6);
     border-top: 1px black solid;
 }
@@ -521,36 +447,12 @@ footer{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contentpotentialedit{
-    /*background-color: #ff6213;*/
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     margin: auto;
-    /*box-shadow: black 15px 0px 20px;*/
-
 }
 
 .contentpotentialedit h1{
@@ -564,7 +466,6 @@ footer{
 .potentialuseredit{
 
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -574,7 +475,6 @@ footer{
     display: flex;
     justify-content: center;
     padding-top: 2%;
-    /*align-items: center;*/
 }
 
 .potentialuseredit input{
@@ -605,14 +505,11 @@ footer{
 }
 
 .contentpotentialadd{
-    /*background-color: #ff6213;*/
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     margin: auto;
-    /*box-shadow: black 15px 0px 20px;*/
 
 }
 
@@ -627,7 +524,6 @@ footer{
 .potentialuseradd{
 
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -636,7 +532,6 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
     padding-top: 2%;
 }
 
@@ -668,15 +563,11 @@ footer{
 }
 
 .contentstudentadd{
-    /*background-color: #ff6213;*/
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     margin: auto;
-    /*box-shadow: black 15px 0px 20px;*/
-
 }
 
 .contentstudentadd h1{
@@ -695,7 +586,6 @@ footer{
 
 .studentsectionadd{
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -704,7 +594,6 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
     padding-top: 2%;
 }
 
@@ -739,15 +628,11 @@ footer{
 }
 
 .contentstudentedit{
-    /*background-color: #ff6213;*/
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     margin: auto;
-    /*box-shadow: black 15px 0px 20px;*/
-
 }
 
 .contentstudentedit h1{
@@ -761,7 +646,6 @@ footer{
 .studentsectionedit{
 
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -770,7 +654,6 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
     padding-top: 2%;
 }
 
@@ -802,15 +685,11 @@ footer{
 }
 
 .contentgroupadd, .contentgroupedit, .contentlocationedit, .contentlocationadd, .contentteacheredit, .contentteacheradd, .contentsms{
-    /*background-color: #ff6213;*/
-    /*background: linear-gradient(180deg, #ff691f, #e35400);*/
     height: 85vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
     margin: auto;
-    /*box-shadow: black 15px 0px 20px;*/
-
 }
 
 .contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1, .contentteacheredit h1, .contentteacheradd h1, .contentsms h1{
@@ -824,7 +703,6 @@ footer{
 .groupsectionadd, .groupsectionedit, .locationsectionedit, .locationsectionadd, .teachercontentedit, .teachercontentadd, .smssection{
 
     text-align: center;
-    /*background-color: #9c1fb5;*/
     overflow: auto;
     width: 95vw;
     margin: auto;
@@ -833,7 +711,6 @@ footer{
     box-shadow: black 5px 5px 20px;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
     padding-top: 2%;
 }
 
@@ -872,80 +749,7 @@ body{
     scale: 0.9;
 }
 
-/*.looking{*/
-/*   float: left;*/
-/*    width: 55%;*/
-/*    height: 100%;*/
-/*}*/
-
-/*.butttons{*/
-/*    float: left;*/
-/*    height: 100%;*/
-/*    width: 15%;*/
-/*}*/
-
-/*.add{*/
-/*    float: left;*/
-/*    width: 30%;*/
-/*    height: 100%;*/
-/*}*/
-
-
-/*.butttons button{*/
-/*    background-color:#7043aa;*/
-/*    color: white;*/
-/*    padding: 10px;*/
-/*    border: #7043aa solid 3px;*/
-/*    border-radius: 15px;*/
-/*    margin: 5px 5px 10px 10px;*/
-/*    box-shadow: black 5px 5px 10px;*/
-/*    font-weight: bold;*/
-/*    font-size: 18px;*/
-/*}*/
-
-
-/*.butttons button:hover{*/
-/*    scale: 1.1;*/
-/*    transition: all 0.35s;*/
-/*    background-color: #cc531c;*/
-/*}*/
-
-/*.looking input{*/
-/*    padding: 10px;*/
-/*    border: 1px solid black;*/
-/*    margin: 5px 0 10px 45px;*/
-/*    border-radius: 15px;*/
-/*}*/
-
-/*.looking select{*/
-/*    padding: 10px;*/
-/*    border: 1px solid black;*/
-/*    margin: 5px 0 10px 5px;*/
-/*    border-radius: 15px;*/
-/*}*/
-
-/*.smsbutton{*/
-/*    !*background-color: #ff6213;*!*/
-/*    background-color:#7043aa;*/
-/*    color: white;*/
-/*    padding: 10px;*/
-/*    border: #7043aa solid 3px;*/
-/*    border-radius: 15px;*/
-/*    margin: 10px 10px 10px 10px;*/
-/*    float: right;*/
-/*    box-shadow: black 5px 5px 10px;*/
-/*    font-weight: bold;*/
-/*    font-size: 18px;*/
-/*}*/
-
-/*.smsbutton:hover{*/
-/*    scale: 1.1;*/
-/*    transition: all 0.35s;*/
-/*    background-color: #cc531c;*/
-/*}*/
-
 .send{
-    /*background-color: #ff6213;*/
     background-color:#7043aa;
     color: white;
     padding: 5px 10px;
@@ -1009,7 +813,6 @@ span{
 
     header{
         display: flex;
-        /*flex-wrap: wrap;*/
         width: 100vw;
         justify-content: center;
         align-items: center;
@@ -1074,10 +877,6 @@ span{
     .addteacher, .addlocation{
         margin: 10px 20px 10px 10px;
     }
-
-
-
-
 }
 
 @media screen and (max-width: 767px){
@@ -1146,9 +945,6 @@ span{
         padding: 0;
     }
 
-/*Tomek Sigma*/
-
-
     .addimail a{
         margin: 0;
         padding: 0;
@@ -1161,10 +957,6 @@ span{
 
     .buttsearch label button{
         margin: 10% 10px;
-    }
-
-    .addimail a{
-        /*margin-right: 25px;*/
     }
 
     .helpo{
@@ -1186,7 +978,6 @@ span{
 
     .helpo label{
         height: 100%;
-        /*margin: auto;*/
         margin: auto auto auto 0;
         display: flex;
         flex-direction: column;
@@ -1200,18 +991,14 @@ span{
         display: flex;
     }
 
-
-
     .logo{
         margin-left: 5px;
     }
 
     .student, .potentialuser, .group{
         height: 68%;
+        /*Tomek sigma*/
     }
-
-
-
 }
 
 
@@ -1251,8 +1038,6 @@ span{
         float: left;
         margin-bottom: 10px;
     }
-
-
 
     .searchinput{
         width: 60%;
@@ -1311,7 +1096,6 @@ span{
     .addimail form{
         padding: 0;
         margin: 0;
-        /*height: 100%;*/
         float: right;
         display: flex;
         align-items: center;
@@ -1365,10 +1149,6 @@ span{
         border-collapse: collapse;
         background-color: #6b40a1;
     }
-
-
-
-
 }
 
 @media screen and (min-width: 990px){
@@ -1407,8 +1187,6 @@ span{
         margin-bottom: 10px;
     }
 
-
-
     .searchinput{
         width: 60%;
         height: 100%;
@@ -1441,11 +1219,6 @@ span{
         padding: 0;
     }
 
-    .addimail button{
-        /*float: right;*/
-        /*margin: auto 15px auto 5px;*/
-    }
-
     .addimail a{
         margin: 0;
         padding: 0;
@@ -1471,7 +1244,6 @@ span{
     .addimail form{
         padding: 0;
         margin: 0;
-        /*height: 100%;*/
         float: right;
         display: flex;
         align-items: center;
@@ -1480,10 +1252,7 @@ span{
     .smsbutton{
         margin-right: 25px;
     }
-
 }
-
-
 
 
 .center{
@@ -1590,7 +1359,6 @@ span{
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
-    /* font-family: fantasy; */
     color: white;
 }
 
@@ -1611,14 +1379,12 @@ span{
 }
 
 .addstudent, .smsbutton{
-    /*background-color: #ff6213;*/
     background-color:#7043aa;
     color: white;
     font-size: 18px;
     padding: 10px 11px;
     border: #7043aa solid 3px;
     border-radius: 15px;
-    /*margin: 10px 45px 10px 10px;*/
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
@@ -1688,5 +1454,3 @@ button#close:hover {
     transform: scale(1.05);
     background-color: rgb(255, 62, 62);
 }
-
-
