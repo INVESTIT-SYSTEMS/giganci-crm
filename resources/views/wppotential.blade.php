@@ -99,7 +99,13 @@
 
 @include('Layout_forms.footerlayout')
 
-
+<script>
+    const buttonClose = document.getElementById("close");
+    let windowClose = document.getElementById("modal");
+    buttonClose.addEventListener("click", () => {
+        windowClose.setAttribute("class", "modal-active");
+    });
+</script>
 
 
 
