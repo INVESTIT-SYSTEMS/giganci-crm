@@ -13,7 +13,7 @@
                 <th>Nazwisko</th>
                 <th>Numer telefonu</th>
                 <th>E-mail</th>
-                <th>Edytor</th>
+                <th></th>
             </tr>
             @foreach($teacher as $info)
                 <div class="gap">

@@ -9,7 +9,7 @@
         <table class="">
             <tr>
                 <th>Miasto</th>
-                <th>Edytor</th>
+                <th></th>
             </tr>
             @foreach($location as $info)
                 <div class="gap">

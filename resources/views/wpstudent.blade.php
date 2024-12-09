@@ -65,7 +65,7 @@
                     <th>E-mail rodzica</th>
                     <th>Nazwa grupy</th>
                     <th>Lokalizacaja</th>
-                    <th>Edytor</th>
+                    <th></th>
                 </tr>
 
                     @foreach($student as $info)
