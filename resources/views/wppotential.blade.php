@@ -14,7 +14,10 @@
 <section class="contentpotential">
     <h1>Potencjalni uczniowie</h1>
     @if(session('send'))
-        <p>{{session('send')}}</p>
+        <section class="modal" id="modal">
+            <p>{{session('send')}}</p>
+            <button class="close" type="button" id="close">X</button>
+        </section>
     @endif
 
     <div class="helpo">

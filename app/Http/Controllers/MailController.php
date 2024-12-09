@@ -30,7 +30,7 @@ class MailController extends Controller
                 'group' => Group::all(),
             ]);
         } else {
-            return redirect(route('students.index'))->with('send', 'wybierz uczniów ');
+            return redirect(route('students.index'))->with('send', 'Wybierz uczniów');
 
         }
     }
@@ -44,7 +44,7 @@ class MailController extends Controller
                 'group' => Group::all(),
             ]);
         } else {
-            return redirect(route('potentialStudents.index'))->with('send', 'wybierz uczniów ');
+            return redirect(route('potentialStudents.index'))->with('send', 'Wybierz uczniów');
 
         }
 
@@ -59,7 +59,7 @@ class MailController extends Controller
                 'group' => Group::all(),
             ]);
         } else {
-            return redirect(route('groups.index'))->with('send', 'wybierz grupę ');
+            return redirect(route('groups.index'))->with('send', 'Wybierz grupę');
 
         }
 
