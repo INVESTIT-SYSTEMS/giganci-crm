@@ -16,10 +16,7 @@
     <h3>Siema Marcin</h3>
 
 
-    @if(session('send'))
-        <p>{{session('send')}}</p>
-    @endif
-    <section class="modal-active" id="modal">
+    <section class="modal" id="modal">
         @if(session('send'))
             <p>{{session('send')}}</p>
         @endif
