@@ -15,13 +15,12 @@
     <h1>Giganci programowania CRM</h1>
     <h3>Siema Marcin</h3>
 
-
+    @if(session('send'))
     <section class="modal" id="modal">
-        @if(session('send'))
             <p>{{session('send')}}</p>
-        @endif
         <button class="close" type="button" id="close">X</button>
     </section>
+    @endif
 
     <section class="bg-gray-300 contentmain">
         <a href="{{ route('students.index') }}"><div class="maindiv">
