@@ -16,7 +16,7 @@
     @if(session('send'))
         <section class="modal" id="modal">
             <p>{{session('send')}}</p>
-            <button class="close" type="button" id="close">X</button>
+            <button class="close" type="button" id="close"><i class="fa-solid fa-xmark"></i></button>
         </section>
     @endif
 

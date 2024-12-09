@@ -27,7 +27,6 @@
                 <input type="checkbox" name="checkSMS" id="2"> SMS
             </table>
             <div class="studentmessage">
-
             <table>
                 <form action="{{route('sms.index')}}" method="post">
                 <tr>
@@ -60,10 +59,10 @@
                 </tr>
                 @endforeach
                 @endif
-                </form>
             </table>
             </div>
-            <button type="submit" class="send">Wyślij</button>
+            <button type="submit" class="send">Wyślij</button></a>
+        </div>
         </form>
     </section>
 
