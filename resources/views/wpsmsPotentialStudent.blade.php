@@ -49,6 +49,7 @@
             </table>
             </div>
             <button type="submit" class="send">Wyślij</button></a>
+        </div>
         </form>
     </section>
 
