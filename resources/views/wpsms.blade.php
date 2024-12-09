@@ -12,7 +12,9 @@
         <form action="{{route('mailStudent.send')}}" method="get">
             @csrf
         <div class="sendmessage">
-            <h3>SMS & E-mail</h3>
+            <div class="buttoncontent">
+                <a href="wpsmsSend.blade.php"><button class="messagebutton">SMS</button></a>
+            </div>
 
             <table class="message">
                 <tr>

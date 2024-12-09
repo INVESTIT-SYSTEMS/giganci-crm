@@ -43,3 +43,7 @@ Route::get('/addStudentInGroup', [GroupController::class, 'ShowGroups'])->name('
 Route::get('/login', function () {
     return view('wplogin');
 });
+
+Route::get('/tak', function () {
+    return view('wpsmsSend');
+});

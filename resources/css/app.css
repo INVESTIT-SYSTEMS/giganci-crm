@@ -692,7 +692,15 @@ footer{
     margin: auto;
 }
 
-.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1, .contentteacheredit h1, .contentteacheradd h1, .contentsms h1{
+.contentgroupadd h1, .contentgroupedit h1, .contentlocationedit h1, .contentlocationadd h1, .contentteacheredit h1, .contentteacheradd h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.contentsms h1{
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -1453,4 +1461,31 @@ span{
 button#close:hover {
     transform: scale(1.05);
     background-color: rgb(255, 62, 62);
+}
+
+.messagebutton{
+    background-color:#7043aa;
+    color: white;
+    font-size: 14px;
+    padding: 5px 6px;
+    border: #7043aa solid 3px;
+    border-radius: 15px;
+    float: right;
+    box-shadow: black 5px 5px 10px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.messagebutton:hover{
+    scale: 1.1;
+    transition: all 0.35s;
+    background-color: #cc531c;
+}
+
+.buttoncontent{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2px;
+    transform: translate(5%, 0);
 }
