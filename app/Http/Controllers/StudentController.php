@@ -128,10 +128,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student, Request $request)
+    public function destroy(Student $student)
     {
-            $student->delete();
-            return redirect(route('students.index'));
+        $student->delete();
+        return redirect(route('students.index'));
     }
     public function moveStudent(PotentialStudent $studentData): View
     {

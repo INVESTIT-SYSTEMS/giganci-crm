@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Smsapi\Client\Curl\SmsapiHttpClient;
+use Smsapi\Client\SmsapiClient;
+use Smsapi\Client\Feature\Sms\Bag\SendSmsBag;
 use App\Mail\SendingMail;
 use App\Models\Group;
 use App\Models\Location;
@@ -13,7 +16,6 @@ use Illuminate\Mail\Mailables\Address;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Mockery\Exception;
-use Smsapi\Client\Feature\Sms\Bag\SendSmsBag;
 use function Laravel\Prompts\alert;
 
 class MailController extends Controller
@@ -88,13 +90,17 @@ class MailController extends Controller
                 if ($request->has('number')) {
                     $users = Student::whereIn('parent_phone_number', $request->get('parent_phone_numbers'))->get();
 
+                    $client = new SmsapiHttpClient();
+
+                    $apiToken = 'H3uEZrg3P1pUpdu6b6EUrIrZ9K4ZdIpkMH1rb3Ag';
+                    $service = $client->smsapiPlService($apiToken);
+
                     foreach ($users as $user) {
                         $sms = SendSmsBag::withMessage($user->parent_phone_number, $request->get('message'));
+                        $service->smsFeature()->sendSms($sms);
                     }
-                    return view('Layout_forms.navi');
+                    return view('students.index');
                 }
-            } else {
-                return redirect(route('students.index'))->with('send', 'nie wybrano opcji wysyłki');
             }
     }
     public function sendPotentialStudent(Request $request)
