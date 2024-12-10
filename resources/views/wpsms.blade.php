@@ -13,7 +13,8 @@
             @csrf
         <div class="sendmessage">
             <div class="buttoncontent">
-                <a href="wpsmsSend.blade.php"><button class="messagebutton">SMS</button></a>
+                <label><input type="checkbox" name="checkEmail" id="1"> E-mail</label>
+                <label><input type="checkbox" name="checkSMS" id="2"> SMS</label>
             </div>
 
             <table class="message">
@@ -23,8 +24,8 @@
                 <tr>
                     <td> <textarea name="message" placeholder="Wpisz swoją wiadomość"></textarea></td>
                 </tr>
-                <input type="checkbox" name="checkEmail" id="1"> Emial <br>
-                <input type="checkbox" name="checkSMS" id="2"> SMS
+{{--                <input type="checkbox" name="checkEmail" id="1"> Emial <br>--}}
+{{--                <input type="checkbox" name="checkSMS" id="2"> SMS--}}
             </table>
             <div class="studentmessage">
             <table>

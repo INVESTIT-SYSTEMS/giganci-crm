@@ -1447,7 +1447,7 @@ span{
     position: absolute;
     top: 5px;
     right: 5px;
-    padding: 5px 8px;
+    padding: 0 8px;
     color: black;
     border: 1px black solid;
     border-radius: 10px;
@@ -1485,7 +1485,12 @@ button#close:hover {
 
 .buttoncontent{
     display: flex;
-    justify-content: end;
-    margin-bottom: 2px;
-    transform: translate(5%, 0);
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.buttoncontent label{
+    margin: 0 35px;
 }
