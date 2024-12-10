@@ -74,7 +74,7 @@
                     @foreach($student as $info)
                         <div class="gap">
                             <tr>
-                                <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
+                                <td><input type="checkbox" class="checkboxes" name="check[]" form="delete" id="" value="{{$info->id}}"></td>
                                 <td class="colored">{{$info->name}}</td>
                                 <td>{{$info->surname}}</td>
                                 <td class="colored">{{$info->birth_year}}</td>
@@ -86,10 +86,10 @@
                                 <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
                                <td>
                                     <a href="{{ route('students.edit', ['student' => $info])}}"><button class="edit" type="button"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
-                                    <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post">
+                                    <form action="{{ route('students.destroy', ['student' => $info]) }}" method="post" id="delete">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
+                                        <button onclick="return confirm('Jesteś pewny usunięcia ucznia?\nNie będzie można przywrócić tych zmian')" type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

@@ -69,7 +69,6 @@ class MailController extends Controller
 
     public function sendStudent(Request $request)
     {
-        if ($request->get('checkEmail') || $request->get('checkSMS')) {
             if ($request->get('checkEmail')) {
                 if ($request->has('emails')) {
                     $users = Student::whereIn('parent_email', $request->get('emails'))->get();
@@ -97,7 +96,6 @@ class MailController extends Controller
             } else {
                 return redirect(route('students.index'))->with('send', 'nie wybrano opcji wysyłki');
             }
-        }
     }
     public function sendPotentialStudent(Request $request)
     {
