@@ -28,7 +28,7 @@ Route::resource('teachers', TeacherController::class);
 
 Route::resource('students', StudentController::class);
 
-Route::get('/send-sms', [SmsController::class, 'index'])->name('sms.index');
+
 
 Route::get('/message/Student', [MailController::class, 'messageStudent'])->name('messageStudent.index');
 Route::get('/message/PotentialStudent', [MailController::class, 'messagePotentialStudent'])->name('messagePotentialStudent.index');

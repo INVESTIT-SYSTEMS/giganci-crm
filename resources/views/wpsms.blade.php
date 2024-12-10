@@ -28,7 +28,7 @@
             </table>
             <div class="studentmessage">
             <table>
-                <form action="{{route('sms.index')}}" method="post">
+
                 <tr>
                     <th>Imie i nazwisko ucznia</th>
                     <th>Imie i nazwisko rodzica</th>

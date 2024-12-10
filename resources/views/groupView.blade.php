@@ -10,7 +10,7 @@
     }
 </script>
 @include('Layout_forms.headlayout')
-<form action="{{route('showGroups', ['group'=>$group])}}" method="get">
+
 <section class="contentstudent">
     <h1 class="">Uczniowie z grupy {{$group->name}}</h1>
     <div class="helpo">
@@ -25,8 +25,8 @@
 
 
         <div class="addimail">
-            <a><button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
-            <form action="{{route('messageGroup.index')}}" method="get" id="send">
+            <a href="{{route('showGroups')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+            <form action="{{route('messageStudent.index')}}" method="get" id="send">
                 <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
         </div>
@@ -50,7 +50,7 @@
                         <div class="gap">
 
                                 <tr>
-                                    <td><input type="checkbox" class="checkboxes" name="check" id="{{$info->id}}"></td>
+                                    <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
                                     <td class="colored">{{$info->name}}</td>
                                     <td>{{$info->surname}}</td>
                                     <td class="colored">{{$info->birth_year}}</td>
@@ -76,5 +76,5 @@
             </table>
     </section>
 </section>
-</form>
+
 @include('Layout_forms.footerlayout')
