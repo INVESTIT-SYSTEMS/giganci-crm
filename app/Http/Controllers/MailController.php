@@ -31,10 +31,10 @@ class MailController extends Controller
                 'group' => Group::all(),
             ]);
         }
-//        else {
-//            return redirect(route('students.index'))->with('send', 'Wybierz uczniów');
-//
-//        }
+        else {
+            return redirect(route('students.index'))->with('send', 'Wybierz uczniów');
+
+        }
     }
 
     public function messagePotentialStudent(Request $request)
