@@ -87,7 +87,7 @@ class MailController extends Controller
                 }
             }
             if ($request->get('checkSMS')) {
-                if ($request->has('number')) {
+                if ($request->has('parent_phone_numbers')) {
                     $users = Student::whereIn('parent_phone_number', $request->get('parent_phone_numbers'))->get();
 
                     $client = new SmsapiHttpClient();
@@ -99,30 +99,50 @@ class MailController extends Controller
                         $sms = SendSmsBag::withMessage($user->parent_phone_number, $request->get('message'));
                         $service->smsFeature()->sendSms($sms);
                     }
-                    return view('students.index');
+
+                }else {
+                    return redirect(route('main.index'))->with('send', 'Wystąpił błąd z wysyłką Sms');
                 }
             }
+            return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie!');
     }
     public function sendPotentialStudent(Request $request)
     {
-        if ($request->has('emails')) {
-            $users = PotentialStudent::whereIn('parent_email', $request->get('emails'))->get();
+        if ($request->get('checkEmail')) {
+            if ($request->has('emails')) {
+                $users = PotentialStudent::whereIn('parent_email', $request->get('emails'))->get();
 
-
-
-            foreach ($users as $user) {
-
-                Mail::to($user->parent_email)->send(new SendingMail($mailData = [
-                    'title' => $request->get('title'),
-                    'body' => $request->get('message'),
-                    'name' => $user->parent_name,
-                ]));
+                foreach ($users as $user) {
+                    Mail::to($user->parent_email)->send(new SendingMail($mailData = [
+                        'title' => $request->get('title'),
+                        'body' => $request->get('message'),
+                        'name' => $user->parent_name,
+                    ]));
+                }
+            } else {
+                return redirect(route('main.index'))->with('send', 'Wystąpił błąd z wysyłką email');
             }
-
-            return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie!');
-        } else {
-            return redirect(route('messagePotentialStudent.index'))->with('send', 'wystąpił jakiś bląd');
         }
+        if ($request->get('checkSMS')) {
+            if ($request->has('parent_phone_numbers')) {
+                $users = PotentialStudent::whereIn('parent_phone_number', $request->get('parent_phone_numbers'))->get();
+
+                $client = new SmsapiHttpClient();
+
+                $apiToken = 'H3uEZrg3P1pUpdu6b6EUrIrZ9K4ZdIpkMH1rb3Ag';
+                $service = $client->smsapiPlService($apiToken);
+
+                foreach ($users as $user) {
+                    $sms = SendSmsBag::withMessage($user->parent_phone_number, $request->get('message'));
+                    $service->smsFeature()->sendSms($sms);
+                }
+
+            }else{
+                return redirect(route('main.index'))->with('send', 'Wystąpił błąd z wysyłką Sms');
+            }
+        }
+        return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie!');
+//
     }
 }
 
