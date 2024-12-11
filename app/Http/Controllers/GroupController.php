@@ -122,7 +122,7 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
 
     public function ShowGroups(Request $request)
     {
-        $pickGroup = Group::where('id', $request->get('groupName'))->get('name');
+        $pickGroup = Group::where('name', $request->get('groupName'))->get();
 //        dd($pickGroup);
         return view('Layout_forms.StudentInGroupAddingForm', [
                 'group' => $pickGroup,

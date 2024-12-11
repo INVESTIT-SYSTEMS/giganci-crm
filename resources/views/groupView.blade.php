@@ -25,7 +25,7 @@
 
 
         <div class="addimail">
-            <a href="{{route('showGroups')}}"><button type="button" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+
             <form action="{{route('messageStudent.index')}}" method="get" id="send">
                 <button type="submit" class="smsbutton"><i class="fa-solid fa-envelope"></i></button>
             </form>
@@ -46,19 +46,22 @@
                     <th>Lokalizacaja</th>
                     <th>Edytor</th>
                 </tr>
+                <form action="{{route('showGroups')}}" method="get" id="groupName">
+                    <a><button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
+                </form>
                     @foreach($student as $info)
                         <div class="gap">
 
                                 <tr>
                                     <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
-                                    <td class="colored">{{$info->name}}</td>
+                                    <td class="colored"><input form="groupName" hidden name="id" value="{{$group->id}}">{{$info->name}}</td>
                                     <td>{{$info->surname}}</td>
                                     <td class="colored">{{$info->birth_year}}</td>
                                     <td>{{$info->parent_name}}</td>
                                     <td class="colored">{{$info->parent_surname}}</td>
                                     <td>{{$info->parent_phone_number}}</td>
                                     <td class="colored">{{$info->parent_email}}</td>
-                                    <td><input hidden name="groupName" value="{{$group->id}}">
+                                    <td><input form="groupName" hidden name="groupName" value="{{$group->name}}">
                                         {{$info->group ? $info->group->name:'Brak grupy'}}
                                     </td>
                                     <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
@@ -73,6 +76,7 @@
                                 </tr>
                         </div>
                     @endforeach
+
             </table>
     </section>
 </section>

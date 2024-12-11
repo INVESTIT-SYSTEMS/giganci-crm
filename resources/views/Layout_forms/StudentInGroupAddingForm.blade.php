@@ -64,8 +64,8 @@
                 </tr>
                 <tr>
                     <td>Grupa:</td>
-                    <input hidden value="{{request('groupName')}}" name="group_id">
-                    <td>{{$group}}</td>
+                    <input hidden value="{{request('id')}}" name="group_id">
+                    <td>{{request('groupName')}}</td>
                 </tr>
             </table>
             <button type="submit" class="studentadd">Dodaj Ucznia</button>
