@@ -22,9 +22,9 @@
 <section class="login">
 <div class="bg-gray-300 center">
     <h1>Logowanie</h1>
-    <form method="get">
+    <form method="get" action="{{route('login.ichuj')}}">
         <div class="text_field">
-            <input type="text" name="Username" required>
+            <input type="text" name="login" required>
             <span></span>
             <label>Login</label>
         </div>
