@@ -15,6 +15,13 @@
         <section class="logo">
             <h1>Giganci Programowania</h1>
         </section>
+        <section class="oversearch" id="oversearch"><i class="fa-solid fa-magnifying-glass"></i></section>
+        <div class="bg-gray-300 overtext" id="overtext">
+            <input type="text" name="" id="" placeholder="Wpisz wyszukiwaną wartość">
+            <button class="look1"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+
         <section class="navigator">
 
 {{--            <input type="checkbox" id="menu-toggle">--}}
@@ -64,6 +71,13 @@
 
         hamburger.addEventListener('click', () => {
             menu.classList.toggle('active');
+        });
+
+        const oversearch = document.getElementById('oversearch');
+        const overtext = document.getElementById('overtext');
+
+        oversearch.addEventListener('click', () => {
+            overtext.classList.toggle('active');
         });
     </script>
 {{--@include('navi')--}}
