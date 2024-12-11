@@ -5,10 +5,12 @@ use App\Models\Location;
 use App\Models\PotentialStudent;
 use App\Models\Student;
 use App\Models\Group;
+use App\Models\User;
 use Cassandra\Custom;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class StudentController extends Controller
@@ -139,5 +141,18 @@ class StudentController extends Controller
         return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
     }
 
+    public function Login(Request $request)
+    {
+        $data = $request->validate([
+            'login'=>'required',
+            'password'=>'required',
+        ]);
+
+        if (Auth::attempt($data)){
+            $request->session()->regenerate();
+            return redirect()->intended('main');
+        }
+        return view('wplogin');
+    }
 
 }

@@ -43,14 +43,12 @@ Route::put('/groupView/{student}', [GroupController::class, 'GroupViewUpdate'])-
 Route::delete('/groupView/{student}', [GroupController::class, 'GroupViewDestroy'])->name('groupView.destroy');
 Route::post('groups/{group}/groupView', [GroupController::class, 'GroupViewStore'])->name('groupView.store');
 
-
+Route::get('/', [StudentController::class, 'Login'])->name('login.ichuj');
 
 
 //Perla t gej
-Route::get('/', function () {
-    return view('wplogin');
-});
+//Route::get('/', function () {
+//    return view('wplogin');
+//});
 
-Route::get('/tak', function () {
-    return view('wpsmsSend');
-});
+
