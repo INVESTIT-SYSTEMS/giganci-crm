@@ -9,6 +9,15 @@
     @vite('resources/css/app.css')
 </head>
 <body>
+<header class="text-center">
+    <section class="logo">
+        <h1>Giganci Programowania</h1>
+    </section>
+    <section class="navigator">
+        <nav class="menu" id="menu">
+        </nav>
+    </section>
+</header>
 <section class="login">
 <div class="bg-gray-300 center">
     <h1>Logowanie</h1>
