@@ -143,14 +143,19 @@ class StudentController extends Controller
 
     public function Login(Request $request)
     {
-        $data = $request->validate([
-            'login'=>'required',
-            'password'=>'required',
+//        $data = $request->validate([
+//            'login'=>'required',
+//            'password'=>'required',
+//        ]);
+
+        $data = $request->only([
+            'login',
+            'password'
         ]);
 
         if (Auth::attempt($data)){
             $request->session()->regenerate();
-            return redirect()->intended('main');
+            return redirect()->intended(route('main.index'));
         }
         return view('wplogin');
     }

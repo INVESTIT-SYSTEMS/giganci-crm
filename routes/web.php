@@ -11,7 +11,7 @@ use App\Http\Controllers\LocationController;
 
 
 
-Route::get('/main', function () {
+Route::get('/', function () {
     return view('main');
 })->name('main.index');
 
@@ -43,7 +43,7 @@ Route::put('/groupView/{student}', [GroupController::class, 'GroupViewUpdate'])-
 Route::delete('/groupView/{student}', [GroupController::class, 'GroupViewDestroy'])->name('groupView.destroy');
 Route::post('groups/{group}/groupView', [GroupController::class, 'GroupViewStore'])->name('groupView.store');
 
-Route::get('/', [StudentController::class, 'Login'])->name('login.ichuj');
+Route::get('/login', [StudentController::class, 'Login'])->name('login');
 
 
 //Perla t gej
