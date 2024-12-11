@@ -316,13 +316,13 @@ main h1{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    padding: 15px 0 10px 0;
+    padding: 15px 0 5px 0;
 }
 
 main h3{
     text-align: center;
     font-size: 22px;
-    padding: 10px 0 25px 0;
+    padding: 10px 0 20px 0;
 }
 
 .contentlocation{
@@ -830,6 +830,7 @@ span{
         font-weight: bold;
         box-shadow: black 15px 0 20px;
         border-bottom: solid 1px black;
+        z-index: 1001;
     }
 
     .menu {
@@ -866,16 +867,20 @@ span{
     }
 
     .navigator {
-        width: 40%;
+        width: 20%;
         justify-content: space-between;
     }
 
     .logo{
-        width: 40%;
+        width: 60%;
     }
 
     .oversearch{
         width: 20%;
+    }
+
+    .overtext{
+        width: 60%;
     }
 
     .hamburger{
@@ -1148,6 +1153,7 @@ span{
         font-weight: bold;
         box-shadow: black 15px 0 20px;
         border-bottom: solid 1px black;
+        z-index: 1001;
     }
 
     .menu{
@@ -1162,6 +1168,10 @@ span{
 
     .oversearch{
         width: 5vw;
+    }
+
+    .overtext{
+        width:25%;
     }
 
     .n:hover{
@@ -1520,28 +1530,27 @@ button#close:hover {
 }
 
 .overtext{
-    display: none;
-    flex-direction: column;
+    /*display: none;*/
     gap: 5px;
-    width: 30%;
+    /*width: 30%;*/
     position: absolute;
     top: 60px;
     left: 23%;
     padding: 15px;
-    transform: translateY(20px);
-    opacity: 0;
+    transform: translateY(-200px);
+    /*opacity: 0;*/
     border: 1px black solid;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
-    transition: all 0.35s ease-in, transform 0.35s ease-in;
+    transition: 0.5s;
+    z-index: 888;
 }
 
 .overtext.active{
     display: flex;
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.35s ease-in, transform 0.35s ease-in;
+    /*opacity: 1;*/
+    transform: translateY(0) !important;
 }
 
 .oversearch:hover{
@@ -1553,8 +1562,8 @@ button#close:hover {
 .look1{
     background-color:#7043aa;
     color: white;
-    font-size: 14px;
-    padding: 5px 6px;
+    font-size: 12px;
+    padding: 6px 2px;
     border: #7043aa solid 3px;
     border-radius: 8px;
     box-shadow: black 5px 5px 10px;
@@ -1569,7 +1578,7 @@ button#close:hover {
 }
 
 .overtext input{
-    width: 60%;
+    width: 70%;
     border: 1px solid black;
     border-radius: 2px;
     height: 26px;
