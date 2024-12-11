@@ -85,11 +85,11 @@ table{
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
+    transition: all 0.35s;
 }
 
 .addpotential:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -108,11 +108,11 @@ table button{
     border: #7043aa solid 2px;
     padding: 5px;
     margin: 5px;
+    transition: all .2s;
 }
 
 table button:hover{
     scale: 1.1;
-    transition: all .2s;
 }
 
 table form, a{
@@ -194,11 +194,11 @@ table select, textarea{
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
+    transition: all 0.35s;
 }
 
 .addteacher:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -238,11 +238,11 @@ table select, textarea{
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
+    transition: all 0.35s;
 }
 
 .addgroup:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -284,11 +284,11 @@ main{
     justify-content: center;
     font-size: 19px;
     border-radius: 10px;
+    transition: all 0.3s;
 }
 
 .maindiv:hover{
     background-color: #ef7d00;
-    transition: all 0.3s;
     scale: 1.1;
     box-shadow: black 1px 1px 10px;
 }
@@ -344,11 +344,11 @@ main h3{
     float: right;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
+    transition: all 0.35s;
 }
 
 .addlocation:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -496,11 +496,11 @@ footer{
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
     text-align: center;
+    transition: all 0.35s;
 }
 
 .editpotential:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -554,11 +554,11 @@ footer{
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
     text-align: center;
+    transition: all 0.35s;
 }
 
 .potentialadd:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -619,11 +619,11 @@ footer{
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
     text-align: center;
+    transition: all 0.35s;
 }
 
 .studentadd:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -676,11 +676,11 @@ footer{
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
     text-align: center;
+    transition: all 0.35s;
 }
 
 .studentedit:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -741,11 +741,11 @@ footer{
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
     text-align: center;
+    transition: all 0.35s;
 }
 
 .groupadd:hover, .groupedit:hover, .locationedit:hover, .locationadd:hover, .teacheredit:hover, .teacheradd:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -766,11 +766,11 @@ body{
     margin: 5px 10px 10px 10px;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
+    transition: all 0.35s;
 }
 
 .send:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
@@ -1126,6 +1126,7 @@ span{
         height: 55px;
         align-items: center;
         justify-content: center;
+        transition: all 0.15s;
     }
 
     header{
@@ -1153,7 +1154,6 @@ span{
 
     .n:hover{
         border-bottom: 6px solid #51307a;
-        transition: all 0.15s;
         border-collapse: collapse;
         background-color: #6b40a1;
     }
@@ -1411,8 +1411,11 @@ span{
 
 .addstudent:hover,  .smsbutton:hover, .look:hover, .refresh:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
+}
+
+.addstudent, .smsbutton, .look, .refresh{
+    transition: all 0.35s;
 }
 
 .addstudent{
@@ -1475,11 +1478,11 @@ button#close:hover {
     font-weight: bold;
     text-align: center;
     margin: 0 5px;
+    transition: all 0.35s;
 }
 
 .messagebutton:hover{
     scale: 1.1;
-    transition: all 0.35s;
     background-color: #cc531c;
 }
 
