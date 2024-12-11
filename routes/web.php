@@ -7,12 +7,10 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LocationController;
-use App\Http\Controllers\SmsController;
 
 
-Route::get('/', function () {
-    return view('main');
-});
+
+
 Route::get('/main', function () {
     return view('main');
 })->name('main.index');
@@ -40,10 +38,16 @@ Route::get('/send-mail/Student', [MailController::class, 'sendStudent'])->name('
 Route::get('/send-mail/PotentialStudent', [MailController::class, 'sendPotentialStudent'])->name('mailPotentialStudent.send');
 
 Route::get('/addStudentInGroup', [GroupController::class, 'ShowGroups'])->name('showGroups');
+Route::get('/groupView/{student}/edit', [GroupController::class, 'GroupViewEdit'])->name('groupView.edit');
+Route::put('/groupView/{student}', [GroupController::class, 'GroupViewUpdate'])->name('groupView.update');
+Route::delete('/groupView/{student}', [GroupController::class, 'GroupViewDestroy'])->name('groupView.destroy');
+Route::post('groups/{group}/groupView', [GroupController::class, 'GroupViewStore'])->name('groupView.store');
+
+
 
 
 //Perla t gej
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('wplogin');
 });
 

@@ -7,7 +7,7 @@
 <section class="contentstudentadd">
     <h1>Dodaj ucznia</h1>
     <section class="bg-gray-300 studentsectionadd">
-        <form action="{{route('students.store')}}" method="POST" id="StudentForm">
+        <form action="{{route('groupView.store', ['group'=>request('id')])}}" method="POST" id="StudentForm">
             @csrf
             <table class="">
                 <tr>
