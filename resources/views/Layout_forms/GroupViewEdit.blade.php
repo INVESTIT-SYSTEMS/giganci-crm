@@ -6,7 +6,7 @@
 <section class="contentstudentedit">
     <h1>Edytuj ucznia</h1>
     <section class="bg-gray-300 studentsectionedit">
-        <form action="{{route('students.update', ['student'=>$student])}}" method="POST" id="StudentForm">
+        <form action="{{route('groupView.update', ['student'=>$student])}}" method="POST" id="StudentForm">
             @csrf
             @method('put')
             <table class="">
@@ -51,6 +51,7 @@
                     <td><input type="email" name="parent_email" id="" value="{{$student->parent_email}}"></tr>
                 <tr>
                     <td>Grupa</td>
+                    <input hidden name="group" value="{{$student->group_id}}">
                     <td> <select form="StudentForm" name="group_id">
                             @foreach($group as $name)
                                 <option @selected($student->group_id == $name->id) value="{{$name->id}}">{{$name->name}}</option>

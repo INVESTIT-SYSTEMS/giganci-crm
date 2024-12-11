@@ -124,9 +124,73 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
     {
         $pickGroup = Group::where('name', $request->get('groupName'))->get();
 //        dd($pickGroup);
-        return view('Layout_forms.StudentInGroupAddingForm', [
+        return view('Layout_forms.GroupViewAddForm', [
                 'group' => $pickGroup,
         ]);
     }
 
+    public function GroupViewStore(Request $request, $group)
+    {
+//        $groups = Group::all();
+
+        $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'birth_year' => 'required|numeric',
+            'parent_name' => 'required',
+            'parent_surname' => 'required',
+            'parent_phone_number' => 'required|numeric',
+        ]);
+
+        Student::create([
+            'name'=>$request->get('name'),
+            'surname'=>$request->get('surname'),
+            'birth_year'=>$request->get('birth_year'),
+            'parent_name'=>$request->get('parent_name'),
+            'parent_surname'=>$request->get('parent_surname'),
+            'parent_phone_number'=>$request->get('parent_phone_number'),
+            'parent_email'=>$request->get('parent_email'),
+            'group_id'=>$request->get('group_id'),
+        ]);
+        return redirect()->route('groups.show' , ['group'=>$group]);
+    }
+
+
+    public function GroupViewEdit(Student $student)
+    {
+        $groups= Group::all();
+        return view('Layout_forms.GroupViewEdit', ['student'=>$student, 'group'=>$groups]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function GroupViewUpdate(Student $student, Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'surname' => 'required',
+            'birth_year' => 'required|numeric',
+            'parent_name' => 'required',
+            'parent_surname' => 'required',
+            'parent_phone_number' => 'required|numeric',
+        ]);
+        $student->update([
+            'name'=>$request->get('name'),
+            'surname'=>$request->get('surname'),
+            'birth_year'=>$request->get('birth_year'),
+            'parent_name'=>$request->get('parent_name'),
+            'parent_surname'=>$request->get('parent_surname'),
+            'parent_phone_number'=>$request->get('parent_phone_number'),
+            'parent_email'=>$request->get('parent_email'),
+            'group_id'=>$request->get('group_id'),
+        ]);
+
+        return redirect(route('groups.show', ['group'=>$request->get('group')]))->with('success', 'Updated');
+    }
+    public function GroupViewDestroy(Student $student, Request $request)
+    {
+        $student->delete();
+        return redirect(route('groups.show', ['group'=>$request->get('group')]));
+    }
 }
