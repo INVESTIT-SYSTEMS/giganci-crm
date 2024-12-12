@@ -33,10 +33,9 @@
             <span></span>
             <label>Hasło</label>
         </div>
-        <div class="pass">Nie pamiętasz hasła?</div>
+        <div class="pass">Pamiętaj hasło!</div>
         <input type="submit" value="Login">
         <div class="singup_link">
-            <a href="#">ZAŁÓŻ KONTO</a>
         </div>
     </form>
 </div>

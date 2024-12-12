@@ -1325,10 +1325,10 @@ span{
 
 .text_field label{
     position: absolute;
-    top: 50%;
+    top: -35%;
     left: 5px;
     color: #7043aa;
-    transform: translateY(-50%);
+    /*transform: translateY(-50%);*/
     font-size: 16px;
     pointer-events: none;
     transition: .5s;
@@ -1345,11 +1345,11 @@ span{
     transition: .5s;
 }
 
-.text_field input:focus ~ label,
-.text_field input:valid ~ label{
-    top: -3px;
-    color: #7043aa;
-}
+/*.text_field input:focus ~ label,*/
+/*.text_field input:valid ~ label{*/
+/*    top: -3px;*/
+/*    color: #7043aa;*/
+/*}*/
 
 .text_field input:focus ~ span::before,
 .text_field input:valid ~ span::before{
@@ -1359,7 +1359,7 @@ span{
 .pass{
     margin: -5px 0 20px 5px;
     color: black;
-    cursor: pointer;
+    cursor: default;
 }
 
 .pass:hover{
@@ -1578,7 +1578,7 @@ button#close:hover {
 }
 
 .overtext input{
-    width: 70%;
+    width: 80%;
     border: 1px solid black;
     border-radius: 2px;
     height: 26px;
