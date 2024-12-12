@@ -10,10 +10,6 @@ use Illuminate\Http\Request;
 
 class PotentialStudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-
    public function index(Request $request)
     {
         $query = PotentialStudent::
@@ -36,17 +32,11 @@ class PotentialStudentController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(): View
     {
         return view('Layout_forms.PotentialStudentAddingForm');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
@@ -73,25 +63,16 @@ class PotentialStudentController extends Controller
             return redirect()->route('potentialStudents.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(PotentialStudent $potentialStudent)
     {
         return view('Layout_forms.PotentialStudentEditForm', ['user' => $potentialStudent]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, PotentialStudent $potentialStudent)
     {
         $data = $request->validate([
@@ -117,9 +98,6 @@ class PotentialStudentController extends Controller
         return redirect()->route('potentialStudents.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(PotentialStudent $potentialStudent)
     {
         $potentialStudent -> delete();

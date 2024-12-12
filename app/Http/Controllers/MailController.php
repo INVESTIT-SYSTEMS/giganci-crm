@@ -20,9 +20,6 @@ use function Laravel\Prompts\alert;
 
 class MailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
 
     public function messageStudent(Request $request)
     {

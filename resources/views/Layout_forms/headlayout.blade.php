@@ -17,8 +17,10 @@
         </section>
         <section class="oversearch" id="oversearch"><i class="fa-solid fa-magnifying-glass"></i></section>
         <div class="bg-gray-300 overtext" id="overtext">
-            <input type="text" name="" id="" placeholder="Wpisz wyszukiwaną wartość">
+            <form action="{{route('FindNumber')}}" method="get">
+            <input type="text" name="FindNumber" id="" placeholder="Wyszukaj numer telefonu">
             <button class="look1"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </div>
 
 
