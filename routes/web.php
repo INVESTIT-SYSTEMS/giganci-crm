@@ -15,7 +15,7 @@ use App\Http\Controllers\groupViewController;
 
 Route::get('/main', function () {
     return view('main');
-})->name('main.index');
+})->name('main.index')->middleware('admin');
 
 
 Route::resource('potentialStudents', PotentialStudentController::class);

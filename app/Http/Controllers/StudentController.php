@@ -81,8 +81,13 @@ class StudentController extends Controller
 
     public function edit(Student $student)
     {
+        $savedLocations = Location::all();
         $groups= Group::all();
-        return view('Layout_forms.StudentEdit', ['student'=>$student, 'group'=>$groups]);
+        return view('Layout_forms.StudentEdit', [
+            'student'=>$student,
+            'group'=>$groups,
+            'locaton'=>$savedLocations,
+        ]);
     }
 
     public function update(Student $student, Request $request)

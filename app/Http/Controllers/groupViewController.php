@@ -59,8 +59,13 @@ class groupViewController extends Controller
 
     public function edit(Student $groupView)
     {
+        $savedLocations = Location::all();
         $groups= Group::all();
-        return view('Layout_forms.GroupViewEdit', ['student'=>$groupView, 'group'=>$groups]);
+        return view('Layout_forms.GroupViewEdit', [
+            'student'=>$groupView,
+            'group'=>$groups,
+            'location'=>$savedLocations
+        ]);
     }
 
 

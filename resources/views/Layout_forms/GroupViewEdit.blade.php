@@ -62,6 +62,41 @@
             </table>
             <button type="submit" class="studentedit">Edytuj Ucznia</button>
         </form>
+        <table class="information">
+            <tr>
+                <td class="tabledescription">Grupa</td>
+            </tr>
+            <tr>
+                <td>{{$student->group->name ?? 'brak'}}<hr></td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Dzień</td>
+            </tr>
+            <tr>
+                <td>{{$student->group->classes_day ?? 'brak'}}<hr></td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Godzina</td>
+            </tr>
+            <tr>
+                <td>{{$student->group->classes_hour ?? 'brak'}}<hr></td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Nauczyciel</td>
+            </tr>
+            <tr>
+                <td>{{$student->group->teacher->name ?? 'brak'}}
+                    {{$student->group->teacher->surname ?? ''}}
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Lokalizacja</td>
+            </tr>
+            <tr>
+                <td>{{$student->group->location->town ?? 'brak'}}</td>
+            </tr>
+        </table>
     </section>
 </section>
 @include('Layout_forms.footerlayout')
