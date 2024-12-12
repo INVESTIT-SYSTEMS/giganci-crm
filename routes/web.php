@@ -9,18 +9,19 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\groupViewController;
+use App\Http\Middleware\Admin;
 
 
 
 
 Route::get('/main', function () {
     return view('main');
-})->name('main.index')->middleware('admin');
+})->name('main.index')->middleware('auth');
 
 
 Route::resource('potentialStudents', PotentialStudentController::class);
 
-Route::resource('groups', GroupController::class);
+Route::resource('groups', GroupController::class)->middleware('auth');
 
 Route::resource('locations', LocationController::class);
 
