@@ -6,7 +6,7 @@
 <section class="contentstudentedit">
     <h1>Edytuj ucznia</h1>
     <section class="bg-gray-300 studentsectionedit">
-        <form action="{{route('groupView.update', ['student'=>$student])}}" method="POST" id="StudentForm">
+        <form action="{{route('groupView.update', ['groupView'=>$student])}}" method="POST" id="StudentForm">
             @csrf
             @method('put')
             <table class="">

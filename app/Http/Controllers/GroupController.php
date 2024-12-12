@@ -13,36 +13,32 @@ use Illuminate\View\View;
 
 class GroupController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
 
 
-    public function index(Request $request){
-      $savedLocations = Location::all();
-      $savedTeachers = Teacher::all();
-        $query = Group::when($request->get('search'), function (Builder $query) use ($request){
-            $query->where(function ($query)use ($request){
-                  $query->orWhere('name','like','%' . $request->get('search') . '%')
-                ->orWhere('classes_day','like','%' . $request->get('search') . '%')
-                ->orWhere('classes_hour','like','%' . $request->get('search') . '%');
+    public function index(Request $request)
+    {
+        $savedLocations = Location::all();
+        $savedTeachers = Teacher::all();
+        $query = Group::when($request->get('search'), function (Builder $query) use ($request) {
+            $query->where(function ($query) use ($request) {
+                $query->orWhere('name', 'like', '%' . $request->get('search') . '%')
+                    ->orWhere('classes_day', 'like', '%' . $request->get('search') . '%')
+                    ->orWhere('classes_hour', 'like', '%' . $request->get('search') . '%');
             });
-            })->when($request->get('Location'), function ($query) use ($request) {
-                $query->where('location_id', $request->get('Location'));
-            })
+        })->when($request->get('Location'), function ($query) use ($request) {
+            $query->where('location_id', $request->get('Location'));
+        })
             ->when($request->get('Teacher'), function ($query) use ($request) {
                 $query->where('teacher_id', $request->get('Teacher'));
-                })
-                    ->get();
+            })
+            ->get();
 
 
-return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teacher' => $savedTeachers]);
+        return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teacher' => $savedTeachers]);
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         $teacher = Teacher::all();
@@ -50,15 +46,13 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
         return view('Layout_forms.GroupAddingForm', ['teachers' => $teacher, 'locations' => $location]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request): RedirectResponse
     {
-        $request-> validate([
-                'name' => 'required',
-                'classes_day' => 'required',
-                'classes_hour' => 'required',
+        $request->validate([
+            'name' => 'required',
+            'classes_day' => 'required',
+            'classes_hour' => 'required',
         ]);
         Group::create([
             'name' => $request->get('name'),
@@ -70,13 +64,9 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
         return redirect()->route('groups.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Group $group): View
+
+    public function show(Group $group)
     {
-
-
         return view('groupView', [
             'student' => Student::where("group_id", $group->id)->get(),
             'location' => Location::all(),
@@ -84,27 +74,23 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(Group $group): View
     {
         $teacher = Teacher::all();
         $location = Location::all();
-        return view('Layout_forms.GroupEditForm', ['groups'=>$group, 'teachers' => $teacher, 'locations' => $location]);
+        return view('Layout_forms.GroupEditForm', ['groups' => $group, 'teachers' => $teacher, 'locations' => $location]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, Group $group): RedirectResponse
     {
-        $request-> validate([
+        $request->validate([
             'name' => 'required',
             'classes_day' => 'required',
             'classes_hour' => 'required',
         ]);
-        $group ->update([
+        $group->update([
             'name' => $request->get('name'),
             'classes_day' => $request->get('classes_day'),
             'classes_hour' => $request->get('classes_hour'),
@@ -116,81 +102,8 @@ return view('wpgroup', ['group' => $query, 'location' => $savedLocations, 'teach
 
     public function destroy(Group $group): RedirectResponse
     {
-        $group -> delete();
+        $group->delete();
         return redirect()->route('groups.index');
     }
-
-    public function ShowGroups(Request $request)
-    {
-        $pickGroup = Group::where('name', $request->get('groupName'))->get();
-//        dd($pickGroup);
-        return view('Layout_forms.GroupViewAddForm', [
-                'group' => $pickGroup,
-        ]);
-    }
-
-    public function GroupViewStore(Request $request, $group)
-    {
-//        $groups = Group::all();
-
-        $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'birth_year' => 'required|numeric',
-            'parent_name' => 'required',
-            'parent_surname' => 'required',
-            'parent_phone_number' => 'required|numeric',
-        ]);
-
-        Student::create([
-            'name'=>$request->get('name'),
-            'surname'=>$request->get('surname'),
-            'birth_year'=>$request->get('birth_year'),
-            'parent_name'=>$request->get('parent_name'),
-            'parent_surname'=>$request->get('parent_surname'),
-            'parent_phone_number'=>$request->get('parent_phone_number'),
-            'parent_email'=>$request->get('parent_email'),
-            'group_id'=>$request->get('group_id'),
-        ]);
-        return redirect()->route('groups.show' , ['group'=>$group]);
-    }
-
-
-    public function GroupViewEdit(Student $student)
-    {
-        $groups= Group::all();
-        return view('Layout_forms.GroupViewEdit', ['student'=>$student, 'group'=>$groups]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function GroupViewUpdate(Student $student, Request $request)
-    {
-        $data = $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'birth_year' => 'required|numeric',
-            'parent_name' => 'required',
-            'parent_surname' => 'required',
-            'parent_phone_number' => 'required|numeric',
-        ]);
-        $student->update([
-            'name'=>$request->get('name'),
-            'surname'=>$request->get('surname'),
-            'birth_year'=>$request->get('birth_year'),
-            'parent_name'=>$request->get('parent_name'),
-            'parent_surname'=>$request->get('parent_surname'),
-            'parent_phone_number'=>$request->get('parent_phone_number'),
-            'parent_email'=>$request->get('parent_email'),
-            'group_id'=>$request->get('group_id'),
-        ]);
-
-        return redirect(route('groups.show', ['group'=>$request->get('group')]))->with('success', 'Updated');
-    }
-    public function GroupViewDestroy(Student $student, Request $request)
-    {
-        $student->delete();
-        return redirect(route('groups.show', ['group'=>$request->get('group')]));
-    }
 }
+
