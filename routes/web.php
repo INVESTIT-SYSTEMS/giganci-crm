@@ -12,7 +12,7 @@ use App\Http\Controllers\groupViewController;
 
 
 
-Route::get('/main', function () {
+Route::get('/', function () {
     return view('main');
 })->name('main.index');
 
@@ -44,10 +44,8 @@ Route::get('/send-mail/PotentialStudent', [MailController::class, 'sendPotential
 
 
 //Perla t gej
-Route::get('/', function () {
-    return view('wplogin');
-});
+//Route::get('/', function () {
+//    return view('wplogin');
+//});
 
-Route::get('/tak', function () {
-    return view('wpsmsSend');
-});
+
