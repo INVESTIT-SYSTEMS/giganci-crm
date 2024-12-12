@@ -10,14 +10,11 @@ use Cassandra\Custom;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
 
@@ -43,9 +40,6 @@ class StudentController extends Controller
         return view('wpstudent', ['student' => $query, 'group' => $savedGroups, 'location' => $savedLocations]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $saved_students = Student::all();
@@ -54,9 +48,6 @@ class StudentController extends Controller
         return view('Layout_forms.StudentAddingForm', ['student'=>$saved_students, 'group'=>$groups, 'location'=>$locations]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $groups = Group::all();
@@ -83,26 +74,17 @@ class StudentController extends Controller
         return redirect()->route('students.index' , ['groups'=>$groups]);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Request $request)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Student $student)
     {
         $groups= Group::all();
         return view('Layout_forms.StudentEdit', ['student'=>$student, 'group'=>$groups]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Student $student, Request $request)
     {
         $data = $request->validate([
@@ -127,9 +109,6 @@ class StudentController extends Controller
         return redirect(route('students.index'))->with('success', 'Updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Student $student)
     {
         $student->delete();
@@ -141,23 +120,24 @@ class StudentController extends Controller
         return view('Layout_forms.MoveStudentForm', ['studentData'=>$studentData, 'group'=>$groups]);
     }
 
-    public function Login(Request $request)
+    public function FindNumber(Request $request)
     {
-//        $data = $request->validate([
-//            'login'=>'required',
-//            'password'=>'required',
-//        ]);
+        $savedGroups = Group::all();
+        $savedLocations = Location::all();
+        $studentQuery = Student::where('parent_phone_number', 'like', '%'.$request->FindNumber.'%')->get();
+        $potentialQuery = PotentialStudent::where('parent_phone_number', 'like', '%'.$request->FindNumber.'%')->get();
 
-        $data = $request->only([
-            'login',
-            'password'
-        ]);
+        if (!empty($studentQuery->toArray())){
+            return view('wpstudent', [
+                'student' => $studentQuery,
+                'group' => $savedGroups,
+                'location' => $savedLocations]);
 
-        if (Auth::attempt($data)){
-            $request->session()->regenerate();
-            return redirect()->intended(route('main.index'));
+        }else if (!empty($potentialQuery->toArray())){
+            return view('wppotential', ['user' => $potentialQuery]);
         }
-        return view('wplogin');
+
+        return view('main')->with('send', 'Nie wyszukano podanych wartośći.');
     }
 
 }
