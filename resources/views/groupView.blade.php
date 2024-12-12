@@ -25,7 +25,7 @@
 
 
         <div class="addimail">
-            <form action="{{route('showGroups')}}" method="get" id="groupName">
+            <form action="{{route('groupView.create')}}" method="get" id="groupName">
                 <a><button type="submit" class="addstudent"><i class="fa-solid fa-plus"></i></button></a>
                 <input hidden name="groupName" value="{{$group->name}}">
                 <input hidden name="id" value="{{$group->id}}">
@@ -68,8 +68,8 @@
                                     </td>
                                     <td class="colored">{{$info->group->location->town ??'Brak lokalizacji'}}</td>
                                    <td>
-                                        <a href="{{ route('groupView.edit', ['student' => $info])}}"><button type="button" class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
-                                        <form action="{{ route('groupView.destroy', ['student' => $info]) }}" method="post">
+                                        <a href="{{ route('groupView.edit', ['groupView' => $info])}}"><button type="button" class="edit"><i class="fa-solid fa-pencil fa-sm"></i></button></a> <br>
+                                        <form action="{{ route('groupView.destroy', ['groupView' => $info]) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <input hidden name="group" value="{{$info->group_id}}">
