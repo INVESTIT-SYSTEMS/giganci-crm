@@ -653,8 +653,10 @@ footer{
     height: 80%;
     box-shadow: black 5px 5px 20px;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    /*align-items: center;*/
     padding-top: 2%;
+    flex-wrap: wrap;
 }
 
 .studentsectionedit input{
@@ -662,8 +664,32 @@ footer{
     padding: 5px;
 }
 
+hr{
+    border-bottom: solid 1px black;
+    padding-top: 5px;
+}
+
 .studentsectionedit td,.studentsectionedit tr {
     border: 0;
+}
+
+.information{
+    scale: 0.9;
+    width: 30%;
+    margin: 2% auto;
+}
+
+.editstudenttable{
+    width: 100%;
+}
+
+.studentform{
+    margin: auto;
+}
+
+.tabledescription{
+    font-weight: bold;
+    border: none;
 }
 
 .studentedit{
@@ -672,11 +698,12 @@ footer{
     padding: 5px 10px;
     border: #7043aa solid 3px;
     border-radius: 15px;
-    margin: 10px 45px 20px 10px;
+    margin: 10px auto;
     box-shadow: black 5px 5px 10px;
     font-weight: bold;
     text-align: center;
     transition: all 0.35s;
+    width: 35%;
 }
 
 .studentedit:hover{

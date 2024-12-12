@@ -6,10 +6,10 @@
 <section class="contentstudentedit">
     <h1>Edytuj ucznia</h1>
     <section class="bg-gray-300 studentsectionedit">
-        <form action="{{route('students.update', ['student'=>$student])}}" method="POST" id="StudentForm">
+        <form action="{{route('students.update', ['student'=>$student])}}" method="POST" id="StudentForm" class="studentform">
             @csrf
             @method('put')
-            <table class="">
+            <table class="editstudenttable">
                 <tr>
                     <td>Imie:</td>
                     <td><input type="text" name="name" id="name" value="{{$student->name}}">
@@ -61,6 +61,38 @@
             </table>
             <button type="submit" class="studentedit">Edytuj Ucznia</button>
         </form>
+        <table class="information">
+            <tr>
+                <td class="tabledescription">Grupa</td>
+            </tr>
+            <tr>
+                <td>ok<hr></td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Dzień</td>
+            </tr>
+            <tr>
+                <td>ok<hr></td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Godzina</td>
+            </tr>
+            <tr>
+                <td>ok<hr></td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Nauczyciel</td>
+            </tr>
+            <tr>
+                <td>ok<hr></td>
+            </tr>
+            <tr>
+                <td class="tabledescription">Lokalizacja</td>
+            </tr>
+            <tr>
+                <td>ok</td>
+            </tr>
+        </table>
     </section>
 </section>
 @include('Layout_forms.footerlayout')
