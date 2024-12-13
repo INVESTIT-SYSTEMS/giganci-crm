@@ -35,7 +35,7 @@ Route::resource('groupView', groupViewController::class)->middleware('admin:admi
 Route::get('/', [LoginController::class, 'index'])
     ->name('login.index');
 
-Route::post('/', [LoginController::class, 'store'])
+Route::post('/login-store', [LoginController::class, 'store'])
     ->name('login.store');
 
 Route::get('/logout', [LoginController::class, 'logout'])

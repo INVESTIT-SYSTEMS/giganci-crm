@@ -32,7 +32,7 @@
     <form method="post" action="{{route('login.store')}}">
         @csrf
         <div class="text_field">
-            <input type="text" name="login" required>
+            <input type="text" name="login" required value="{{old('login')}}">
             <span></span>
             <label>Login</label>
         </div>
