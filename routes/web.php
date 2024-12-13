@@ -16,41 +16,72 @@ use App\Http\Middleware\Admin;
 
 Route::get('/main', function () {
     return view('main');
-})->name('main.index')->middleware('auth');
+})->name('main.index')->middleware('admin:admin');
 
 
-Route::resource('potentialStudents', PotentialStudentController::class);
+Route::resource('potentialStudents', PotentialStudentController::class)->middleware('admin:admin');
 
-Route::resource('groups', GroupController::class)->middleware('auth');
+Route::resource('groups', GroupController::class)->middleware('auth')->middleware('admin:admin');
 
-Route::resource('locations', LocationController::class);
+Route::resource('locations', LocationController::class)->middleware('admin:admin');
 
-Route::resource('teachers', TeacherController::class);
+Route::resource('teachers', TeacherController::class)->middleware('admin:admin');
 
-Route::resource('students', StudentController::class);
+Route::resource('students', StudentController::class)->middleware('admin:admin');
 
-Route::resource('groupView', groupViewController::class);
-
-
-
-Route::get('/', [LoginController::class, 'index'])->name('login.index');
-Route::get('/', [LoginController::class, 'store'])->name('login.store');
-Route::get('/find-number', [StudentController::class, 'FindNumber'])->name('FindNumber');
+Route::resource('groupView', groupViewController::class)->middleware('admin:admin');
 
 
+Route::get('/', [LoginController::class, 'index'])
+    ->name('login.index');
+
+Route::get('/', [LoginController::class, 'store'])
+    ->name('login.store');
+
+Route::get('/find-number', [StudentController::class, 'FindNumber'])
+    ->name('FindNumber')
+    ->middleware('admin:admin');
+
+Route::get('/message/Student', [MailController::class, 'messageStudent'])
+    ->name('messageStudent.index')
+    ->middleware('admin:admin');
+
+Route::get('/message/PotentialStudent', [MailController::class, 'messagePotentialStudent'])
+    ->name('messagePotentialStudent.index')
+    ->middleware('admin:admin');
+
+Route::get('/message/Group', [MailController::class, 'messageGroup'])
+    ->name('messageGroup.index')
+    ->middleware('admin:admin');
+
+Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent'])
+    ->name('moveStudent.index')
+    ->middleware('admin:admin');
+
+Route::get('/send-mail/Student', [MailController::class, 'sendStudent'])
+    ->name('mailStudent.send')
+    ->middleware('admin:admin');
+
+Route::get('/send-mail/PotentialStudent', [MailController::class, 'sendPotentialStudent'])
+    ->name('mailPotentialStudent.send')
+    ->middleware('admin:admin');
 
 
-Route::get('/message/Student', [MailController::class, 'messageStudent'])->name('messageStudent.index');
-Route::get('/message/PotentialStudent', [MailController::class, 'messagePotentialStudent'])->name('messagePotentialStudent.index');
-Route::get('/message/Group', [MailController::class, 'messageGroup'])->name('messageGroup.index');
-
-Route::get('/moveStudent/{studentData}', [StudentController::class, 'moveStudent'])->name('moveStudent.index');
-
-Route::get('/send-mail/Student', [MailController::class, 'sendStudent'])->name('mailStudent.send');
-Route::get('/send-mail/PotentialStudent', [MailController::class, 'sendPotentialStudent'])->name('mailPotentialStudent.send');
 
 
-//Route::get('/', [StudentController::class, 'Login'])->name('login');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Perla t gej

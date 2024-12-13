@@ -23,6 +23,7 @@
 <div class="bg-gray-300 center">
     <h1>Logowanie</h1>
     <form method="get" action="{{route('login.store')}}">
+        @csrf
         <div class="text_field">
             <input type="text" name="login" required>
             <span></span>
