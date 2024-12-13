@@ -12,6 +12,10 @@ class LoginController extends Controller
      */
     public function index()
     {
+        if(auth()->user() != null)
+        {
+            return redirect()->route('main.index');
+        }
         return view('wplogin');
     }
 
