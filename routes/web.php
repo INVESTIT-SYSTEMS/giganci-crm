@@ -35,11 +35,11 @@ Route::resource('groupView', groupViewController::class)->middleware('admin:admi
 Route::get('/', [LoginController::class, 'index'])
     ->name('login.index');
 
-//Route::get('/', [LoginController::class, 'show'])
-//    ->name('login.show');
-
-Route::post('/', [LoginController::class, 'store'])
+Route::post('/login-store', [LoginController::class, 'store'])
     ->name('login.store');
+
+Route::get('/logout', [LoginController::class, 'logout'])
+    ->name('login.logout');
 
 Route::get('/find-number', [StudentController::class, 'FindNumber'])
     ->name('FindNumber')
