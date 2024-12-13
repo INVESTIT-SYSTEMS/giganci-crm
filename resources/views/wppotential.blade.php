@@ -86,7 +86,7 @@
                     <form action="{{ route('potentialStudents.destroy', ['potentialStudent' => $info]) }}" method="post">
                         @csrf
                         @method('delete')
-                        <button onclick="return confirm('Jesteś pewny usunięcia ucznia?\nNie będzie można przywrócić tych zmian')" type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
+                        <button onclick="return confirm('Jesteś pewny usunięcia potencjalnego ucznia?\nNie będzie można przywrócić tych zmian')" type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                     </form>
                 </td>
                 <td><a href="{{route('moveStudent.index', ['studentData' =>$info])}}"><button>Przenieś</button></a></td>
