@@ -13,7 +13,7 @@
 <body>
     <header class="text-center">
         <section class="logout">
-            <button class="logoutbutton"><i class="fa-solid fa-power-off"></i></button>
+            <a href="{{route('login.logout')}}"><button class="logoutbutton"><i class="fa-solid fa-power-off"></i></button></a>
         </section>
         <section class="logo">
             <h1>Giganci Programowania</h1>

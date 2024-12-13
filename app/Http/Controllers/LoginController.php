@@ -15,17 +15,6 @@ class LoginController extends Controller
         return view('wplogin');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
 //        $data = $request->validate([
@@ -42,14 +31,15 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route('main.index'));
         }
-
             return redirect()->intended(route('login.index'))->with('send', 'Wprowadzono niepoprawne dane.');
-
     }
 
-    /**
-     * Display the specified resource.
-     */
+    public function logout()
+    {
+        Auth::logout();
+        return redirect(route('login.index'));
+    }
+
     public function show()
     {
         return view('wplogin');
