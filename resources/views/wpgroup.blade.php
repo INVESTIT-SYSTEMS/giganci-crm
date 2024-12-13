@@ -61,6 +61,7 @@
                 <th colspan="2"></th>
             </tr>
             @foreach($group as $info)
+                @if($info->id!=1)
                 <div class="gap">
                     <tr>
                         <td><input type="checkbox" class="checkboxes" name="check[]" form="send" id="" value="{{$info->id}}"></td>
@@ -84,6 +85,7 @@
                         </td>
                     </tr>
                 </div>
+                @endif
             @endforeach
         </table>
     </section>
