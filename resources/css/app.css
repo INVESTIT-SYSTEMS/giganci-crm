@@ -898,8 +898,12 @@ span{
         justify-content: space-between;
     }
 
+    .logout{
+        width: 5%;
+    }
+
     .logo{
-        width: 60%;
+        width: 55%;
     }
 
     .oversearch{
@@ -1040,6 +1044,10 @@ span{
     }
 
     .logo{
+        margin-left: 5px;
+    }
+
+    .logout{
         margin-left: 5px;
     }
 
@@ -1190,7 +1198,11 @@ span{
     }
 
     .logo{
-        width: 35vw;
+        width: 30vw;
+    }
+
+    .logout{
+        width: 5vw;
     }
 
     .oversearch{
@@ -1614,4 +1626,16 @@ button#close:hover {
     font-weight: 500;
     text-align: center;
     color: black;
+}
+
+.logoutbutton{
+    color: white;
+    font-weight: bold;
+    transition: all 0.35s;
+    padding: 5px 8px;
+}
+
+.logoutbutton:hover{
+    scale: 1.09;
+    color: red;
 }
