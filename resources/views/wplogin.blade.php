@@ -21,8 +21,15 @@
 </header>
 <section class="login">
 <div class="bg-gray-300 center">
+    @if(session('send'))
+        <section class="modal" id="modal">
+            <p>{{session('send')}}</p>
+            <button class="close" type="button" id="close"><i class="fa-solid fa-xmark"></i></button>
+        </section>
+    @endif
     <h1>Logowanie</h1>
-    <form method="get" action="{{route('login.store')}}">
+    <form method="post" action="{{route('login.store')}}">
+        @csrf
         <div class="text_field">
             <input type="text" name="login" required>
             <span></span>

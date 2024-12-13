@@ -35,7 +35,10 @@ Route::resource('groupView', groupViewController::class)->middleware('admin:admi
 Route::get('/', [LoginController::class, 'index'])
     ->name('login.index');
 
-Route::get('/', [LoginController::class, 'store'])
+//Route::get('/', [LoginController::class, 'show'])
+//    ->name('login.show');
+
+Route::post('/', [LoginController::class, 'store'])
     ->name('login.store');
 
 Route::get('/find-number', [StudentController::class, 'FindNumber'])

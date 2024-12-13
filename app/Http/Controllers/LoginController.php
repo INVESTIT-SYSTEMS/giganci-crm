@@ -42,15 +42,17 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route('main.index'));
         }
-        return view('wplogin');
+
+            return redirect()->intended(route('login.index'))->with('send', 'Wprowadzono niepoprawne dane.');
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        return view('wplogin');
     }
 
     /**
