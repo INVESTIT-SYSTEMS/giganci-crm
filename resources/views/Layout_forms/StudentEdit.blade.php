@@ -52,6 +52,7 @@
                 <tr>
                     <td>Grupa</td>
                     <td> <select form="StudentForm" name="group_id">
+                            <option value="0">Brak grupy</option>
                             @foreach($group as $name)
                                 <option @selected($student->group_id == $name->id) value="{{$name->id}}">{{$name->name}}</option>
                             @endforeach

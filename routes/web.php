@@ -21,7 +21,7 @@ Route::get('/main', function () {
 
 Route::resource('potentialStudents', PotentialStudentController::class)->middleware('admin:admin');
 
-Route::resource('groups', GroupController::class)->middleware('auth')->middleware('admin:admin');
+Route::resource('groups', GroupController::class)->middleware('admin:admin');
 
 Route::resource('locations', LocationController::class)->middleware('admin:admin');
 
