@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="https://i.ibb.co/mF5578K/icon.jpg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/04436fe658.js" crossorigin="anonymous"></script>
     <title>Giganci Programowania</title>
     @vite('resources/css/app.css')
 </head>
@@ -48,5 +49,14 @@
 </div>
 </section>
 @include('Layout_forms.footerlayout')
+
+<script>
+    const buttonClose = document.getElementById("close");
+    let windowClose = document.getElementById("modal");
+    buttonClose.addEventListener("click", () => {
+        windowClose.setAttribute("class", "modal-active");
+    });
+</script>
+
 </body>
 </html>
