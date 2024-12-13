@@ -79,6 +79,7 @@ class MailController extends Controller
                             'name' => $user->parent_name,
                         ]));
                     }
+                    return redirect(route('main.index'))->with('send', 'Pomyślnie wysłano wiadomość');
                 } else {
                     return redirect(route('messageStudent.index'))->with('send', 'Wystąpił błąd z wysyłką email');
                 }
@@ -96,12 +97,12 @@ class MailController extends Controller
                         $sms = SendSmsBag::withMessage($user->parent_phone_number, $request->get('message'));
                         $service->smsFeature()->sendSms($sms);
                     }
-
+                    return redirect(route('main.index'))->with('send', 'Pomyślnie wysłano wiadomość');
                 }else {
                     return redirect(route('main.index'))->with('send', 'Wystąpił błąd z wysyłką Sms');
                 }
             }
-            return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie!');
+            return redirect(route('potentialStudents.index'))->with('send', 'Nie wybrano opcji wysyłki');
     }
     public function sendPotentialStudent(Request $request)
     {
@@ -116,6 +117,7 @@ class MailController extends Controller
                         'name' => $user->parent_name,
                     ]));
                 }
+                return redirect(route('main.index'))->with('send', 'Pomyślnie wysłano wiadomość');
             } else {
                 return redirect(route('main.index'))->with('send', 'Wystąpił błąd z wysyłką email');
             }
@@ -133,12 +135,12 @@ class MailController extends Controller
                     $sms = SendSmsBag::withMessage($user->parent_phone_number, $request->get('message'));
                     $service->smsFeature()->sendSms($sms);
                 }
-
+                return redirect(route('main.index'))->with('send', 'Pomyślnie wysłano wiadomość');
             }else{
                 return redirect(route('main.index'))->with('send', 'Wystąpił błąd z wysyłką Sms');
             }
         }
-        return redirect(route('main.index'))->with('send', 'Wiadomość została wysłana pomyślnie!');
+        return redirect(route('potentialStudents.index'))->with('send', 'Nie wybrano opcji wysyłki');
 //
     }
 }

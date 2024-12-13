@@ -73,7 +73,7 @@
                                             @csrf
                                             @method('delete')
                                             <input hidden name="group" value="{{$info->group_id}}">
-                                            <button type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
+                                            <button onclick="return confirm('Jesteś pewny usunięcia ucznia?\nNie będzie można przywrócić tych zmian')" type="submit" class="del"><i class="fa-solid fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
